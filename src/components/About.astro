@@ -1,116 +1,96 @@
 ---
-// About component
+
+
+
+const features = [
+  {
+    title: "poor Design",
+    description: "Custom-designed landing pages that capture your brand's essence and convert visitors into customers.",
+    gradient: "from-blue-100 to-red-100",
+    iconGradient: "from-blue-600 to-blue-700",
+    iconPath: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+  },
+  {
+    title: "SEO Optimization",
+    description: "Rank higher on Google with meticulously optimized content and best practices for enhanced local visibility.",
+    gradient: "from-green-50 to-emerald-50",
+    iconGradient: "from-green-600 to-green-700",
+    iconPath: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+  },
+  {
+    title: "Free Hosting & Zero Maintenance",
+    description: "Your website will be hosted on reliable platforms like GitHub Pages or Cloudflare, meaning zero ongoing maintenance costs.",
+    gradient: "from-purple-50 to-violet-50",
+    iconGradient: "from-purple-600 to-purple-700",
+    iconPath: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01",
+  },
+  {
+    title: "Innovation First",
+    description: "We're committed to pushing boundaries with creative and forward-thinking solutions.",
+    gradient: "from-orange-50 to-red-50",
+    iconGradient: "from-orange-600 to-red-600",
+    iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
+  },
+  {
+    title: "Fast Delivery",
+    description: "Expect a quick turnaround without ever compromising on the quality of our work.",
+    gradient: "from-cyan-50 to-blue-50",
+    iconGradient: "from-cyan-600 to-blue-600",
+    iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    title: "User Focused",
+    description: "Every design and development decision is made with your target audience in mind.",
+    gradient: "from-indigo-50 to-purple-50",
+    iconGradient: "from-indigo-600 to-purple-600",
+    iconPath: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+  },
+];
 ---
 
 <section id="about" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-16">
-            <div class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                About Us
-            </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                We turn ideas into extraordinary
-                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    digital solutions
-                </span>
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                With over a decade of experience, we've mastered the art of transforming complex challenges 
-                into elegant digital solutions. Our team of experts combines creativity with technical excellence, 
-                delivering key benefits for your project:
-            </p>
-        </div>
-
-        <!-- Features Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <!-- Feature 1 -->
-            <div class="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Professional Design</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Custom-designed landing pages that capture your brand's essence and convert visitors into customers.
-                </p>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="w-12 h-12 bg-gradient-to-br from-green-600 to-green-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">SEO Optimization</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Rank higher on Google with meticulously optimized content and best practices for enhanced local visibility.
-                </p>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="group bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Free Hosting & Zero Maintenance</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Your website will be hosted on reliable platforms like GitHub Pages or Cloudflare, meaning zero ongoing maintenance costs.
-                </p>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="w-12 h-12 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Innovation First</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    We're committed to pushing boundaries with creative and forward-thinking solutions.
-                </p>
-            </div>
-
-            <!-- Feature 5 -->
-            <div class="group bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="w-12 h-12 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Fast Delivery</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Expect a quick turnaround without ever compromising on the quality of our work.
-                </p>
-            </div>
-
-            <!-- Feature 6 -->
-            <div class="group bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">User Focused</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Every design and development decision is made with your target audience in mind.
-                </p>
-            </div>
-        </div>
-
-        <!-- CTA Section -->
-        <div class="text-center">
-            <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 mr-4">
-                Learn More
-            </button>
-            <a href="#team" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                Meet our team →
-            </a>
-        </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+        About Us
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        We turn ideas into extraordinary
+        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          digital solutions
+        </span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        With over a decade of experience, we've mastered the art of transforming complex challenges 
+        into elegant digital solutions. Our team of experts combines creativity with technical excellence, 
+        delivering key benefits for your project:
+      </p>
     </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {features.map((feature) => (
+        <div class={`group bg-gradient-to-br ${feature.gradient} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
+          <div class={`w-12 h-12 bg-gradient-to-br ${feature.iconGradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={feature.iconPath}></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center">
+      <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 mr-4">
+        Learn More
+      </button>
+      <a href="#team" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+        Meet our team →
+      </a>
+    </div>
+  </div>
 </section>
