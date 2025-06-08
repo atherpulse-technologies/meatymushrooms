@@ -1,29 +1,528 @@
 ---
+import { Image } from 'astro:assets';
 import "../assets/css/styles.css";
-import About from "../components/About.astro";
-import Hero from "../components/Hero.astro";
-import Nav from "../components/utils/Nav.astro";
+import Head from "../components/Head.astro";
+import Footer from "../components/Footer.astro";
+
+
+import image1 from '../assets/images/image1.webp';
+import banner from '../assets/images/banner.jpg';
+import image2 from '../assets/images/image2.webp';  
+import buttonmush from '../assets/images/button.jpg';
+import oyster from '../assets/images/oyster.jpg';
+import pink from '../assets/images/pink.jpg';
 
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atherpulse Technologies - Affordable Web Design, Development & Digital Innovation</title>
-    <meta name="description" content="Your website dream made affordable! Atherpulse Technologies offers professional web design, development, SEO, and free hosting. Get a stunning online presence without the hefty price tag.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body class="font-inter antialiased">
- 
-		<Nav />
-		<Hero />
-	    <About />
-		
-		
+<Head/>
+
+  <section class="min-h-screen pt-28 pb-20 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&blur=100')] opacity-5 z-0"></div>
+        
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column -->
+                <div class="text-center lg:text-left" data-aos="fade-right">
+                    <span class="inline-block px-4 py-2 rounded-full bg-[#E9F0EA] text-[#3A493E] text-sm font-medium mb-6">
+                        🌟 Premium Quality Organic Mushrooms
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-stone-900 leading-tight mb-6">
+                        Fresh Mushrooms, <br>
+                        Harvested Daily from 
+                        <span class="text-[#3A493E]">Vadakara</span>
+                    </h1>
+                    <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0">
+                        Experience the finest organic oyster mushrooms, cultivated with care in our state-of-the-art farm. 
+                        From farm to table, we ensure premium quality and freshness.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="px-8 py-4 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all flex items-center justify-center gap-2 group">
+                            Order Fresh Mushrooms
+                            <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                        <button class="px-8 py-4 border-2 border-[#3A493E] text-[#3A493E] rounded-full hover:bg-[#E9F0EA] transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-play-circle"></i>
+                            Watch Our Story
+                        </button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto lg:mx-0">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="text-3xl font-bold text-[#3A493E] mb-1">100%</h3>
+                            <p class="text-sm text-stone-600">Organic</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-3xl font-bold text-[#3A493E] mb-1">50kg+</h3>
+                            <p class="text-sm text-stone-600">Daily Harvest</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="text-3xl font-bold text-[#3A493E] mb-1">1000+</h3>
+                            <p class="text-sm text-stone-600">Happy Customers</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="text-3xl font-bold text-[#3A493E] mb-1">5+</h3>
+                            <p class="text-sm text-stone-600">Varieties</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="relative" data-aos="fade-left">
+                    
+                         <Image src={image1} alt="Fresh Oyster Mushrooms" class="w-full max-w-2xl mx-auto animate-float" />
+                    <!-- Floating Elements -->
+                    <div class="absolute top-10 right-10 w-20 h-20 bg-[#E9F0EA] rounded-full -z-10"></div>
+                    <div class="absolute bottom-10 left-10 w-32 h-32 bg-[#E9F0EA] rounded-full -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-20 bg-[#F8FAF8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Our Products</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Farm Fresh Mushroom Varieties</h2>
+                <p class="text-stone-600">Discover our range of premium organic mushrooms, harvested daily to ensure maximum freshness and nutrition.</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <Image src={oyster} alt="Pearl Oyster Mushrooms" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                 
+                        <span class="absolute top-4 right-4 bg-[#3A493E] text-white text-sm px-3 py-1 rounded-full">Best Seller</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Pearl Oyster Mushrooms</h3>
+                    <p class="text-stone-600 text-sm mb-4">Fresh, tender, and perfect for stir-fries and curries. Rich in proteins and minerals.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[#3A493E] font-semibold">₹60/250g</span>
+                        <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                            <i class="fas fa-shopping-basket"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <Image src={pink} alt="Pink Oyster Mushrooms" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 right-4 bg-[#D87D88] text-white text-sm px-3 py-1 rounded-full">New</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Pink Oyster Mushrooms</h3>
+                    <p class="text-stone-600 text-sm mb-4">Visually stunning with a delicate seafood-like flavor. Perfect for gourmet dishes.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[#3A493E] font-semibold">₹80/250g</span>
+                        <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                            <i class="fas fa-shopping-basket"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                       <Image src={buttonmush} alt="Mushroom Powder" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 right-4 bg-[#3A493E] text-white text-sm px-3 py-1 rounded-full">Popular</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Mushroom Powder</h3>
+                    <p class="text-stone-600 text-sm mb-4">100% pure mushroom powder. Add to smoothies, soups, and dishes for extra nutrition.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[#3A493E] font-semibold">₹120/100g</span>
+                        <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                            <i class="fas fa-shopping-basket"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Products Button -->
+            <div class="text-center mt-12">
+                <a href="#all-products" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group">
+                    View All Products
+                    <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growing Process Section -->
+    <section class="py-24 relative overflow-hidden bg-white">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('./assets/dots-pattern.png')] opacity-5"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">How We Grow</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Perfect Growing Conditions</h2>
+                <p class="text-stone-600">Our state-of-the-art facility ensures optimal conditions for growing the most nutritious and flavorful mushrooms.</p>
+            </div>
+
+            <!-- Growing Conditions Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Temperature Control -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm group hover:shadow-xl transition-all duration-300" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-temperature-high text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Perfect Temperature</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Maintained at 22-25°C (72-77°F) for optimal growth and development.</p>
+                </div>
+
+                <!-- Humidity -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-tint text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Controlled Humidity</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">85-95% humidity levels for healthy mushroom development.</p>
+                </div>
+
+                <!-- Air Quality -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-wind text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Fresh Air Exchange</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Advanced ventilation system ensures optimal CO2 levels and air quality.</p>
+                </div>
+            </div>
+
+            <!-- Growing Room Image -->
+            <div class="relative rounded-2xl overflow-hidden" data-aos="zoom-in">
+              <Image src={banner} alt="Our Growing Room" class="w-full h-[400px] object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                    <div class="p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-2">State-of-the-Art Growing Room</h3>
+                        <p class="text-sm text-gray-200 max-w-2xl">Our growing rooms are equipped with automated climate control systems and use renewable energy to maintain perfect conditions 24/7.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">6+</div>
+                    <p class="text-sm text-stone-600">Growing Rooms</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">25°C</div>
+                    <p class="text-sm text-stone-600">Perfect Temperature</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">90%</div>
+                    <p class="text-sm text-stone-600">Humidity Level</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">24/7</div>
+                    <p class="text-sm text-stone-600">Monitoring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-[#F8FAF8] transform -skew-y-6 origin-top-right"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Why Choose Us</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Quality Meets Sustainability</h2>
+                <p class="text-stone-600">We combine traditional farming wisdom with modern technology to bring you the finest organic mushrooms.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-leaf text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">100% Organic</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Our mushrooms are grown using organic methods, free from pesticides and artificial additives.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-clock text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Same Day Delivery</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Fresh mushrooms delivered to your doorstep within hours of harvesting.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-flask text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Lab Tested</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Regular quality checks ensure the highest standards of safety and nutrition.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-handshake text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Local Community</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Supporting local farmers and contributing to sustainable agriculture in Vadakara.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-2xl p-8 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-seedling text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Sustainable Farming</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Eco-friendly cultivation methods that prioritize environmental conservation.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-2xl p-8 group hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-[#E9F0EA] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
+                        <i class="fas fa-phone-alt text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Expert Support</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Our team is always available to assist with your queries and provide growing tips.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-[#E9F0EA] rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#E9F0EA] rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">What Our Customers Say</h2>
+                <p class="text-stone-600">Hear from our satisfied customers about their experience with Meaty Mushrooms.</p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-[#F8FAF8] rounded-2xl p-8 relative" data-aos="fade-up">
+                    <div class="absolute -top-4 right-8 text-6xl text-[#3A493E] opacity-10">"</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=200" alt="Restaurant Owner" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-stone-900">Rajesh Kumar</h4>
+                            <p class="text-sm text-stone-500">Restaurant Owner, Calicut</p>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        "The quality and freshness of Meaty Mushrooms is outstanding. Our customers love the dishes we prepare with their oyster mushrooms. Highly recommended!"
+                    </p>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-[#F8FAF8] rounded-2xl p-8 relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-4 right-8 text-6xl text-[#3A493E] opacity-10">"</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200" alt="Home Chef" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-stone-900">Priya Menon</h4>
+                            <p class="text-sm text-stone-500">Home Chef, Vadakara</p>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        "Their mushroom powder is a game-changer! I add it to smoothies and curries. The health benefits are amazing, and the delivery is always on time."
+                    </p>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-[#F8FAF8] rounded-2xl p-8 relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 right-8 text-6xl text-[#3A493E] opacity-10">"</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200" alt="Nutritionist" class="w-14 h-14 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-stone-900">Dr. Sarah Thomas</h4>
+                            <p class="text-sm text-stone-500">Nutritionist, Kozhikode</p>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        "I recommend Meaty Mushrooms to all my clients. Their organic cultivation methods and consistent quality make them the best choice for a healthy diet."
+                    </p>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">4.9</div>
+                    <p class="text-sm text-stone-600">Average Rating</p>
+                    <div class="flex justify-center text-yellow-400 text-sm mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">500+</div>
+                    <p class="text-sm text-stone-600">Reviews</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">98%</div>
+                    <p class="text-sm text-stone-600">Satisfied Customers</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-[#3A493E] mb-2">24/7</div>
+                    <p class="text-sm text-stone-600">Customer Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="py-24 relative overflow-hidden bg-[#F8FAF8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Left Column - Contact Form -->
+                <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm" data-aos="fade-right">
+                    <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Get in Touch</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Contact Us</h2>
+                    <p class="text-stone-600 mb-8">Have questions about our products or want to place a bulk order? Reach out to us!</p>
+                    
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-[#3A493E] focus:border-transparent transition-all outline-none" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-2">Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-[#3A493E] focus:border-transparent transition-all outline-none" placeholder="Your phone number">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-[#3A493E] focus:border-transparent transition-all outline-none" placeholder="Your email">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:ring-2 focus:ring-[#3A493E] focus:border-transparent transition-all outline-none" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all flex items-center justify-center gap-2 group">
+                            Send Message
+                            <i class="fas fa-paper-plane text-sm transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right Column - Location & Quick Contact -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <!-- Quick Contact -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <h3 class="text-xl font-bold text-stone-900 mb-6">Quick Contact</h3>
+                        <div class="space-y-4">
+                            <a href="tel:+919876543210" class="flex items-center gap-4 text-stone-600 hover:text-[#3A493E] transition-colors">
+                                <div class="w-12 h-12 bg-[#E9F0EA] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-[#3A493E]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-stone-500">Call Us</p>
+                                    <p class="font-medium">+91 8078937260</p>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/919876543210" class="flex items-center gap-4 text-stone-600 hover:text-[#3A493E] transition-colors">
+                                <div class="w-12 h-12 bg-[#E9F0EA] rounded-full flex items-center justify-center">
+                                    <i class="fab fa-whatsapp text-[#3A493E]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-stone-500">WhatsApp</p>
+                                    <p class="font-medium">+91 8078937260</p>
+                                </div>
+                            </a>
+                            <a href="mailto:info@meatymushrooms.in" class="flex items-center gap-4 text-stone-600 hover:text-[#3A493E] transition-colors">
+                                <div class="w-12 h-12 bg-[#E9F0EA] rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-[#3A493E]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-stone-500">Email Us</p>
+                                    <p class="font-medium">info@meatymushrooms.in</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <h3 class="text-xl font-bold text-stone-900 mb-6">Visit Our Farm</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 text-stone-600">
+                                <div class="w-12 h-12 bg-[#E9F0EA] rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fas fa-map-marker-alt text-[#3A493E]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-stone-500">Address</p>
+                                    <p class="font-medium">Keethadi Road, Makkoolpeedika</p>
+                                    <p class="font-medium">Vadakara, Kozhikode</p>
+                                    <p class="font-medium">Kerala, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Map -->
+                        <div class="mt-6 rounded-xl overflow-hidden h-64 bg-stone-100">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4549.464578895633!2d75.60678897568725!3d11.60445588859923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba68405563873f7%3A0xbe8db2c0f1ca32a4!2sDaily%20Fresh%20Mushroom!5e1!3m2!1sen!2sin!4v1749401179073!5m2!1sen!2sin
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-
-</body>
-</html>
+<Footer/>
