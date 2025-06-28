@@ -8,112 +8,100 @@ import buttonmush from '../assets/images/button.jpg';
 
 const recipes = [
     {
-        slug: 'mushroom-biryani',
-        title: 'Mushroom Biryani',
+        id: 'mushroom-biryani',
+        name: 'Mushroom Biryani',
         description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices.',
         image: oyster,
         cookTime: '45 min',
         difficulty: 'Medium',
         cuisine: 'Indian',
         rating: 5,
-        reviews: 24
+        reviews: 24,
+        ingredients: [
+            '500g basmati rice',
+            '300g oyster mushrooms',
+            '2 onions, sliced',
+            '1 cup yogurt',
+            'Biryani spices',
+            'Mint leaves',
+            'Fried onions'
+        ],
+        instructions: [
+            'Soak basmati rice for 30 minutes',
+            'Clean and slice mushrooms',
+            'Marinate mushrooms with yogurt and spices',
+            'Cook rice with whole spices until 70% done',
+            'Layer mushrooms and rice alternately',
+            'Cook on dum for 45 minutes',
+            'Garnish with mint and fried onions'
+        ]
     },
     {
-        slug: 'mushroom-soup',
-        title: 'Creamy Mushroom Soup',
+        id: 'mushroom-soup',
+        name: 'Creamy Mushroom Soup',
         description: 'Rich and creamy soup perfect for cold evenings with fresh herbs.',
         image: pink,
         cookTime: '25 min',
         difficulty: 'Easy',
         cuisine: 'Continental',
         rating: 4,
-        reviews: 18
+        reviews: 18,
+        ingredients: [
+            '400g mixed mushrooms',
+            '2 cups vegetable stock',
+            '1 cup heavy cream',
+            '2 garlic cloves',
+            '1 onion, diced',
+            'Fresh thyme',
+            'Salt and pepper'
+        ],
+        instructions: [
+            'Sauté onions and garlic until fragrant',
+            'Add mushrooms and cook until tender',
+            'Pour in vegetable stock and simmer',
+            'Blend half the soup for texture',
+            'Add cream and season to taste',
+            'Garnish with fresh thyme',
+            'Serve hot with crusty bread'
+        ]
     },
     {
-        slug: 'mushroom-stir-fry',
-        title: 'Quick Mushroom Stir Fry',
+        id: 'mushroom-stir-fry',
+        name: 'Quick Mushroom Stir Fry',
         description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce.',
         image: buttonmush,
         cookTime: '15 min',
         difficulty: 'Easy',
         cuisine: 'Asian',
         rating: 5,
-        reviews: 31
-    },
-    {
-        slug: 'mushroom-curry',
-        title: 'Kerala Style Mushroom Curry',
-        description: 'Traditional Kerala curry with coconut milk and aromatic spices.',
-        image: oyster,
-        cookTime: '35 min',
-        difficulty: 'Medium',
-        cuisine: 'Indian',
-        rating: 5,
-        reviews: 42
-    },
-    {
-        slug: 'mushroom-pasta',
-        title: 'Creamy Mushroom Pasta',
-        description: 'Rich and indulgent pasta with sautéed mushrooms in cream sauce.',
-        image: pink,
-        cookTime: '20 min',
-        difficulty: 'Easy',
-        cuisine: 'Italian',
-        rating: 4,
-        reviews: 28
-    },
-    {
-        slug: 'mushroom-risotto',
-        title: 'Mushroom Risotto',
-        description: 'Creamy Italian rice dish with mixed mushrooms and parmesan.',
-        image: buttonmush,
-        cookTime: '40 min',
-        difficulty: 'Hard',
-        cuisine: 'Italian',
-        rating: 5,
-        reviews: 19
-    },
-    {
-        slug: 'mushroom-pizza',
-        title: 'Mushroom Pizza',
-        description: 'Homemade pizza topped with fresh mushrooms and herbs.',
-        image: oyster,
-        cookTime: '30 min',
-        difficulty: 'Medium',
-        cuisine: 'Italian',
-        rating: 4,
-        reviews: 35
-    },
-    {
-        slug: 'mushroom-salad',
-        title: 'Grilled Mushroom Salad',
-        description: 'Fresh salad with grilled mushrooms and balsamic dressing.',
-        image: pink,
-        cookTime: '15 min',
-        difficulty: 'Easy',
-        cuisine: 'Mediterranean',
-        rating: 4,
-        reviews: 22
-    },
-    {
-        slug: 'mushroom-sandwich',
-        title: 'Mushroom Grilled Sandwich',
-        description: 'Crispy grilled sandwich with sautéed mushrooms and cheese.',
-        image: buttonmush,
-        cookTime: '10 min',
-        difficulty: 'Easy',
-        cuisine: 'Continental',
-        rating: 4,
-        reviews: 16
+        reviews: 31,
+        ingredients: [
+            '300g oyster mushrooms',
+            '1 bell pepper',
+            '2 carrots, julienned',
+            '3 cloves garlic',
+            '2 tbsp soy sauce',
+            '1 tbsp oyster sauce',
+            'Spring onions'
+        ],
+        instructions: [
+            'Heat oil in a wok or large pan',
+            'Add garlic and stir-fry for 30 seconds',
+            'Add mushrooms and cook for 3-4 minutes',
+            'Add vegetables and stir-fry for 2 minutes',
+            'Mix sauces and add to the pan',
+            'Toss everything together for 1 minute',
+            'Garnish with spring onions and serve'
+        ]
     }
 ];
 ---
 
-<Head title="Mushroom Recipes - Meaty Mushrooms" />
+<Head title="Mushroom Recipes - Delicious & Healthy Cooking Ideas" />
 
-<main class="min-h-screen bg-white">
+<main class="min-h-screen bg-white pt-20">
     <!-- Header -->
-    <section class="pt-24 pb-12 bg-[#F8FAF8]">
+    <section class="pt-12 pb-8 bg-[#F8FAF8]">
         <div class="max-w-7xl mx-auto px-6">
             <nav class="flex items-center gap-2 text-sm text-stone-500 mb-6">
                 <a href="/" class="hover:text-[#3A493E]">Home</a>
@@ -121,26 +109,27 @@ const recipes = [
                 <span class="text-[#3A493E]">Recipes</span>
             </nav>
             
-            <div class="text-center max-w-2xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Mushroom Recipes</h1>
-                <p class="text-lg text-stone-600">Explore our curated collection of delicious mushroom recipes from around the world.</p>
+                <p class="text-lg text-stone-600 mb-8">Discover delicious and healthy ways to cook with our premium mushrooms. From traditional Indian dishes to international cuisine.</p>
             </div>
         </div>
     </section>
 
     <!-- Recipes Grid -->
-    <section class="py-12">
+    <section class="py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {recipes.map((recipe, index) => (
-                    <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay={index * 100}>
                         <div class="relative">
-                            <Image src={recipe.image} alt={recipe.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <Image src={recipe.image} alt={recipe.name} class="w-full h-48 object-cover" />
                             <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-medium text-[#3A493E]">
                                 <i class="fas fa-clock text-xs mr-1"></i>
                                 {recipe.cookTime}
                             </div>
                         </div>
+                        
                         <div class="p-6">
                             <div class="flex items-center gap-4 mb-3">
                                 <span class="text-xs bg-[#E9F0EA] text-[#3A493E] px-2 py-1 rounded-full">{recipe.cuisine}</span>
@@ -150,23 +139,60 @@ const recipes = [
                                     'bg-red-100 text-red-600'
                                 }`}>{recipe.difficulty}</span>
                             </div>
-                            <h3 class="text-lg font-semibold text-stone-900 mb-2">{recipe.title}</h3>
-                            <p class="text-stone-600 text-sm mb-4">{recipe.description}</p>
-                            <div class="flex items-center justify-between">
+                            
+                            <h3 class="text-xl font-semibold text-stone-900 mb-2">{recipe.name}</h3>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">{recipe.description}</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
                                 <div class="flex items-center gap-1 text-yellow-400 text-sm">
-                                    {Array.from({length: 5}, (_, i) => (
-                                        <i class={`fas fa-star ${i < recipe.rating ? '' : 'text-gray-300'}`}></i>
+                                    {Array(recipe.rating).fill(0).map(() => (
+                                        <i class="fas fa-star"></i>
+                                    ))}
+                                    {Array(5 - recipe.rating).fill(0).map(() => (
+                                        <i class="far fa-star"></i>
                                     ))}
                                     <span class="text-stone-500 ml-1">({recipe.reviews})</span>
                                 </div>
-                                <a href={`/recipe/${recipe.slug}`} class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                                    View Recipe
-                                    <i class="fas fa-arrow-right text-sm"></i>
-                                </a>
                             </div>
+
+                            <!-- Ingredients Preview -->
+                            <div class="mb-4">
+                                <h4 class="font-semibold text-stone-900 mb-2">Key Ingredients:</h4>
+                                <div class="text-xs text-stone-600">
+                                    {recipe.ingredients.slice(0, 3).join(', ')}...
+                                </div>
+                            </div>
+
+                            <button class="w-full bg-[#3A493E] text-white py-3 rounded-lg hover:bg-[#2C3A30] transition-colors font-medium">
+                                View Full Recipe
+                            </button>
                         </div>
                     </div>
                 ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Tips -->
+    <section class="py-16 bg-[#F8FAF8]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-stone-900 mb-6">Cooking Tips</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl">
+                    <i class="fas fa-fire text-[#3A493E] text-2xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">High Heat Cooking</h3>
+                    <p class="text-sm text-stone-600">Cook mushrooms on high heat to prevent them from becoming soggy.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl">
+                    <i class="fas fa-tint text-[#3A493E] text-2xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Don't Wash Before Storage</h3>
+                    <p class="text-sm text-stone-600">Clean mushrooms just before cooking to maintain freshness.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl">
+                    <i class="fas fa-cut text-[#3A493E] text-2xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Uniform Cutting</h3>
+                    <p class="text-sm text-stone-600">Cut mushrooms evenly for consistent cooking results.</p>
+                </div>
             </div>
         </div>
     </section>
