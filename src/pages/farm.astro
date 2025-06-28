@@ -1,0 +1,188 @@
+---
+import { Image } from 'astro:assets';
+import Head from "../components/Head.astro";
+import Footer from "../components/Footer.astro";
+import image2 from '../assets/images/image2.webp';
+import oyster from '../assets/images/oyster.jpg';
+import pink from '../assets/images/pink.jpg';
+---
+
+<Head title="Our Farm - Sustainable Mushroom Cultivation in Vadakara" />
+
+<main class="min-h-screen bg-white pt-16">
+    <!-- Header -->
+    <section class="pt-8 pb-16 bg-[#F8FAF8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex items-center gap-2 text-sm text-stone-500 mb-6">
+                <a href="/" class="hover:text-[#3A493E]">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-[#3A493E]">Our Farm</span>
+            </nav>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-6">Our Farm in Vadakara</h1>
+                    <p class="text-lg text-stone-600 mb-8">Nestled in the lush landscapes of Vadakara, our state-of-the-art mushroom farm combines traditional knowledge with modern sustainable practices to bring you the freshest, highest quality mushrooms.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#3A493E] mb-2">5000+</div>
+                            <p class="text-sm text-stone-600">Sq Ft Farm Area</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#3A493E] mb-2">50kg+</div>
+                            <p class="text-sm text-stone-600">Daily Production</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#3A493E] mb-2">100%</div>
+                            <p class="text-sm text-stone-600">Organic Methods</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#3A493E] mb-2">5+</div>
+                            <p class="text-sm text-stone-600">Mushroom Varieties</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <Image src={image2} alt="Our Mushroom Farm" class="w-full rounded-2xl shadow-lg" />
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#3A493E]/10 rounded-2xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Process -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Our Cultivation Process</h2>
+                <p class="text-stone-600">From substrate preparation to harvest, every step is carefully monitored to ensure the highest quality mushrooms.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-seedling text-[#3A493E] text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Substrate Preparation</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">We prepare nutrient-rich organic substrates using rice straw, wheat bran, and other natural materials, all sourced locally.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-flask text-[#3A493E] text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Sterilization</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">All substrates undergo steam sterilization to eliminate harmful microorganisms while preserving beneficial nutrients.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-microscope text-[#3A493E] text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Inoculation</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">High-quality mushroom spawn is introduced to the sterile substrate in our controlled environment laboratory.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-hands-helping text-[#3A493E] text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Harvesting</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Mushrooms are hand-harvested at peak freshness every morning, ensuring maximum flavor and nutritional value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Features -->
+    <section class="py-20 bg-[#F8FAF8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">What Makes Our Farm Special</h2>
+                <p class="text-stone-600">We've invested in the latest technology and sustainable practices to create the perfect environment for mushroom cultivation.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Climate Control -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10 group hover:shadow-lg transition-all" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-thermometer-half text-[#3A493E] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Climate Controlled Environment</h3>
+                    <p class="text-stone-600 leading-relaxed">Our growing rooms maintain optimal temperature (18-22°C) and humidity (80-85%) for perfect mushroom development.</p>
+                </div>
+
+                <!-- Water Management -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10 group hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-tint text-[#3A493E] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Pure Water System</h3>
+                    <p class="text-stone-600 leading-relaxed">We use filtered and UV-treated water for irrigation, ensuring no harmful chemicals reach our mushrooms.</p>
+                </div>
+
+                <!-- Organic Certification -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10 group hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-leaf text-[#3A493E] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">100% Organic Methods</h3>
+                    <p class="text-stone-600 leading-relaxed">No pesticides, fungicides, or chemical fertilizers are used. Only natural, organic inputs throughout the process.</p>
+                </div>
+
+                <!-- Quality Testing -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10 group hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-search text-[#3A493E] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Regular Quality Testing</h3>
+                    <p class="text-stone-600 leading-relaxed">Every batch undergoes rigorous quality testing for freshness, nutrition content, and safety standards.</p>
+                </div>
+
+                <!-- Sustainable Practices -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10 group hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-recycle text-[#3A493E] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Waste to Wealth</h3>
+                    <p class="text-stone-600 leading-relaxed">Spent substrate is converted into valuable compost for local farmers, creating a circular economy.</p>
+                </div>
+
+                <!-- Local Community -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10 group hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E]/20 transition-colors">
+                        <i class="fas fa-users text-[#3A493E] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Community Support</h3>
+                    <p class="text-stone-600 leading-relaxed">We employ local workers and source materials from nearby farms, supporting the Vadakara community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Our Farm -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-gradient-to-r from-[#3A493E] to-[#2C3A30] rounded-3xl p-12 text-white text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Visit Our Farm</h2>
+                <p class="text-white/80 mb-8 max-w-2xl mx-auto">We welcome visitors to see our cultivation process firsthand. Educational tours available for schools, colleges, and agricultural enthusiasts.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+918078937260" class="px-8 py-4 bg-white text-[#3A493E] rounded-full hover:bg-gray-100 transition-all flex items-center justify-center gap-2 font-semibold">
+                        <i class="fas fa-phone"></i>
+                        Schedule a Visit
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-[#3A493E] transition-all flex items-center justify-center gap-2 font-semibold">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<Footer />

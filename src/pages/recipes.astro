@@ -1,0 +1,175 @@
+---
+import { Image } from 'astro:assets';
+import Head from "../components/Head.astro";
+import Footer from "../components/Footer.astro";
+import oyster from '../assets/images/oyster.jpg';
+import pink from '../assets/images/pink.jpg';
+import buttonmush from '../assets/images/button.jpg';
+
+const recipes = [
+    {
+        slug: 'mushroom-biryani',
+        title: 'Mushroom Biryani',
+        description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices.',
+        image: oyster,
+        cookTime: '45 min',
+        difficulty: 'Medium',
+        cuisine: 'Indian',
+        rating: 5,
+        reviews: 24
+    },
+    {
+        slug: 'mushroom-soup',
+        title: 'Creamy Mushroom Soup',
+        description: 'Rich and creamy soup perfect for cold evenings with fresh herbs.',
+        image: pink,
+        cookTime: '25 min',
+        difficulty: 'Easy',
+        cuisine: 'Continental',
+        rating: 4,
+        reviews: 18
+    },
+    {
+        slug: 'mushroom-stir-fry',
+        title: 'Quick Mushroom Stir Fry',
+        description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce.',
+        image: buttonmush,
+        cookTime: '15 min',
+        difficulty: 'Easy',
+        cuisine: 'Asian',
+        rating: 5,
+        reviews: 31
+    },
+    {
+        slug: 'mushroom-curry',
+        title: 'Kerala Style Mushroom Curry',
+        description: 'Traditional Kerala curry with coconut milk and aromatic spices.',
+        image: oyster,
+        cookTime: '35 min',
+        difficulty: 'Medium',
+        cuisine: 'Indian',
+        rating: 5,
+        reviews: 42
+    },
+    {
+        slug: 'mushroom-pasta',
+        title: 'Creamy Mushroom Pasta',
+        description: 'Rich and indulgent pasta with sautéed mushrooms in cream sauce.',
+        image: pink,
+        cookTime: '20 min',
+        difficulty: 'Easy',
+        cuisine: 'Italian',
+        rating: 4,
+        reviews: 28
+    },
+    {
+        slug: 'mushroom-risotto',
+        title: 'Mushroom Risotto',
+        description: 'Creamy Italian rice dish with mixed mushrooms and parmesan.',
+        image: buttonmush,
+        cookTime: '40 min',
+        difficulty: 'Hard',
+        cuisine: 'Italian',
+        rating: 5,
+        reviews: 19
+    },
+    {
+        slug: 'mushroom-pizza',
+        title: 'Mushroom Pizza',
+        description: 'Homemade pizza topped with fresh mushrooms and herbs.',
+        image: oyster,
+        cookTime: '30 min',
+        difficulty: 'Medium',
+        cuisine: 'Italian',
+        rating: 4,
+        reviews: 35
+    },
+    {
+        slug: 'mushroom-salad',
+        title: 'Grilled Mushroom Salad',
+        description: 'Fresh salad with grilled mushrooms and balsamic dressing.',
+        image: pink,
+        cookTime: '15 min',
+        difficulty: 'Easy',
+        cuisine: 'Mediterranean',
+        rating: 4,
+        reviews: 22
+    },
+    {
+        slug: 'mushroom-sandwich',
+        title: 'Mushroom Grilled Sandwich',
+        description: 'Crispy grilled sandwich with sautéed mushrooms and cheese.',
+        image: buttonmush,
+        cookTime: '10 min',
+        difficulty: 'Easy',
+        cuisine: 'Continental',
+        rating: 4,
+        reviews: 16
+    }
+];
+---
+
+<Head title="Mushroom Recipes - Meaty Mushrooms" />
+
+<main class="min-h-screen bg-white">
+    <!-- Header -->
+    <section class="pt-24 pb-12 bg-[#F8FAF8]">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex items-center gap-2 text-sm text-stone-500 mb-6">
+                <a href="/" class="hover:text-[#3A493E]">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-[#3A493E]">Recipes</span>
+            </nav>
+            
+            <div class="text-center max-w-2xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Mushroom Recipes</h1>
+                <p class="text-lg text-stone-600">Explore our curated collection of delicious mushroom recipes from around the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Grid -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {recipes.map((recipe, index) => (
+                    <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <div class="relative">
+                            <Image src={recipe.image} alt={recipe.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                            <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-medium text-[#3A493E]">
+                                <i class="fas fa-clock text-xs mr-1"></i>
+                                {recipe.cookTime}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-4 mb-3">
+                                <span class="text-xs bg-[#E9F0EA] text-[#3A493E] px-2 py-1 rounded-full">{recipe.cuisine}</span>
+                                <span class={`text-xs px-2 py-1 rounded-full ${
+                                    recipe.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
+                                    recipe.difficulty === 'Medium' ? 'bg-orange-100 text-orange-600' :
+                                    'bg-red-100 text-red-600'
+                                }`}>{recipe.difficulty}</span>
+                            </div>
+                            <h3 class="text-lg font-semibold text-stone-900 mb-2">{recipe.title}</h3>
+                            <p class="text-stone-600 text-sm mb-4">{recipe.description}</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                    {Array.from({length: 5}, (_, i) => (
+                                        <i class={`fas fa-star ${i < recipe.rating ? '' : 'text-gray-300'}`}></i>
+                                    ))}
+                                    <span class="text-stone-500 ml-1">({recipe.reviews})</span>
+                                </div>
+                                <a href={`/recipe/${recipe.slug}`} class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
+                                    View Recipe
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+</main>
+
+<Footer />

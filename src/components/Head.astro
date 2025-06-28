@@ -48,49 +48,85 @@ import "../assets/css/styles.css";
 </head>
 <body class="bg-[#FFFDF9]">
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-stone-100">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="/" class="flex items-center gap-3">
-                    <div>
-                        <span class="font-pattaya text-4xl text-stone-800 block leading-none">Meaty</span>
-                        <span class="text-sm tracking-wide text-stone-600">MUSHROOMS</span>
+                <a href="/" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-[#3A493E] rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <span class="text-white text-lg font-bold">🍄</span>
+                    </div>
+                    <div class="leading-none">
+                        <h1 class="font-pattaya text-xl text-stone-900 leading-tight">Meaty</h1>
+                        <h2 class="font-pattaya text-xl text-stone-900 leading-tight -mt-1">Mushrooms</h2>
+                        <p class="text-xs text-[#3A493E] leading-none -mt-0.5">Fresh from Vadakara</p>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center gap-8">
-                    <a href="#about" class="text-stone-600 hover:text-stone-900 transition-colors text-sm">About</a>
-                    <a href="#products" class="text-stone-600 hover:text-stone-900 transition-colors text-sm">Products</a>
-                    <a href="#farm" class="text-stone-600 hover:text-stone-900 transition-colors text-sm">Our Farm</a>
-                    <a href="#recipes" class="text-stone-600 hover:text-stone-900 transition-colors text-sm">Recipes</a>
-                    <a href="#contact" class="text-stone-600 hover:text-stone-900 transition-colors text-sm">Contact</a>
-                    <button class="px-6 py-2.5 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all flex items-center gap-2 text-sm">
-                        <i class="fas fa-shopping-basket"></i>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-stone-600 hover:text-[#3A493E] transition-colors font-medium text-sm relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3A493E] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/products" class="text-stone-600 hover:text-[#3A493E] transition-colors font-medium text-sm relative group">
+                        Products
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3A493E] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/farm" class="text-stone-600 hover:text-[#3A493E] transition-colors font-medium text-sm relative group">
+                        Our Farm
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3A493E] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="/recipes" class="text-stone-600 hover:text-[#3A493E] transition-colors font-medium text-sm relative group">
+                        Recipes
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3A493E] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="text-stone-600 hover:text-[#3A493E] transition-colors font-medium text-sm relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3A493E] transition-all group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="tel:+918078937260" class="bg-[#3A493E] text-white px-6 py-2.5 rounded-full hover:bg-[#2C3A30] hover:shadow-lg transition-all flex items-center gap-2 text-sm font-medium">
+                        <i class="fas fa-phone text-xs"></i>
                         Order Now
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden" id="mobile-menu-button">
-                    <i class="fas fa-bars text-xl text-stone-600"></i>
+                <button class="md:hidden p-2 text-stone-600 hover:text-[#3A493E] transition-colors" id="mobile-menu-button">
+                    <i class="fas fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div class="hidden lg:hidden" id="mobile-menu">
-            <div class="px-6 py-6 space-y-4 bg-white border-t border-stone-100">
-                <a href="#about" class="block text-stone-600 hover:text-stone-900 transition-colors">About</a>
-                <a href="#products" class="block text-stone-600 hover:text-stone-900 transition-colors">Products</a>
-                <a href="#farm" class="block text-stone-600 hover:text-stone-900 transition-colors">Our Farm</a>
-                <a href="#recipes" class="block text-stone-600 hover:text-stone-900 transition-colors">Recipes</a>
-                <a href="#contact" class="block text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
-                <button class="w-full px-6 py-3 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all flex items-center justify-center gap-2">
-                    <i class="fas fa-shopping-basket"></i>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3 bg-white border-t border-stone-200">
+                <a href="/" class="block text-stone-600 hover:text-[#3A493E] transition-colors font-medium py-2">Home</a>
+                <a href="/products" class="block text-stone-600 hover:text-[#3A493E] transition-colors font-medium py-2">Products</a>
+                <a href="/farm" class="block text-stone-600 hover:text-[#3A493E] transition-colors font-medium py-2">Our Farm</a>
+                <a href="/recipes" class="block text-stone-600 hover:text-[#3A493E] transition-colors font-medium py-2">Recipes</a>
+                <a href="#contact" class="block text-stone-600 hover:text-[#3A493E] transition-colors font-medium py-2">Contact</a>
+                <a href="tel:+918078937260" class="block bg-[#3A493E] text-white px-6 py-3 rounded-full text-center mt-4 font-medium hover:bg-[#2C3A30] transition-colors">
+                    <i class="fas fa-phone text-xs mr-2"></i>
                     Order Now
-                </button>
+                </a>
             </div>
         </div>
     </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
