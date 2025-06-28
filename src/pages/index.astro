@@ -10,6 +10,111 @@ import image2 from '../assets/images/image2.webp';
 import buttonmush from '../assets/images/button.jpg';
 import oyster from '../assets/images/oyster.jpg';
 import pink from '../assets/images/pink.jpg';
+
+// Cooking Videos Data
+const cookingVideos = [
+    {
+        id: 'bkkQLRKoHrI',
+        title: 'Delicious Oyster Mushrooms Recipe',
+        description: 'കൂൺ - Must-try delicious oyster mushroom recipe by Anusithara Vlog',
+        label: 'Malayalam'
+    },
+    {
+        id: 'lDbEHOhiy10',
+        title: 'Mushroom Mezhukkupuratti',
+        description: 'മെഴുക്കുപുരട്ടി - Traditional Kerala style mushroom stir-fry recipe',
+        label: 'Malayalam'
+    },
+    {
+        id: 'GrXU5RMYotE',
+        title: 'Mushroom Thoran',
+        description: 'ചിപ്പിക്കൂൺ കൊണ്ട് രുചികരമായ ഒരു തോരൻ - Delicious mushroom thoran recipe',
+        label: 'Malayalam'
+    },
+    {
+        id: 'WgZUNb2BjCU',
+        title: 'Easy Mushroom Masala',
+        description: 'വളരെപ്പെട്ടന്ന് ഉണ്ടാക്കാവുന്ന ഒരു കൂൺ മസാല - Perfect for beginners',
+        label: 'Malayalam'
+    },
+    {
+        id: 'fM83Vo_F_hA',
+        title: 'Restaurant Style Mushroom Gravy',
+        description: 'കൂൺ ഗ്രേവി - റസ്റ്റോറന്റ് രുചിയിൽ വീട്ടിൽ തയ്യാറാക്കാം',
+        label: 'Malayalam'
+    },
+    {
+        id: '9OT6AbTeuVI',
+        title: 'Quick Mushroom Recipe',
+        description: 'കൊറച്ചു ചിപ്പി കൂൺ കിട്ടിയട്ടുണ്ട് - Perfect with rice',
+        label: 'Shorts'
+    }
+];
+
+// Recipes Data
+const recipes = [
+    {
+        name: 'Mushroom Biryani',
+        description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices.',
+        image: oyster,
+        cookTime: '45 min',
+        difficulty: 'Medium',
+        cuisine: 'Indian',
+        rating: 5,
+        reviews: 24,
+        link: '/recipes#mushroom-biryani'
+    },
+    {
+        name: 'Creamy Mushroom Soup',
+        description: 'Rich and creamy soup perfect for cold evenings with fresh herbs.',
+        image: pink,
+        cookTime: '25 min',
+        difficulty: 'Easy',
+        cuisine: 'Continental',
+        rating: 4,
+        reviews: 18,
+        link: '/recipes#mushroom-soup'
+    },
+    {
+        name: 'Quick Mushroom Stir Fry',
+        description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce.',
+        image: buttonmush,
+        cookTime: '15 min',
+        difficulty: 'Easy',
+        cuisine: 'Asian',
+        rating: 5,
+        reviews: 31,
+        link: '/recipes#mushroom-stir-fry'
+    }
+];
+
+// Products Data
+const products = [
+    {
+        name: 'Pearl Oyster Mushrooms',
+        description: 'Fresh, tender, and perfect for stir-fries and curries. Rich in proteins and minerals.',
+        image: oyster,
+        price: '₹60/250g',
+        badge: 'Best Seller',
+        badgeColor: 'bg-[#3A493E]'
+    },
+    {
+        name: 'Pink Oyster Mushrooms',
+        description: 'Visually stunning with a delicate seafood-like flavor. Perfect for gourmet dishes.',
+        image: pink,
+        price: '₹80/250g',
+        badge: 'New',
+        badgeColor: 'bg-[#D87D88]'
+    },
+    {
+        name: 'Mushroom Powder',
+        description: '100% pure mushroom powder. Add to smoothies, soups, and dishes for extra nutrition.',
+        image: buttonmush,
+        price: '₹120/100g',
+        badge: 'Popular',
+        badgeColor: 'bg-[#3A493E]'
+    }
+];
 ---
 
 <Head/>
@@ -97,267 +202,139 @@ import pink from '../assets/images/pink.jpg';
     </div>
 </section>
 
-<!-- Cooking Videos Section (New) -->
+<!-- Cooking Videos Section -->
 <section id="cooking-videos" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Learn to Cook</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Cooking Videos & Tutorials</h2>
-            <p class="text-stone-600">Master the art of cooking mushrooms with our expert video guides.</p>
+            <p class="text-stone-600">Master the art of cooking mushrooms with our expert video guides in Malayalam.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Video 1 -->
-            <div class="bg-[#F8FAF8] rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up">
-                <div class="relative">
-                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Basic Mushroom Stir Fry" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <i class="fas fa-play text-white text-3xl"></i>
+            {cookingVideos.map((video, index) => (
+                <div class="bg-[#F8FAF8] rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="relative">
+                        <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt={video.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-play text-white text-3xl"></i>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">{video.label}</span>
                     </div>
-                    <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">5:30</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2">Basic Mushroom Stir Fry</h3>
-                    <p class="text-stone-600 text-sm mb-4">Learn the fundamentals of cooking oyster mushrooms with this simple stir-fry recipe.</p>
-                    <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                        Watch on YouTube
-                        <i class="fas fa-external-link-alt text-sm"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="bg-[#F8FAF8] rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative">
-                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Mushroom Curry Recipe" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <i class="fas fa-play text-white text-3xl"></i>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-stone-900 mb-2">{video.title}</h3>
+                        <p class="text-stone-600 text-sm mb-4">{video.description}</p>
+                        <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
+                            Watch on YouTube
+                            <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
                     </div>
-                    <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">8:45</span>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2">Traditional Mushroom Curry</h3>
-                    <p class="text-stone-600 text-sm mb-4">Authentic Kerala-style mushroom curry with coconut and spices.</p>
-                    <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                        Watch on YouTube
-                        <i class="fas fa-external-link-alt text-sm"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Video 3 -->
-            <div class="bg-[#F8FAF8] rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative">
-                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Grilled Mushrooms" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <i class="fas fa-play text-white text-3xl"></i>
-                    </div>
-                    <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">6:20</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2">Perfect Grilled Mushrooms</h3>
-                    <p class="text-stone-600 text-sm mb-4">Master the art of grilling mushrooms for maximum flavor and texture.</p>
-                    <a href="https://youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                        Watch on YouTube
-                        <i class="fas fa-external-link-alt text-sm"></i>
-                    </a>
-                </div>
-            </div>
+            ))}
         </div>
 
         <div class="text-center mt-12">
-            <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all group">
-                View All Cooking Videos
+
+            <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all group">
+                <i class="fab fa-youtube"></i>
+                More Cooking Videos
                 <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
             </a>
         </div>
     </div>
 </section>
 
-<!-- Recipes Section (New) -->
-<section id="recipes" class="py-20 bg-[#F8FAF8]">
+<!-- Recipes Section (Redesigned - Fresh & Minimal) -->
+<section id="recipes" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Recipe Collection</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Delicious Mushroom Recipes</h2>
-            <p class="text-stone-600">Explore our curated collection of mushroom recipes from around the world.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Simple. Delicious. Healthy.</h2>
+            <p class="text-stone-600">Three carefully curated recipes to get you started with mushroom cooking.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Recipe 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up">
-                <div class="relative">
-                    <Image src={oyster} alt="Mushroom Biryani" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-medium text-[#3A493E]">
-                        <i class="fas fa-clock text-xs mr-1"></i>
-                        45 min
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-4 mb-3">
-                        <span class="text-xs bg-[#E9F0EA] text-[#3A493E] px-2 py-1 rounded-full">Indian</span>
-                        <span class="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">Medium</span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2">Mushroom Biryani</h3>
-                    <p class="text-stone-600 text-sm mb-4">Aromatic basmati rice cooked with tender mushrooms and traditional spices.</p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span class="text-stone-500 ml-1">(24)</span>
+        <div class="grid lg:grid-cols-3 gap-12">
+            {recipes.map((recipe, index) => (
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay={index * 150}>
+                    <div class="relative mb-8 overflow-hidden rounded-3xl">
+                        <Image src={recipe.image} alt={recipe.name} class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <div class="flex items-center gap-4 mb-3">
+                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cuisine}</span>
+                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cookTime}</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">{recipe.name}</h3>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                {Array(recipe.rating).fill(0).map(() => (
+                                    <i class="fas fa-star text-sm"></i>
+                                ))}
+                                <span class="text-white/80 ml-2 text-sm">({recipe.reviews} reviews)</span>
+                            </div>
                         </div>
-                        <a href="/recipe/mushroom-biryani" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                            View Recipe
-                            <i class="fas fa-arrow-right text-sm"></i>
-                        </a>
                     </div>
-                </div>
-            </div>
-
-            <!-- Recipe 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative">
-                    <Image src={pink} alt="Mushroom Soup" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-medium text-[#3A493E]">
-                        <i class="fas fa-clock text-xs mr-1"></i>
-                        25 min
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-4 mb-3">
-                        <span class="text-xs bg-[#E9F0EA] text-[#3A493E] px-2 py-1 rounded-full">Continental</span>
-                        <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">Easy</span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2">Creamy Mushroom Soup</h3>
-                    <p class="text-stone-600 text-sm mb-4">Rich and creamy soup perfect for cold evenings with fresh herbs.</p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span class="text-stone-500 ml-1">(18)</span>
+                    
+                    <div class="space-y-4">
+                        <p class="text-stone-600 leading-relaxed">{recipe.description}</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4 text-sm text-stone-500">
+                                <span class="flex items-center gap-1">
+                                    <i class="fas fa-signal"></i>
+                                    {recipe.difficulty}
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i class="fas fa-users"></i>
+                                    Serves 4
+                                </span>
+                            </div>
+                            <a href={`/recipes/recipe-${index + 1}`} class="text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group-hover:underline">
+                                View Recipe →
+                            </a>
                         </div>
-                        <a href="/recipe/mushroom-soup" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                            View Recipe
-                            <i class="fas fa-arrow-right text-sm"></i>
-                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Recipe 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative">
-                    <Image src={buttonmush} alt="Mushroom Stir Fry" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-medium text-[#3A493E]">
-                        <i class="fas fa-clock text-xs mr-1"></i>
-                        15 min
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-4 mb-3">
-                        <span class="text-xs bg-[#E9F0EA] text-[#3A493E] px-2 py-1 rounded-full">Asian</span>
-                        <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">Easy</span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2">Quick Mushroom Stir Fry</h3>
-                    <p class="text-stone-600 text-sm mb-4">Fast and healthy stir-fry with colorful vegetables and savory sauce.</p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-1 text-yellow-400 text-sm">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span class="text-stone-500 ml-1">(31)</span>
-                        </div>
-                        <a href="/recipe/mushroom-stir-fry" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                            View Recipe
-                            <i class="fas fa-arrow-right text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>
 
-        <div class="text-center mt-12">
-            <a href="/recipes" class="inline-flex items-center gap-2 px-8 py-4 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all group">
-                View All Recipes
+        <div class="text-center mt-16">
+            <a href="/recipes" class="inline-flex items-center gap-3 px-8 py-4 border border-[#3A493E] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all group">
+                Browse All Recipes
                 <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
             </a>
         </div>
     </div>
 </section>
 
-<!-- Featured Products Section (Moved below recipes) -->
+<!-- Featured Products Section -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Our Products</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Premium Mushroom Varieties</h2>
             <p class="text-stone-600">Discover our range of premium organic mushrooms, harvested daily to ensure maximum freshness and nutrition.</p>
         </div>
 
-        <!-- Products Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Product Card 1 -->
-            <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay="0">
-                <div class="relative mb-6 overflow-hidden rounded-xl">
-                    <Image src={oyster} alt="Pearl Oyster Mushrooms" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <span class="absolute top-4 right-4 bg-[#3A493E] text-white text-sm px-3 py-1 rounded-full">Best Seller</span>
+            {products.map((product, index) => (
+                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <Image src={product.image} alt={product.name} class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <span class={`absolute top-4 right-4 ${product.badgeColor} text-white text-sm px-3 py-1 rounded-full`}>{product.badge}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">{product.name}</h3>
+                    <p class="text-stone-600 text-sm mb-4">{product.description}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[#3A493E] font-semibold">{product.price}</span>
+                        <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                            <i class="fas fa-shopping-basket"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-2">Pearl Oyster Mushrooms</h3>
-                <p class="text-stone-600 text-sm mb-4">Fresh, tender, and perfect for stir-fries and curries. Rich in proteins and minerals.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-[#3A493E] font-semibold">₹60/250g</span>
-                    <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
-                        <i class="fas fa-shopping-basket"></i>
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <!-- Product Card 2 -->
-            <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative mb-6 overflow-hidden rounded-xl">
-                    <Image src={pink} alt="Pink Oyster Mushrooms" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <span class="absolute top-4 right-4 bg-[#D87D88] text-white text-sm px-3 py-1 rounded-full">New</span>
-                </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-2">Pink Oyster Mushrooms</h3>
-                <p class="text-stone-600 text-sm mb-4">Visually stunning with a delicate seafood-like flavor. Perfect for gourmet dishes.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-[#3A493E] font-semibold">₹80/250g</span>
-                    <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
-                        <i class="fas fa-shopping-basket"></i>
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <!-- Product Card 3 -->
-            <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative mb-6 overflow-hidden rounded-xl">
-                    <Image src={buttonmush} alt="Mushroom Powder" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <span class="absolute top-4 right-4 bg-[#3A493E] text-white text-sm px-3 py-1 rounded-full">Popular</span>
-                </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-2">Mushroom Powder</h3>
-                <p class="text-stone-600 text-sm mb-4">100% pure mushroom powder. Add to smoothies, soups, and dishes for extra nutrition.</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-[#3A493E] font-semibold">₹120/100g</span>
-                    <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
-                        <i class="fas fa-shopping-basket"></i>
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
+            ))}
         </div>
 
-        <!-- View All Products Button -->
         <div class="text-center mt-12">
             <a href="/products" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group">
                 View All Products

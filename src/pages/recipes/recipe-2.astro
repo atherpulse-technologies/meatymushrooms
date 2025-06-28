@@ -1,0 +1,106 @@
+---
+import RecipeLayout from "../../layouts/RecipeLayout.astro";
+---
+
+<RecipeLayout 
+    title="Creamy Mushroom Soup"
+    description="Rich and creamy soup perfect for cold evenings with fresh herbs"
+    cookTime="25 min"
+    difficulty="Easy"
+    cuisine="Continental"
+    rating={4}
+    reviews={18}
+    image="/src/assets/images/pink.jpg"
+>
+    <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Ingredients -->
+        <div class="lg:col-span-1">
+            <div class="sticky top-8 space-y-8">
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ingredients</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">400g mixed mushrooms</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">2 cups vegetable stock</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">1 cup heavy cream</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">2 cloves garlic, minced</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">1 onion, diced</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">Fresh thyme</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">Salt and pepper to taste</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#3A493E] text-white rounded-2xl p-6">
+                    <h3 class="text-lg font-bold mb-3">Chef's Note</h3>
+                    <p class="text-white/90 text-sm">For best results, use a mix of mushroom varieties like button, cremini, and shiitake for complex flavors.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="lg:col-span-2">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">Instructions</h3>
+            <div class="space-y-8">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Sauté Aromatics</h4>
+                        <p class="text-gray-600 leading-relaxed">Heat oil in a large pot over medium heat. Add diced onions and minced garlic, cook until fragrant and translucent, about 3-4 minutes.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Cook Mushrooms</h4>
+                        <p class="text-gray-600 leading-relaxed">Add sliced mushrooms to the pot and cook until they release their moisture and become tender, about 8-10 minutes. Season with salt and pepper.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Add Stock and Simmer</h4>
+                        <p class="text-gray-600 leading-relaxed">Pour in the vegetable stock and bring to a simmer. Let it cook for 10 minutes to allow flavors to meld together.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Blend for Texture</h4>
+                        <p class="text-gray-600 leading-relaxed">Using an immersion blender, blend about half of the soup to create a creamy texture while keeping some chunks for interest.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Finish with Cream</h4>
+                        <p class="text-gray-600 leading-relaxed">Stir in the heavy cream and fresh thyme. Heat through but don't boil. Adjust seasoning and serve hot with crusty bread.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</RecipeLayout>

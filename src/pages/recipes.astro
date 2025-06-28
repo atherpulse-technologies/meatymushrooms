@@ -8,194 +8,209 @@ import buttonmush from '../assets/images/button.jpg';
 
 const recipes = [
     {
-        id: 'mushroom-biryani',
+        id: 1,
         name: 'Mushroom Biryani',
-        description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices.',
+        description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices. A perfect blend of flavors that will tantalize your taste buds.',
         image: oyster,
         cookTime: '45 min',
         difficulty: 'Medium',
         cuisine: 'Indian',
         rating: 5,
         reviews: 24,
-        ingredients: [
-            '500g basmati rice',
-            '300g oyster mushrooms',
-            '2 onions, sliced',
-            '1 cup yogurt',
-            'Biryani spices',
-            'Mint leaves',
-            'Fried onions'
-        ],
-        instructions: [
-            'Soak basmati rice for 30 minutes',
-            'Clean and slice mushrooms',
-            'Marinate mushrooms with yogurt and spices',
-            'Cook rice with whole spices until 70% done',
-            'Layer mushrooms and rice alternately',
-            'Cook on dum for 45 minutes',
-            'Garnish with mint and fried onions'
-        ]
+        category: 'Main Course',
+        ingredients: 7,
+        calories: 320
     },
     {
-        id: 'mushroom-soup',
+        id: 2,
         name: 'Creamy Mushroom Soup',
-        description: 'Rich and creamy soup perfect for cold evenings with fresh herbs.',
+        description: 'Rich and creamy soup perfect for cold evenings with fresh herbs. Comfort food at its finest.',
         image: pink,
         cookTime: '25 min',
         difficulty: 'Easy',
         cuisine: 'Continental',
         rating: 4,
         reviews: 18,
-        ingredients: [
-            '400g mixed mushrooms',
-            '2 cups vegetable stock',
-            '1 cup heavy cream',
-            '2 garlic cloves',
-            '1 onion, diced',
-            'Fresh thyme',
-            'Salt and pepper'
-        ],
-        instructions: [
-            'Sauté onions and garlic until fragrant',
-            'Add mushrooms and cook until tender',
-            'Pour in vegetable stock and simmer',
-            'Blend half the soup for texture',
-            'Add cream and season to taste',
-            'Garnish with fresh thyme',
-            'Serve hot with crusty bread'
-        ]
+        category: 'Soup',
+        ingredients: 8,
+        calories: 180
     },
     {
-        id: 'mushroom-stir-fry',
+        id: 3,
         name: 'Quick Mushroom Stir Fry',
-        description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce.',
+        description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce. Perfect for busy weeknights.',
         image: buttonmush,
         cookTime: '15 min',
         difficulty: 'Easy',
         cuisine: 'Asian',
         rating: 5,
         reviews: 31,
-        ingredients: [
-            '300g oyster mushrooms',
-            '1 bell pepper',
-            '2 carrots, julienned',
-            '3 cloves garlic',
-            '2 tbsp soy sauce',
-            '1 tbsp oyster sauce',
-            'Spring onions'
-        ],
-        instructions: [
-            'Heat oil in a wok or large pan',
-            'Add garlic and stir-fry for 30 seconds',
-            'Add mushrooms and cook for 3-4 minutes',
-            'Add vegetables and stir-fry for 2 minutes',
-            'Mix sauces and add to the pan',
-            'Toss everything together for 1 minute',
-            'Garnish with spring onions and serve'
-        ]
+        category: 'Quick Meal',
+        ingredients: 6,
+        calories: 220
     }
 ];
+
+const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Side Dish'];
 ---
 
-<Head title="Mushroom Recipes - Delicious & Healthy Cooking Ideas" />
+<Head title="Mushroom Recipes - Simple & Delicious Cooking Ideas" />
 
 <main class="min-h-screen bg-white pt-20">
-    <!-- Header -->
-    <section class="pt-12 pb-8 bg-[#F8FAF8]">
-        <div class="max-w-7xl mx-auto px-6">
-            <nav class="flex items-center gap-2 text-sm text-stone-500 mb-6">
-                <a href="/" class="hover:text-[#3A493E]">Home</a>
-                <i class="fas fa-chevron-right text-xs"></i>
-                <span class="text-[#3A493E]">Recipes</span>
-            </nav>
+    <!-- Hero Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Simple<br>
+                <span class="text-[#3A493E]">Mushroom Recipes</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+                Easy-to-follow recipes that turn fresh mushrooms into extraordinary meals. 
+                Perfect for home cooks of all skill levels.
+            </p>
             
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Mushroom Recipes</h1>
-                <p class="text-lg text-stone-600 mb-8">Discover delicious and healthy ways to cook with our premium mushrooms. From traditional Indian dishes to international cuisine.</p>
+            <!-- Search Bar -->
+            <div class="max-w-md mx-auto mb-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search recipes..." 
+                           class="w-full px-6 py-4 pl-12 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#3A493E] focus:border-transparent">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-3 gap-8 max-w-md mx-auto">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-[#3A493E] mb-1">15+</div>
+                    <div class="text-sm text-gray-600">Recipes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-[#3A493E] mb-1">5-45</div>
+                    <div class="text-sm text-gray-600">Minutes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-[#3A493E] mb-1">4.8★</div>
+                    <div class="text-sm text-gray-600">Avg Rating</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Recipes Grid -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {recipes.map((recipe, index) => (
-                    <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay={index * 100}>
-                        <div class="relative">
-                            <Image src={recipe.image} alt={recipe.name} class="w-full h-48 object-cover" />
-                            <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-medium text-[#3A493E]">
-                                <i class="fas fa-clock text-xs mr-1"></i>
-                                {recipe.cookTime}
-                            </div>
-                        </div>
-                        
-                        <div class="p-6">
-                            <div class="flex items-center gap-4 mb-3">
-                                <span class="text-xs bg-[#E9F0EA] text-[#3A493E] px-2 py-1 rounded-full">{recipe.cuisine}</span>
-                                <span class={`text-xs px-2 py-1 rounded-full ${
-                                    recipe.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
-                                    recipe.difficulty === 'Medium' ? 'bg-orange-100 text-orange-600' :
-                                    'bg-red-100 text-red-600'
-                                }`}>{recipe.difficulty}</span>
-                            </div>
-                            
-                            <h3 class="text-xl font-semibold text-stone-900 mb-2">{recipe.name}</h3>
-                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">{recipe.description}</p>
-                            
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-1 text-yellow-400 text-sm">
-                                    {Array(recipe.rating).fill(0).map(() => (
-                                        <i class="fas fa-star"></i>
-                                    ))}
-                                    {Array(5 - recipe.rating).fill(0).map(() => (
-                                        <i class="far fa-star"></i>
-                                    ))}
-                                    <span class="text-stone-500 ml-1">({recipe.reviews})</span>
-                                </div>
-                            </div>
-
-                            <!-- Ingredients Preview -->
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-stone-900 mb-2">Key Ingredients:</h4>
-                                <div class="text-xs text-stone-600">
-                                    {recipe.ingredients.slice(0, 3).join(', ')}...
-                                </div>
-                            </div>
-
-                            <button class="w-full bg-[#3A493E] text-white py-3 rounded-lg hover:bg-[#2C3A30] transition-colors font-medium">
-                                View Full Recipe
-                            </button>
-                        </div>
-                    </div>
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                {categories.map(category => (
+                    <button class="category-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 hover:border-[#3A493E] hover:text-[#3A493E] transition-all font-medium">
+                        {category}
+                    </button>
                 ))}
             </div>
         </div>
     </section>
 
-    <!-- Recipe Tips -->
-    <section class="py-16 bg-[#F8FAF8]">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-stone-900 mb-6">Cooking Tips</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl">
-                    <i class="fas fa-fire text-[#3A493E] text-2xl mb-4"></i>
-                    <h3 class="font-semibold mb-2">High Heat Cooking</h3>
-                    <p class="text-sm text-stone-600">Cook mushrooms on high heat to prevent them from becoming soggy.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl">
-                    <i class="fas fa-tint text-[#3A493E] text-2xl mb-4"></i>
-                    <h3 class="font-semibold mb-2">Don't Wash Before Storage</h3>
-                    <p class="text-sm text-stone-600">Clean mushrooms just before cooking to maintain freshness.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl">
-                    <i class="fas fa-cut text-[#3A493E] text-2xl mb-4"></i>
-                    <h3 class="font-semibold mb-2">Uniform Cutting</h3>
-                    <p class="text-sm text-stone-600">Cut mushrooms evenly for consistent cooking results.</p>
-                </div>
+    <!-- Recipes Grid -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {recipes.map((recipe) => (
+                    <article class="group">
+                        <a href={`/recipes/recipe-${recipe.id}`} class="block">
+                            <div class="relative mb-6 overflow-hidden rounded-2xl">
+                                <Image src={recipe.image} alt={recipe.name} 
+                                       class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div class="absolute top-4 left-4">
+                                    <span class="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                                        {recipe.category}
+                                    </span>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                        <i class="far fa-heart text-gray-600"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#3A493E] transition-colors">
+                                    {recipe.name}
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed">{recipe.description}</p>
+                                
+                                <!-- Recipe Meta -->
+                                <div class="flex items-center justify-between text-sm text-gray-500">
+                                    <div class="flex items-center gap-4">
+                                        <span class="flex items-center gap-1">
+                                            <i class="fas fa-clock"></i>
+                                            {recipe.cookTime}
+                                        </span>
+                                        <span class="flex items-center gap-1">
+                                            <i class="fas fa-utensils"></i>
+                                            {recipe.ingredients} ingredients
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-yellow-400">
+                                        {Array(recipe.rating).fill(0).map(() => (
+                                            <i class="fas fa-star text-xs"></i>
+                                        ))}
+                                    </div>
+                                </div>
+                                
+                                <!-- Difficulty Badge -->
+                                <div class="flex items-center justify-between">
+                                    <span class={`text-xs px-3 py-1 rounded-full ${
+                                        recipe.difficulty === 'Easy' ? 'bg-green-100 text-green-600' :
+                                        recipe.difficulty === 'Medium' ? 'bg-orange-100 text-orange-600' :
+                                        'bg-red-100 text-red-600'
+                                    }`}>{recipe.difficulty}</span>
+                                    <span class="text-sm text-gray-500">{recipe.calories} cal</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                ))}
             </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Never Miss a Recipe</h2>
+            <p class="text-gray-600 mb-8">Get our latest mushroom recipes and cooking tips delivered to your inbox.</p>
+            <form class="flex gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" 
+                       class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3A493E]">
+                <button class="px-6 py-3 bg-[#3A493E] text-white rounded-lg hover:bg-[#2C3A30] transition-colors font-medium">
+                    Subscribe
+                </button>
+            </form>
         </div>
     </section>
 </main>
 
 <Footer />
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.category-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active state from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('border-[#3A493E]', 'text-[#3A493E]', 'bg-[#3A493E]', 'text-white');
+                    btn.classList.add('border-gray-200', 'text-gray-600');
+                });
+                
+                // Add active state to clicked button
+                this.classList.remove('border-gray-200', 'text-gray-600');
+                this.classList.add('border-[#3A493E]', 'bg-[#3A493E]', 'text-white');
+            });
+        });
+        
+        // Set initial active state
+        filterButtons[0].classList.add('border-[#3A493E]', 'bg-[#3A493E]', 'text-white');
+        filterButtons[0].classList.remove('border-gray-200', 'text-gray-600');
+    });
+</script>

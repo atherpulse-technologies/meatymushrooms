@@ -1,0 +1,130 @@
+---
+import RecipeLayout from "../../layouts/RecipeLayout.astro";
+import oyster from '../../assets/images/oyster.jpg';
+---
+
+<RecipeLayout 
+    title="Mushroom Biryani"
+    description="Aromatic basmati rice cooked with tender mushrooms and traditional spices"
+    cookTime="45 min"
+    difficulty="Medium"
+    cuisine="Indian"
+    rating={5}
+    reviews={24}
+    image="/src/assets/images/oyster.jpg"
+>
+    <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Ingredients -->
+        <div class="lg:col-span-1">
+            <div class="sticky top-8 space-y-8">
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ingredients</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">500g basmati rice</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">300g fresh oyster mushrooms</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">2 large onions, sliced</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">1 cup plain yogurt</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">2 tsp biryani masala</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">Fresh mint leaves</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="text-gray-700">Fried onions for garnish</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-[#3A493E] text-white rounded-2xl p-6">
+                    <h3 class="text-lg font-bold mb-3">Pro Tip</h3>
+                    <p class="text-white/90 text-sm">Soak the basmati rice for 30 minutes before cooking for the perfect texture and separate grains.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="lg:col-span-2">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">Instructions</h3>
+            <div class="space-y-8">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Prepare the Rice</h4>
+                        <p class="text-gray-600 leading-relaxed">Wash and soak basmati rice for 30 minutes. Boil water in a large pot with whole spices (bay leaves, cardamom, cinnamon). Add the soaked rice and cook until 70% done. Drain and set aside.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Prepare Mushrooms</h4>
+                        <p class="text-gray-600 leading-relaxed">Clean and slice the oyster mushrooms. Marinate them with yogurt, biryani masala, salt, and half of the fried onions. Let it rest for 15 minutes.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Cook the Base</h4>
+                        <p class="text-gray-600 leading-relaxed">In a heavy-bottomed pot, heat oil and fry the sliced onions until golden brown. Add the marinated mushrooms and cook for 5-7 minutes until tender.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Layer and Cook</h4>
+                        <p class="text-gray-600 leading-relaxed">Layer the partially cooked rice over the mushrooms. Sprinkle remaining fried onions and mint leaves. Cover with aluminum foil, then place the lid. Cook on high heat for 3 minutes, then reduce to low and cook for 45 minutes.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Rest and Serve</h4>
+                        <p class="text-gray-600 leading-relaxed">Turn off the heat and let it rest for 10 minutes without opening the lid. Gently mix and serve hot with raita and pickles. Garnish with fresh mint and fried onions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nutrition Info -->
+            <div class="mt-12 bg-gray-50 rounded-2xl p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Nutrition Information</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#3A493E]">320</div>
+                        <div class="text-sm text-gray-600">Calories</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#3A493E]">12g</div>
+                        <div class="text-sm text-gray-600">Protein</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#3A493E]">58g</div>
+                        <div class="text-sm text-gray-600">Carbs</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[#3A493E]">8g</div>
+                        <div class="text-sm text-gray-600">Fat</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</RecipeLayout>
