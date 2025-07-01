@@ -1,104 +1,107 @@
 ---
 import RecipeLayout from "../../layouts/RecipeLayout.astro";
-import soup from '/src/assets/images/soup.png';    
 ---
 
 <RecipeLayout 
-    title="Creamy Mushroom Soup"
-    description="Rich and creamy soup perfect for cold evenings with fresh herbs"
-    cookTime="25 min"
+    title="കൂൺ ഓംലറ്റ് (Mushroom Omelet)"
+    description="Traditional Malayalam style mushroom omelet with fresh herbs and spices"
+    cookTime="15 min"
     difficulty="Easy"
-    cuisine="Continental"
-    rating={4}
-    reviews={18}
-    image="/src/assets/images/soup.png"
+    cuisine="Malayalam"
+    rating={5}
+    reviews={8}
+    image="/src/assets/images/fry.png"
 >
     <div class="grid lg:grid-cols-3 gap-12">
         <!-- Ingredients -->
         <div class="lg:col-span-1">
             <div class="sticky top-8 space-y-8">
                 <div class="bg-gray-50 rounded-2xl p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ingredients</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">ചേരുവകൾ (Ingredients)</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">400g mixed mushrooms</span>
+                            <span class="text-gray-700">കൂൺ - 50 ഗ്രാം</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">2 cups vegetable stock</span>
+                            <span class="text-gray-700">മുട്ട - 2 എണ്ണം</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">1 cup heavy cream</span>
+                            <span class="text-gray-700">ചെറിയ ഉള്ളി അരിഞ്ഞത് - 1 ടേബിൾ സ്പൂൺ</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">2 cloves garlic, minced</span>
+                            <span class="text-gray-700">ഇഞ്ചിവെളുത്തുള്ളി ചതച്ചത് - 1 ടീ സ്പൂൺ</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">1 onion, diced</span>
+                            <span class="text-gray-700">കുരുമുളക് പൊടി - കാൽ ടീ സ്പൂൺ</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">Fresh thyme</span>
+                            <span class="text-gray-700">ഉപ്പ് - പാകത്തിന്</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">Salt and pepper to taste</span>
+                            <span class="text-gray-700">മല്ലിയില അരിഞ്ഞത് - കാൽ കപ്പ്</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
+                            <span class="text-gray-700">വെളിച്ചെണ്ണ - 2 ടേബിൾ സ്പൂൺ</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="bg-[#3A493E] text-white rounded-2xl p-6">
-                    <h3 class="text-lg font-bold mb-3">Chef's Note</h3>
-                    <p class="text-white/90 text-sm">For best results, use a mix of mushroom varieties like button, cremini, and shiitake for complex flavors.</p>
+                    <h3 class="text-lg font-bold mb-3">Breakfast Special</h3>
+                    <p class="text-white/90 text-sm">Quick and nutritious breakfast with authentic Kerala flavors. Perfect with coconut oil for that traditional taste.</p>
                 </div>
             </div>
         </div>
 
         <!-- Instructions -->
         <div class="lg:col-span-2">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8">Instructions</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">തയ്യാറാക്കുന്ന വിധം (Instructions)</h3>
             <div class="space-y-8">
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Sauté Aromatics</h4>
-                        <p class="text-gray-600 leading-relaxed">Heat oil in a large pot over medium heat. Add diced onions and minced garlic, cook until fragrant and translucent, about 3-4 minutes.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">മുട്ട തയ്യാറാക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">മുട്ട, ഉപ്പും, കുരുമുളകുപൊടിയും, മല്ലിയിലയും ചേർത്ത് പതപ്പിച്ച് വയ്ക്കുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Cook Mushrooms</h4>
-                        <p class="text-gray-600 leading-relaxed">Add sliced mushrooms to the pot and cook until they release their moisture and become tender, about 8-10 minutes. Season with salt and pepper.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">ഉള്ളിയും മസാലയും വറുക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">ഉള്ളിയും, ഇഞ്ചിവെളുത്തുള്ളി ചതച്ചതും ഒന്നിച്ചാക്കി 1 ടേബിൾ സ്പൂൺ എണ്ണയിൽ വറുക്കുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Add Stock and Simmer</h4>
-                        <p class="text-gray-600 leading-relaxed">Pour in the vegetable stock and bring to a simmer. Let it cook for 10 minutes to allow flavors to meld together.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">കൂൺ ചേർത്ത് വറുക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">കൂൺ ചേർത്ത് വറുറ്റി, വെന്തുകഴിയുമ്പോൾ കോരി മാറ്റുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Blend for Texture</h4>
-                        <p class="text-gray-600 leading-relaxed">Using an immersion blender, blend about half of the soup to create a creamy texture while keeping some chunks for interest.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">മിശ്രിതം ചേർക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">ഈ മിശ്രിതം മുട്ടക്കുട്ടിൽ ചേർത്തിളക്കുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Finish with Cream</h4>
-                        <p class="text-gray-600 leading-relaxed">Stir in the heavy cream and fresh thyme. Heat through but don't boil. Adjust seasoning and serve hot with crusty bread.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">ഓംലറ്റ് തയ്യാറാക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">ബാക്കി എണ്ണ ചൂടാക്കി ഓംലറ്റ് തയ്യാറാക്കുക. ഇരുവശവും നന്നായി വേവിച്ച് ചൂടോടെ വിളമ്പുക.</p>
                     </div>
                 </div>
             </div>
@@ -108,17 +111,17 @@ import soup from '/src/assets/images/soup.png';
                 <div class="text-center">
                     <i class="fas fa-clock text-[#3A493E] text-xl mb-2"></i>
                     <div class="text-sm text-gray-500">Prep Time</div>
-                    <div class="font-semibold">10 min</div>
+                    <div class="font-semibold">5 min</div>
                 </div>
                 <div class="text-center">
                     <i class="fas fa-fire text-[#3A493E] text-xl mb-2"></i>
                     <div class="text-sm text-gray-500">Cook Time</div>
-                    <div class="font-semibold">15 min</div>
+                    <div class="font-semibold">10 min</div>
                 </div>
                 <div class="text-center">
                     <i class="fas fa-users text-[#3A493E] text-xl mb-2"></i>
                     <div class="text-sm text-gray-500">Serves</div>
-                    <div class="font-semibold">4 people</div>
+                    <div class="font-semibold">2 people</div>
                 </div>
             </div>
 
@@ -127,19 +130,19 @@ import soup from '/src/assets/images/soup.png';
                 <h3 class="text-lg font-bold text-gray-900 mb-4">Nutrition Information</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">180</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">190</div>
                         <div class="text-sm text-gray-600">Calories</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">8g</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">14g</div>
                         <div class="text-sm text-gray-600">Protein</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">12g</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">4g</div>
                         <div class="text-sm text-gray-600">Carbs</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">14g</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">15g</div>
                         <div class="text-sm text-gray-600">Fat</div>
                     </div>
                 </div>

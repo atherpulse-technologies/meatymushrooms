@@ -12,7 +12,7 @@ const products = [
         name: 'Pearl Oyster Mushrooms',
         description: 'Fresh, tender oyster mushrooms perfect for stir-fries, curries, and grilling. Rich in protein and minerals.',
         image: oyster,
-        price: '₹60/250g',
+        price: '₹75/150g',
         category: 'Fresh Mushrooms',
         features: ['High Protein', 'Low Calorie', 'Vitamin D Rich', 'Fresh Daily'],
         availability: 'In Stock',
@@ -23,10 +23,10 @@ const products = [
         name: 'Pink Oyster Mushrooms',
         description: 'Visually stunning pink mushrooms with delicate seafood-like flavor. Perfect for gourmet cooking.',
         image: pink,
-        price: '₹80/250g',
+        price: '₹80/150g',
         category: 'Fresh Mushrooms',
         features: ['Gourmet Quality', 'Unique Flavor', 'Antioxidant Rich', 'Premium Grade'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['High antioxidants', 'Unique pink color', 'Delicate taste']
     },
     {
@@ -34,10 +34,10 @@ const products = [
         name: 'Mushroom Powder',
         description: '100% pure mushroom powder made from dehydrated oyster mushrooms. Perfect for soups, smoothies, and seasoning.',
         image: buttonmush,
-        price: '₹120/100g',
+        price: '₹200/100g',
         category: 'Processed Products',
         features: ['100% Pure', 'Long Shelf Life', 'Concentrated Nutrition', 'Versatile Use'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['Concentrated nutrients', '12-month shelf life', 'No additives']
     },
     {
@@ -48,7 +48,7 @@ const products = [
         price: '₹150/250g',
         category: 'Ready to Eat',
         features: ['Authentic Recipe', 'Homemade Style', 'No Preservatives', 'Traditional Spices'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['Rich in probiotics', 'Traditional spices', 'Homemade quality']
     },
     {
@@ -59,7 +59,7 @@ const products = [
         price: '₹80/200g',
         category: 'Snacks',
         features: ['Healthy Snack', 'Kids Favorite', 'Baked Not Fried', 'No Artificial Colors'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['Added nutrition', 'Low sugar', 'Whole grain']
     },
     {
@@ -70,7 +70,7 @@ const products = [
         price: '₹200/500g',
         category: 'Ready to Cook',
         features: ['Ready in 30 mins', 'Authentic Spices', 'Fresh Mushrooms', 'Family Size'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['Complete meal', 'Balanced nutrition', 'Authentic taste']
     },
     {
@@ -81,7 +81,7 @@ const products = [
         price: '₹60/100g',
         category: 'Traditional',
         features: ['Handmade', 'Sun Dried', 'No Chemicals', 'Crispy Texture'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['High fiber', 'Traditional method', 'Added protein']
     },
     {
@@ -92,7 +92,7 @@ const products = [
         price: '₹100/200g',
         category: 'Ready to Cook',
         features: ['Instant Cooking', 'Authentic Flavor', 'No Artificial Colors', 'Restaurant Quality'],
-        availability: 'In Stock',
+        availability: 'Future product',
         nutritionHighlights: ['Real mushrooms', 'Natural spices', 'Quick cooking']
     }
 ];
@@ -170,15 +170,7 @@ const categories = ['All', 'Fresh Mushrooms', 'Processed Products', 'Ready to Ea
                             
                             <div class="flex items-center justify-between">
                                 <span class="text-[#3A493E] font-bold text-lg">{product.price}</span>
-                                <div class="flex gap-2">
-                                    <button class="px-3 py-2 border border-[#3A493E] text-[#3A493E] rounded-lg hover:bg-[#E9F0EA] transition-all text-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                    <button class="px-4 py-2 bg-[#3A493E] text-white rounded-lg hover:bg-[#2C3A30] transition-all flex items-center gap-2 text-sm">
-                                        <i class="fas fa-shopping-cart"></i>
-                                        Add to Cart
-                                    </button>
-                                </div>
+                
                             </div>
                         </div>
                     </div>

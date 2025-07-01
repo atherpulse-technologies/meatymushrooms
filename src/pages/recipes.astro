@@ -2,9 +2,10 @@
 import { Image } from 'astro:assets';
 import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
-import biryani from '../assets/images/biryani.jpg';
-import soup from '../assets/images/soup.webp';
-import fry from '../assets/images/fry.jpg';
+import biryani from '../assets/images/biryani.png';
+import soup from '../assets/images/soup.png';
+import fry from '../assets/images/fry.png';
+// import buttonmush from '../assets/images/buttonmush.png';
 
 const recipes = [
     {
@@ -48,6 +49,48 @@ const recipes = [
         category: 'Quick Meal',
         ingredients: ['Mixed Mushrooms', 'Bell Peppers', 'Soy Sauce', 'Garlic', 'Ginger', 'Green Onions'],
         calories: 220
+    },
+    {
+        id: 4,
+        name: 'കൂൺ കട്ലറ്റ് (Mushroom Cutlet)',
+        description: 'Traditional Kerala style mushroom cutlets with spices and herbs. Perfect snack for tea time.',
+        image: fry,
+        cookTime: '35 min',
+        difficulty: 'Medium',
+        cuisine: 'Malayalam',
+        rating: 5,
+        reviews: 15,
+        category: 'Appetizer',
+        ingredients: ['കൂൺ (Mushroom)', 'ഉരുളക്കിഴങ്ങ് (Potato)', 'ഇഞ്ചി (Ginger)', 'സവാള (Onion)', 'പച്ചമുളക് (Green Chili)', 'മസാല (Spices)'],
+        calories: 285
+    },
+    {
+        id: 5,
+        name: 'കൂൺ സൂപ്പ് (Malayalam Mushroom Soup)',
+        description: 'Traditional Kerala style creamy mushroom soup with cardamom and pepper. Perfect comfort food.',
+        image: soup,
+        cookTime: '25 min',
+        difficulty: 'Easy',
+        cuisine: 'Malayalam',
+        rating: 5,
+        reviews: 12,
+        category: 'Soup',
+        ingredients: ['കൂൺ (Mushroom)', 'ഉള്ളി (Onion)', 'വെണ്ണ (Butter)', 'പാൽ (Milk)', 'കോൺഫ്ളവർ (Cornflour)', 'മുട്ട (Egg)'],
+        calories: 165
+    },
+    {
+        id: 6,
+        name: 'കൂൺ ഓംലറ്റ് (Mushroom Omelet)',
+        description: 'Traditional Malayalam style mushroom omelet with fresh herbs and spices. Perfect breakfast dish.',
+        image: fry,
+        cookTime: '15 min',
+        difficulty: 'Easy',
+        cuisine: 'Malayalam',
+        rating: 5,
+        reviews: 8,
+        category: 'Quick Meal',
+        ingredients: ['കൂൺ (Mushroom)', 'മുട്ട (Egg)', 'ചെറിയ ഉള്ളി (Shallots)', 'ഇഞ്ചിവെളുത്തുള്ളി (Ginger-Garlic)', 'മല്ലിയില (Coriander)', 'വെളിച്ചെണ്ണ (Coconut Oil)'],
+        calories: 190
     }
 ];
 

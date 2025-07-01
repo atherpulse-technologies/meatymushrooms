@@ -7,9 +7,15 @@ import Footer from "../components/Footer.astro";
 import image1 from '../assets/images/hero-image.png';
 import banner from '../assets/images/banner.jpg';
 import image2 from '../assets/images/image2.webp';  
-import buttonmush from '../assets/images/button.jpg';
+// import buttonmush from '../assets/images/button.jpg';
 import oyster from '../assets/images/oyster.jpg';
 import pink from '../assets/images/pink.jpg';
+import biryani from '../assets/images/biryani.png';
+import soup from '../assets/images/soup.png';
+import fry from '../assets/images/fry.png';
+import powder from '../assets/images/powder.png';
+
+
 
 // Cooking Videos Data
 const cookingVideos = [
@@ -56,7 +62,7 @@ const recipes = [
     {
         name: 'Mushroom Biryani',
         description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices.',
-        image: oyster,
+        image: biryani,
         cookTime: '45 min',
         difficulty: 'Medium',
         cuisine: 'Indian',
@@ -67,7 +73,7 @@ const recipes = [
     {
         name: 'Creamy Mushroom Soup',
         description: 'Rich and creamy soup perfect for cold evenings with fresh herbs.',
-        image: pink,
+        image: soup,
         cookTime: '25 min',
         difficulty: 'Easy',
         cuisine: 'Continental',
@@ -78,7 +84,7 @@ const recipes = [
     {
         name: 'Quick Mushroom Stir Fry',
         description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce.',
-        image: buttonmush,
+        image: fry,
         cookTime: '15 min',
         difficulty: 'Easy',
         cuisine: 'Asian',
@@ -94,7 +100,7 @@ const products = [
         name: 'Pearl Oyster Mushrooms',
         description: 'Fresh, tender, and perfect for stir-fries and curries. Rich in proteins and minerals.',
         image: oyster,
-        price: '₹60/250g',
+        price: '₹75/150g',
         badge: 'Best Seller',
         badgeColor: 'bg-[#3A493E]'
     },
@@ -102,15 +108,15 @@ const products = [
         name: 'Pink Oyster Mushrooms',
         description: 'Visually stunning with a delicate seafood-like flavor. Perfect for gourmet dishes.',
         image: pink,
-        price: '₹80/250g',
+        price: '₹80/150g',
         badge: 'New',
         badgeColor: 'bg-[#D87D88]'
     },
     {
         name: 'Mushroom Powder',
         description: '100% pure mushroom powder. Add to smoothies, soups, and dishes for extra nutrition.',
-        image: buttonmush,
-        price: '₹120/100g',
+        image: powder,
+        price: '₹200/100g',
         badge: 'Popular',
         badgeColor: 'bg-[#3A493E]'
     }
@@ -326,10 +332,10 @@ const products = [
                     <p class="text-stone-600 text-sm mb-4">{product.description}</p>
                     <div class="flex items-center justify-between">
                         <span class="text-[#3A493E] font-semibold">{product.price}</span>
-                        <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                        {/* <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
                             <i class="fas fa-shopping-basket"></i>
                             Add to Cart
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             ))}

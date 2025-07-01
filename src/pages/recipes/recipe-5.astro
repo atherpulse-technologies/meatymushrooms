@@ -1,16 +1,15 @@
 ---
 import RecipeLayout from "../../layouts/RecipeLayout.astro";
-import soup from '/src/assets/images/soup.png';    
 ---
 
 <RecipeLayout 
-    title="Creamy Mushroom Soup"
-    description="Rich and creamy soup perfect for cold evenings with fresh herbs"
+    title="കൂൺ സൂപ്പ് (Malayalam Mushroom Soup)"
+    description="Traditional Kerala style creamy mushroom soup with cardamom and pepper"
     cookTime="25 min"
     difficulty="Easy"
-    cuisine="Continental"
-    rating={4}
-    reviews={18}
+    cuisine="Malayalam"
+    rating={5}
+    reviews={12}
     image="/src/assets/images/soup.png"
 >
     <div class="grid lg:grid-cols-3 gap-12">
@@ -18,87 +17,103 @@ import soup from '/src/assets/images/soup.png';
         <div class="lg:col-span-1">
             <div class="sticky top-8 space-y-8">
                 <div class="bg-gray-50 rounded-2xl p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ingredients</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">ചേരുവകൾ (Ingredients)</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">400g mixed mushrooms</span>
+                            <span class="text-gray-700">കൂൺ - 200 ഗ്രാം</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">2 cups vegetable stock</span>
+                            <span class="text-gray-700">ഉള്ളി - 1 എണ്ണം</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">1 cup heavy cream</span>
+                            <span class="text-gray-700">വെണ്ണ - 30 ഗ്രാം</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">2 cloves garlic, minced</span>
+                            <span class="text-gray-700">കുരുമുളക് പൊടി - കാൽ ടീ സ്പൂൺ</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">1 onion, diced</span>
+                            <span class="text-gray-700">ഏലക്കായ് പൊടിച്ചത് - കാൽ ടീ സ്പൂൺ</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">Fresh thyme</span>
+                            <span class="text-gray-700">ചെറിയ ഉള്ളി അരിഞ്ഞത് - 2 ടേബിൾ സ്പൂൺ</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
-                            <span class="text-gray-700">Salt and pepper to taste</span>
+                            <span class="text-gray-700">വെള്ളം - 2 കപ്പ്</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
+                            <span class="text-gray-700">കോൺഫ്ളവർ (പൊടിച്ചത്) - 1 ടേബിൾ സ്പൂൺ</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
+                            <span class="text-gray-700">പാൽ - 2 കപ്പ്</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
+                            <span class="text-gray-700">മുട്ട - ഒരെണ്ണം</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
+                            <span class="text-gray-700">ഉപ്പ് - പാകത്തിന്</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="bg-[#3A493E] text-white rounded-2xl p-6">
-                    <h3 class="text-lg font-bold mb-3">Chef's Note</h3>
-                    <p class="text-white/90 text-sm">For best results, use a mix of mushroom varieties like button, cremini, and shiitake for complex flavors.</p>
+                    <h3 class="text-lg font-bold mb-3">Kerala Traditional</h3>
+                    <p class="text-white/90 text-sm">Authentic Malayalam style soup with the perfect blend of cardamom and pepper for that homely taste.</p>
                 </div>
             </div>
         </div>
 
         <!-- Instructions -->
         <div class="lg:col-span-2">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8">Instructions</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">തയ്യാറാക്കുന്ന വിധം (Instructions)</h3>
             <div class="space-y-8">
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Sauté Aromatics</h4>
-                        <p class="text-gray-600 leading-relaxed">Heat oil in a large pot over medium heat. Add diced onions and minced garlic, cook until fragrant and translucent, about 3-4 minutes.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">വെണ്ണ ഉരുക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">വെണ്ണ ഉരുക്കി അതിൽ ഉള്ളിയും അരിഞ്ഞ കൂണും വഴറ്റുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Cook Mushrooms</h4>
-                        <p class="text-gray-600 leading-relaxed">Add sliced mushrooms to the pot and cook until they release their moisture and become tender, about 8-10 minutes. Season with salt and pepper.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">കോൺഫ്ളവർ മിശ്രിതം</h4>
+                        <p class="text-gray-600 leading-relaxed">കോൺഫ്ളവർ പാലിൽ ചേർത്ത് നന്നായി ഇളക്കുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Add Stock and Simmer</h4>
-                        <p class="text-gray-600 leading-relaxed">Pour in the vegetable stock and bring to a simmer. Let it cook for 10 minutes to allow flavors to meld together.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">തിളപ്പിക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">ഈ മിശ്രിതം കൂൺ കഷണങ്ങളിലേയ്ക്ക് ചേർത്ത് 10 മിനിട്ട് നന്നായി തിളപ്പിക്കുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Blend for Texture</h4>
-                        <p class="text-gray-600 leading-relaxed">Using an immersion blender, blend about half of the soup to create a creamy texture while keeping some chunks for interest.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">മുട്ട ചേർക്കുക</h4>
+                        <p class="text-gray-600 leading-relaxed">മുട്ടയുടെ വെള്ള പതപ്പിച്ച് ഇതിലേയ്ക്ക് ചേർത്തിളക്കുക.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-8 h-8 bg-[#3A493E] text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Finish with Cream</h4>
-                        <p class="text-gray-600 leading-relaxed">Stir in the heavy cream and fresh thyme. Heat through but don't boil. Adjust seasoning and serve hot with crusty bread.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">മസാല ചേർത്ത് വിളമ്പുക</h4>
+                        <p class="text-gray-600 leading-relaxed">കുരുമുളക് പൊടി തൂവി, ഏലക്കാപ്പൊടിയും പാകത്തിന് ഉപ്പും ചേർത്ത് ചൂടോടെ ഉപയോഗിക്കാം.</p>
                     </div>
                 </div>
             </div>
@@ -127,11 +142,11 @@ import soup from '/src/assets/images/soup.png';
                 <h3 class="text-lg font-bold text-gray-900 mb-4">Nutrition Information</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">180</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">165</div>
                         <div class="text-sm text-gray-600">Calories</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">8g</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">9g</div>
                         <div class="text-sm text-gray-600">Protein</div>
                     </div>
                     <div class="text-center">
@@ -139,7 +154,7 @@ import soup from '/src/assets/images/soup.png';
                         <div class="text-sm text-gray-600">Carbs</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-[#3A493E]">14g</div>
+                        <div class="text-2xl font-bold text-[#3A493E]">10g</div>
                         <div class="text-sm text-gray-600">Fat</div>
                     </div>
                 </div>
