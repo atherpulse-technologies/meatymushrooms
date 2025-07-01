@@ -1,6 +1,6 @@
 ---
 import RecipeLayout from "../../layouts/RecipeLayout.astro";
-import oyster from '../../assets/images/oyster.jpg';
+import biryani from '../../assets/images/biryani.jpg';
 ---
 
 <RecipeLayout 
@@ -11,7 +11,8 @@ import oyster from '../../assets/images/oyster.jpg';
     cuisine="Indian"
     rating={5}
     reviews={24}
-    image="/src/assets/images/oyster.jpg"
+    image={biryani}
+
 >
     <div class="grid lg:grid-cols-3 gap-12">
         <!-- Ingredients -->
@@ -21,31 +22,31 @@ import oyster from '../../assets/images/oyster.jpg';
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Ingredients</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">500g basmati rice</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">300g fresh oyster mushrooms</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">2 large onions, sliced</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">1 cup plain yogurt</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">2 tsp biryani masala</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">Fresh mint leaves</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <input type="checkbox" class="w-4 h-4 text-[#3A493E] rounded">
+                            <span class="w-2 h-2 bg-[#3A493E] rounded-full"></span>
                             <span class="text-gray-700">Fried onions for garnish</span>
                         </li>
                     </ul>
