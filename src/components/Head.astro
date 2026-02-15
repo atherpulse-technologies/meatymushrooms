@@ -21,7 +21,7 @@ import SEO from "../components/seo.astro";
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&family=Pattaya&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,6 +50,9 @@ import SEO from "../components/seo.astro";
         .font-pattaya {
             font-family: 'Pattaya', sans-serif;
         }
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -63,14 +66,12 @@ import SEO from "../components/seo.astro";
 <body class="bg-[#FFFDF9]">
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="max-w-7xl mx-auto px-6 py-2">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="/" class="flex items-center gap-2">
-                    <div class="leading-none">
-                        <span class="font-pattaya text-3xl text-stone-900 block leading-none">Meaty</span>
-                        <span class="text-xs tracking-wide text-[#3A493E] leading-none mt-0.5 block">Mushrooms</span>
-                    </div>
+                <a href="/" class="flex flex-col items-center leading-none group">
+                    <span class="font-pattaya text-4xl md:text-5xl text-[#3A493E] block group-hover:scale-105 transition-transform origin-center">Meaty</span>
+                    <span class="font-montserrat text-sm md:text-base font-medium text-[#3A493E] -mt-1 md:-mt-1.5 block">Mushrooms</span>
                 </a>
 
                 <!-- Desktop Navigation -->

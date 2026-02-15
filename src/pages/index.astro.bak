@@ -192,10 +192,6 @@ const products = [
 <section class="py-12 bg-[#F8FAF8]">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-             <a href="#nutrition" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group">
-                <i class="fas fa-leaf text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-semibold text-stone-900">Nutrition Facts</h3>
-            </a>
             <a href="#cooking-videos" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group">
                 <i class="fas fa-video text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
                 <h3 class="font-semibold text-stone-900">Cooking Videos</h3>
@@ -203,6 +199,10 @@ const products = [
             <a href="/recipes" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group">
                 <i class="fas fa-utensils text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
                 <h3 class="font-semibold text-stone-900">Recipes</h3>
+            </a>
+            <a href="#nutrition" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group">
+                <i class="fas fa-leaf text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
+                <h3 class="font-semibold text-stone-900">Nutrition Facts</h3>
             </a>
             <a href="#safety" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group">
                 <i class="fas fa-shield-alt text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
@@ -212,8 +212,150 @@ const products = [
     </div>
 </section>
 
+<!-- Cooking Videos Section -->
+<section id="cooking-videos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Learn to Cook</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Cooking Videos & Tutorials</h2>
+            <p class="text-stone-600">Master the art of cooking mushrooms with our expert video guides in Malayalam.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cookingVideos.map((video, index) => (
+                <div class="bg-[#F8FAF8] rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="relative">
+                        <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt={video.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-play text-white text-3xl"></i>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">{video.label}</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-stone-900 mb-2">{video.title}</h3>
+                        <p class="text-stone-600 text-sm mb-4">{video.description}</p>
+                        <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
+                            Watch on YouTube
+                            <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="text-center mt-12">
+
+            <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all group">
+                <i class="fab fa-youtube"></i>
+                More Cooking Videos
+                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Recipes Section (Redesigned - Fresh & Minimal) -->
+<section id="recipes" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Recipe Collection</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Simple. Delicious. Healthy.</h2>
+            <p class="text-stone-600">Three carefully curated recipes to get you started with mushroom cooking.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-12">
+            {recipes.map((recipe, index) => (
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay={index * 150}>
+                    <div class="relative mb-8 overflow-hidden rounded-3xl">
+                        <Image src={recipe.image} alt={recipe.name} class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <div class="flex items-center gap-4 mb-3">
+                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cuisine}</span>
+                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cookTime}</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">{recipe.name}</h3>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                {Array(recipe.rating).fill(0).map(() => (
+                                    <i class="fas fa-star text-sm"></i>
+                                ))}
+                                <span class="text-white/80 ml-2 text-sm">({recipe.reviews} reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <p class="text-stone-600 leading-relaxed">{recipe.description}</p>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4 text-sm text-stone-500">
+                                <span class="flex items-center gap-1">
+                                    <i class="fas fa-signal"></i>
+                                    {recipe.difficulty}
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i class="fas fa-users"></i>
+                                    Serves 4
+                                </span>
+                            </div>
+                            <a href={`/recipes/recipe-${index + 1}`} class="text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group-hover:underline">
+                                View Recipe →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="/recipes" class="inline-flex items-center gap-3 px-8 py-4 border border-[#3A493E] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all group">
+                Browse All Recipes
+                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Our Products</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Premium Mushroom Varieties</h2>
+            <p class="text-stone-600">Discover our range of premium organic mushrooms, harvested daily to ensure maximum freshness and nutrition.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <Image src={product.image} alt={product.name} class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <span class={`absolute top-4 right-4 ${product.badgeColor} text-white text-sm px-3 py-1 rounded-full`}>{product.badge}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">{product.name}</h3>
+                    <p class="text-stone-600 text-sm mb-4">{product.description}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[#3A493E] font-semibold">{product.price}</span>
+                        {/* <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                            <i class="fas fa-shopping-basket"></i>
+                            Add to Cart
+                        </button> */}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="/products" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group">
+                View All Products
+                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Nutritional Facts Section (Redesigned with better layout) -->
-<section id="nutrition" class="py-20 bg-white">
+<section id="nutrition" class="py-20 bg-[#F8FAF8]">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Health Benefits</span>
@@ -449,148 +591,6 @@ const products = [
     </div>
 </section>
 
-<!-- Cooking Videos Section -->
-<section id="cooking-videos" class="py-20 bg-[#F8FAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Learn to Cook</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Cooking Videos & Tutorials</h2>
-            <p class="text-stone-600">Master the art of cooking mushrooms with our expert video guides in Malayalam.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cookingVideos.map((video, index) => (
-                <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay={index * 100}>
-                    <div class="relative">
-                        <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt={video.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <i class="fas fa-play text-white text-3xl"></i>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded">{video.label}</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-stone-900 mb-2">{video.title}</h3>
-                        <p class="text-stone-600 text-sm mb-4">{video.description}</p>
-                        <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
-                            Watch on YouTube
-                            <i class="fas fa-external-link-alt text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            ))}
-        </div>
-
-        <div class="text-center mt-12">
-
-            <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all group">
-                <i class="fab fa-youtube"></i>
-                More Cooking Videos
-                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Recipes Section (Redesigned - Fresh & Minimal) -->
-<section id="recipes" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Recipe Collection</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Simple. Delicious. Healthy.</h2>
-            <p class="text-stone-600">Three carefully curated recipes to get you started with mushroom cooking.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-12">
-            {recipes.map((recipe, index) => (
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay={index * 150}>
-                    <div class="relative mb-8 overflow-hidden rounded-3xl">
-                        <Image src={recipe.image} alt={recipe.name} class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <div class="flex items-center gap-4 mb-3">
-                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cuisine}</span>
-                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cookTime}</span>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2">{recipe.name}</h3>
-                            <div class="flex items-center gap-1 text-yellow-400">
-                                {Array(recipe.rating).fill(0).map(() => (
-                                    <i class="fas fa-star text-sm"></i>
-                                ))}
-                                <span class="text-white/80 ml-2 text-sm">({recipe.reviews} reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <p class="text-stone-600 leading-relaxed">{recipe.description}</p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-4 text-sm text-stone-500">
-                                <span class="flex items-center gap-1">
-                                    <i class="fas fa-signal"></i>
-                                    {recipe.difficulty}
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i class="fas fa-users"></i>
-                                    Serves 4
-                                </span>
-                            </div>
-                            <a href={`/recipes/recipe-${index + 1}`} class="text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group-hover:underline">
-                                View Recipe →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-
-        <div class="text-center mt-16">
-            <a href="/recipes" class="inline-flex items-center gap-3 px-8 py-4 border border-[#3A493E] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all group">
-                Browse All Recipes
-                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Featured Products Section -->
-<section class="py-20 bg-[#F8FAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Our Products</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Premium Mushroom Varieties</h2>
-            <p class="text-stone-600">Discover our range of premium organic mushrooms, harvested daily to ensure maximum freshness and nutrition.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay={index * 100}>
-                    <div class="relative mb-6 overflow-hidden rounded-xl">
-                        <Image src={product.image} alt={product.name} class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
-                        <span class={`absolute top-4 right-4 ${product.badgeColor} text-white text-sm px-3 py-1 rounded-full`}>{product.badge}</span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-2">{product.name}</h3>
-                    <p class="text-stone-600 text-sm mb-4">{product.description}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-[#3A493E] font-semibold">{product.price}</span>
-                        {/* <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
-                            <i class="fas fa-shopping-basket"></i>
-                            Add to Cart
-                        </button> */}
-                    </div>
-                </div>
-            ))}
-        </div>
-
-        <div class="text-center mt-12">
-            <a href="/products" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group">
-                View All Products
-                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
 <!-- Why Choose Us Section (Logo only, no images) -->
 <section class="py-24 relative overflow-hidden bg-white">
     <div class="max-w-7xl mx-auto px-6">
@@ -797,6 +797,95 @@ const products = [
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Stats Section (Standalone) -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-r from-[#3A493E] to-[#2C3A30] rounded-3xl p-12 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+            
+            <div class="relative">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by Thousands</h2>
+                    <p class="text-white/80 text-lg">Numbers that speak for our quality and commitment</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-3 bg-white/10 rounded-2xl py-6">4.9/5</div>
+                        <p class="text-white/90 font-medium text-lg">Average Rating</p>
+                        <p class="text-white/60 text-sm mt-1">Based on 500+ reviews</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-3 bg-white/10 rounded-2xl py-6">500+</div>
+                        <p class="text-white/90 font-medium text-lg">Happy Customers</p>
+                        <p class="text-white/60 text-sm mt-1">And growing every day</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-3 bg-white/10 rounded-2xl py-6">98%</div>
+                        <p class="text-white/90 font-medium text-lg">Repeat Orders</p>
+                        <p class="text-white/60 text-sm mt-1">Customer satisfaction</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-3 bg-white/10 rounded-2xl py-6">24hrs</div>
+                        <p class="text-white/90 font-medium text-lg">Delivery Time</p>
+                        <p class="text-white/60 text-sm mt-1">Same day delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Location Section (Original) -->
+<section id="contact" class="py-24 relative overflow-hidden bg-[#F8FAF8]">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3">Get in Touch</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Contact & Location</h2>
+            <p class="text-stone-600">We'd love to hear from you! Here's how you can reach us.</p>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Phone -->
+            <div class="flex items-center gap-4 p-6 bg-white rounded-xl hover:bg-[#E9F0EA] transition-colors">
+                <i class="fas fa-phone text-[#3A493E] text-2xl"></i>
+                <div class="text-left">
+                    <p class="font-semibold">Call Us</p>
+                    <p class="text-sm text-stone-600">+91 8078937260</p>
+                </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="flex items-center gap-4 p-6 bg-white rounded-xl hover:bg-[#E9F0EA] transition-colors">
+                <i class="fab fa-whatsapp text-[#3A493E] text-2xl"></i>
+                <div class="text-left">
+                    <p class="font-semibold">WhatsApp</p>
+                    <p class="text-sm text-stone-600">Quick Support</p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center gap-4 p-6 bg-white rounded-xl hover:bg-[#E9F0EA] transition-colors">
+                <i class="fas fa-envelope text-[#3A493E] text-2xl"></i>
+                <div class="text-left">
+                    <p class="font-semibold">Email</p>
+                    <p class="text-sm text-stone-600">info@meatymushrooms.in</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Map -->
+        <div class="mt-12">
+            <div class="w-full h-64 rounded-2xl overflow-hidden">
+                <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509568!2d144.953735315316!3d-37.816279979751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f8b7%3A0x5045675218ceed7!2sMeaty%20Mushrooms!5e0!3m2!1sen!2sin!4v1631234567890!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
