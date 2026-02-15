@@ -86,7 +86,7 @@ import SEO from "../components/seo.astro";
 
         function toggleLanguage() {
             const isMl = document.documentElement.classList.toggle('lang-ml');
-            localStorage.setItem('lang', isMl ? 'ml' : 'en');
+            localStorage.setItem('app_language', isMl ? 'ml' : 'en');
             updateLanguageText(isMl);
             updateToggleButtons(isMl);
         }
@@ -130,12 +130,21 @@ import SEO from "../components/seo.astro";
              });
         }
         
-        // Run immediately
-        initLanguage();
+        // Initialize state (CSS class) immediately to prevent font flash
+        // Changing key to 'app_language' to reset legacy 'en' preferences and force Malayalam default
+        const savedLang = localStorage.getItem('app_language');
+        const shouldBeMl = savedLang === 'ml' || savedLang === null;
         
-        // Ensure buttons state is correct on load
+        if (shouldBeMl) {
+            document.documentElement.classList.add('lang-ml');
+            if (savedLang === null) localStorage.setItem('app_language', 'ml');
+        }
+
+        // Logic to update text and buttons once DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-             updateToggleButtons(document.documentElement.classList.contains('lang-ml'));
+             const isMl = document.documentElement.classList.contains('lang-ml');
+             updateLanguageText(isMl);
+             updateToggleButtons(isMl);
              
              document.getElementById('lang-toggle-desktop')?.addEventListener('click', toggleLanguage);
              document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
