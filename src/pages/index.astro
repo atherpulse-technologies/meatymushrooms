@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import "../assets/css/styles.css";
 import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
+import Solutions from "../components/Solutions.astro";
 
 import image1 from '../assets/images/hero-image-v2.jpg';
 import banner from '../assets/images/banner.jpg';
@@ -147,6 +148,7 @@ const products = [
 ];
 ---
 
+
 <Head/>
 
 <!-- Product Welcome Section -->
@@ -191,8 +193,8 @@ const products = [
                         <p class="text-sm text-stone-600" data-ml="സന്തുഷ്ടരായ ഉപഭോക്താക്കൾ">Happy Customers</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="text-3xl font-bold text-[#3A493E] mb-1">2+</h3>
-                        <p class="text-sm text-stone-600" data-ml="ഇനങ്ങൾ">Varieties</p>
+                        <h3 class="text-3xl font-bold text-[#3A493E] mb-1">4.9</h3>
+                        <p class="text-sm text-stone-600" data-ml="റേറ്റിംഗ്">Star Rating</p>
                     </div>
                 </div>
             </div>
@@ -235,6 +237,8 @@ const products = [
         </div>
     </div>
 </section>
+
+<Solutions />
 
 <!-- Nutritional Facts Section -->
 <section id="nutrition" class="py-20 bg-white">
