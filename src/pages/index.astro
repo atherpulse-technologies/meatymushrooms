@@ -240,165 +240,239 @@ const products = [
 
 <Solutions />
 
-<!-- Nutritional Facts Section -->
+<!-- Nutritional Facts Section (Restored Detailed Version) -->
 <section id="nutrition" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">
-                <span data-ml="എൽം ഓയിസ്റ്റർ കൂണിന്റെ അത്ഭുത ഗുണങ്ങൾ">The Power of Elm Oyster Mushrooms</span>
-            </h2>
-            <p class="text-stone-600 mb-4" data-ml="ശാസ്ത്രീയമായി തെളിയിക്കപ്പെട്ട 10 പ്രധാന ആരോഗ്യ ഗുണങ്ങൾ">Discover the scientifically proven health benefits of Hypsizygus ulmarius.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പൂർണ്ണമായ പോഷക വിവരങ്ങൾ">Complete Nutritional Facts</h2>
+            <p class="text-stone-600 mb-4" data-ml="100 ഗ്രാം ഫ്രഷ് കൂണിലെ പോഷക ഗുണങ്ങൾ">Per 100g fresh weight - Discover the incredible health benefits and complete nutritional profile.</p>
+            <div class="inline-block bg-white px-4 py-2 rounded-lg border border-[#3A493E]/20">
+                <p class="text-sm text-[#3A493E] font-medium">
+                    <span class="font-semibold">RDA</span> = Recommended Daily Allowance for adults
+                </p>
+            </div>
         </div>
 
-        <!-- Benefits Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            
-            <!-- 1. Protein & Muscle -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-dumbbell text-2xl text-[#3A493E] group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="മികച്ച പ്രോട്ടീൻ & മസിൽ ബിൽഡിംഗ്">Superior Protein & Muscle</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="സാധാരണ ഓയിസ്റ്റർ കൂണുകളേക്കാൾ (23-39%) പ്രോട്ടീൻ അടങ്ങിയിരിക്കുന്നു. രാജ്മയ്ക്കും മാംസാഹാരത്തിനും തുല്യം. ലൈസിൻ, ല്യൂസിൻ തുടങ്ങിയ അമിനോ ആസിഡുകളാൽ സമ്പന്നം.">Contains 23-39% protein (dry weight), significantly higher than common oysters. Rich in Lysine & Leucine, equivalent to legumes and meat for muscle building.</span>
-                </p>
-                <div class="bg-white p-3 rounded-lg border border-[#3A493E]/10">
-                    <p class="text-xs font-semibold text-[#3A493E]" data-ml="ജിമ്മിൽ പോകുന്നവർക്കും കുട്ടികൾക്കും ഉത്തമം">Perfect for fitness enthusiasts & kids</p>
-                </div>
-            </div>
-
-            <!-- 2. Immune Support -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-shield-virus text-2xl text-[#3A493E] group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="രോഗപ്രതിരോധ ശേഷി">Immune System Modulation</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="1,3-1,6 ബീറ്റാ-ഗ്ലൂക്കാനുകൾ വൈറസുകൾക്കെതിരെ പോരാടാൻ ശരീരത്തെ സഹായിക്കുന്നു. പാചകം ചെയ്താലും നശിക്കാത്ത ആന്റിഓക്സിഡന്റുകൾ.">Rich in Beta-Glucans that activate immune defense without causing inflammation. Supports interferon production to fight viruses. Heat-stable antioxidants.</span>
-                </p>
-            </div>
-
-            <!-- 3. Heart Health -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-heartbeat text-2xl text-[#3A493E] group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="ഹൃദയാരോഗ്യം & കൊളസ്ട്രോൾ">Heart & Cholesterol</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="പ്രകൃതിദത്ത ലൊവാസ്റ്റാറ്റിൻ കൊളസ്ട്രോൾ കുറയ്ക്കാൻ സഹായിക്കുന്നു. പൊട്ടാസ്യം ബിപി നിയന്ത്രിക്കാനും രക്തക്കുഴലുകൾ വികസിപ്പിക്കാനും സഹായിക്കുന്നു.">Contains natural Lovastatin to lower LDL cholesterol. High Potassium content helps regulate blood pressure and prevents plaque buildup in arteries.</span>
-                </p>
-            </div>
-
-            <!-- 4. Diabetes -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-tint text-2xl text-[#3A493E] group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="പ്രമേഹ നിയന്ത്രണം">Diabetes Management</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="രക്തത്തിലെ പഞ്ചസാര പെട്ടെന്ന് കൂടുന്നത് തടയുന്നു. ഇൻസുലിൻ പ്രവർത്തനം കാര്യക്ഷമമാക്കാനും പാൻക്രിയാസിനെ സംരക്ഷിക്കാനും സഹായിക്കുന്നു.">Regulates blood sugar spikes. Soluble fibers act like a gel to slow sugar absorption, improving insulin efficiency and protecting pancreatic beta cells.</span>
-                </p>
-            </div>
-
-            <!-- 5. Anti-Inflammatory -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-joint text-2xl text-[#3A493E] group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="നീർവീക്കവും വേദനയും കുറയ്ക്കുന്നു">Pain & Inflammation Relief</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="സന്ധിവേദനയ്ക്കും നീർവീക്കത്തിനും എതിരെ പ്രവർത്തിക്കുന്നു. മരുന്നുകൾക്കുള്ള പാർശ്വഫലങ്ങളില്ലാതെ പ്രകൃതിദത്ത വേദന സംഹാരിയായി പ്രവർത്തിക്കുന്നു.">Acts as a natural COX-2 inhibitor (like Ibuprofen) to reduce joint pain and inflammation without side effects. Protects cartilage health.</span>
-                </p>
-            </div>
-
-            <!-- 6. Liver & Brain -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-brain text-2xl text-[#3A493E] group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="കരൾ & തലച്ചോർ സംരക്ഷണം">Liver & Neuro Protection</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="ഓർമ്മശക്തി വർദ്ധിപ്പിക്കാനും കരളിനെ സംരക്ഷിക്കാനും സഹായിക്കുന്നു. മിൽക്ക് തിസിൽ പോലെ കരളിന് ഗുണകരം.">Protects liver function similar to Milk Thistle. Boosts Acetylcholine for memory and supports nerve growth and brain health.</span>
-                </p>
-            </div>
-            
-            <!-- 7. Culinary (Spanning 2 cols on huge screens, or just regular card) -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group md:col-span-2 lg:col-span-3 text-center">
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                        <i class="fas fa-utensils text-3xl text-[#3A493E] group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-stone-900 mb-4">
-                        <span data-ml="രുചിയിലും ഘടനയിലും രാജാവ്">The "Meaty" Culinary Experience</span>
+        <!-- Main Nutritional Grid -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Left Column: Macronutrients & Vitamins -->
+            <div class="space-y-8">
+                <!-- Macronutrients -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                            <span class="text-xl">🧪</span>
+                        </div>
+                        <span data-ml="മാക്രോന്യൂട്രിയന്റുകൾ">Macronutrients</span>
                     </h3>
-                    <p class="text-stone-600 leading-relaxed max-w-3xl mx-auto mb-6">
-                        <span data-ml="ഇറച്ചി പോലെയുള്ള ഘടന. പാചകം ചെയ്യുമ്പോൾ ഉടഞ്ഞുപോകില്ല. വറുത്തരച്ച കറികൾക്കും പെപ്പർ ഫ്രൈക്കും ഏറ്റവും അനുയോജ്യം. രുചികരവും എന്നാൽ ഇറച്ചി കഴിക്കുന്ന സംതൃപ്തിയും നൽകുന്നു.">Unlike common mushrooms that shrink, Elm Oysters hold their shape and "meaty" texture. Perfect for traditional Kerala curries, roasts, and pepper dry fry. Provides high satiety like meat.</span>
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="px-4 py-2 bg-white rounded-full border border-[#3A493E]/20 text-sm font-medium text-[#3A493E]" data-ml="വെള്ളം പിടിച്ചുനിർത്തുന്നു">Retains Water & Shape</span>
-                        <span class="px-4 py-2 bg-white rounded-full border border-[#3A493E]/20 text-sm font-medium text-[#3A493E]" data-ml="ഇറച്ചിക്ക് തുല്യം">Meat Alternative</span>
-                        <span class="px-4 py-2 bg-white rounded-full border border-[#3A493E]/20 text-sm font-medium text-[#3A493E]" data-ml="നാരുകൾ ധാരാളം">High Satiety</span>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-[#3A493E] mb-1">33</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="കലോറി">Calories (kcal)</div>
+                            <div class="text-xs text-[#3A493E]/70">2% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-[#3A493E] mb-1">3.3g</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="പ്രോട്ടീൻ">Protein</div>
+                            <div class="text-xs text-[#3A493E]/70">7% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-[#3A493E] mb-1">0.4g</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="കൊഴുപ്പ്">Total Fat</div>
+                            <div class="text-xs text-[#3A493E]/70">1% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-[#3A493E] mb-1">6.1g</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="കാർബോഹൈഡ്രേറ്റ്">Carbohydrates</div>
+                            <div class="text-xs text-[#3A493E]/70">2% RDA</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid grid-cols-2 gap-4">
+                        <div class="bg-[#3A493E]/3 p-3 rounded-lg">
+                            <div class="text-lg font-semibold text-[#3A493E]">2.3g</div>
+                            <div class="text-xs text-stone-600" data-ml="നാരുകൾ">Dietary Fiber (9% RDA)</div>
+                        </div>
+                        <div class="bg-[#3A493E]/3 p-3 rounded-lg">
+                            <div class="text-lg font-semibold text-[#3A493E]">1.1g</div>
+                            <div class="text-xs text-stone-600" data-ml="പ്രകൃതിദത്ത പഞ്ചസാര">Natural Sugar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Vitamins -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                            <span class="text-xl">🌿</span>
+                        </div>
+                        <span data-ml="പ്രധാന വിറ്റാമിനുകൾ">Key Vitamins</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-[#3A493E]/10 p-4 rounded-xl border border-[#3A493E]/20">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="font-semibold text-[#3A493E] mb-1" data-ml="വിറ്റാമിൻ ഡി2">Vitamin D2</div>
+                                    <div class="text-sm text-stone-600">0.5-4.9µg</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-lg font-bold text-[#3A493E]">20-200%</div>
+                                    <div class="text-xs text-[#3A493E]/70">RDA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                                <div class="text-sm font-medium text-stone-700">Vitamin B2</div>
+                                <div class="text-[#3A493E] font-semibold">27% RDA</div>
+                            </div>
+                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                                <div class="text-sm font-medium text-stone-700">Vitamin B3</div>
+                                <div class="text-[#3A493E] font-semibold">31% RDA</div>
+                            </div>
+                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                                <div class="text-sm font-medium text-stone-700">Vitamin B5</div>
+                                <div class="text-[#3A493E] font-semibold">26% RDA</div>
+                            </div>
+                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                                <div class="text-sm font-medium text-stone-700">Folate (B9)</div>
+                                <div class="text-[#3A493E] font-semibold">10% RDA</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Right Column: Minerals & Bioactive Compounds -->
+            <div class="space-y-8">
+                <!-- Essential Minerals -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                            <span class="text-xl">💪</span>
+                        </div>
+                        <span data-ml="ധാതുക്കൾ">Essential Minerals</span>
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-[#3A493E] mb-1">361mg</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="പൊട്ടാസ്യം">Potassium</div>
+                            <div class="text-xs text-[#3A493E]/70">10% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-[#3A493E] mb-1">120mg</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="ഫോസ്ഫറസ്">Phosphorus</div>
+                            <div class="text-xs text-[#3A493E]/70">17% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-[#3A493E] mb-1">1.3-2.7mg</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="ഇരുമ്പ്">Iron</div>
+                            <div class="text-xs text-[#3A493E]/70">15% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-[#3A493E] mb-1">0.2mg</div>
+                            <div class="text-sm text-stone-600 mb-1" data-ml="ചെമ്പ്">Copper</div>
+                            <div class="text-xs text-[#3A493E]/70">22% RDA</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid grid-cols-2 gap-4">
+                        <div class="bg-[#3A493E]/3 p-3 rounded-lg text-center">
+                            <div class="text-sm font-medium text-stone-700" data-ml="സിങ്ക്">Zinc</div>
+                            <div class="text-[#3A493E] font-semibold">10% RDA</div>
+                        </div>
+                        <div class="bg-[#3A493E]/3 p-3 rounded-lg text-center">
+                            <div class="text-sm font-medium text-stone-700" data-ml="മാംഗനീസ്">Manganese</div>
+                            <div class="text-[#3A493E] font-semibold">13% RDA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bioactive Compounds -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                            <span class="text-xl">🧠</span>
+                        </div>
+                        <span data-ml="ജൈവ സംയുക്തങ്ങൾ">Bioactive Compounds</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">🛡️</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-[#3A493E]">Beta-glucans</div>
+                                    <div class="text-sm text-stone-600" data-ml="രോഗപ്രതിരോധ ശേഷി വർദ്ധിപ്പിക്കുന്നു">Immune system support & anti-tumor properties</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">⚡</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-[#3A493E]">Ergothioneine</div>
+                                    <div class="text-sm text-stone-600" data-ml="ശക്തമായ ആന്റിഓക്‌സിഡന്റ്">Powerful antioxidant that protects DNA & cells</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">❤️</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-[#3A493E]">Lovastatin</div>
+                                    <div class="text-sm text-stone-600" data-ml="കൊളസ്ട്രോൾ കുറയ്ക്കുന്നു">Natural cholesterol-lowering compound</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">🔥</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-[#3A493E]">Polyphenols</div>
+                                    <div class="text-sm text-stone-600" data-ml="നീർവീക്കം തടയുന്നു">Anti-inflammatory & antioxidant properties</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Vitamin D & Anti-Aging Summary -->
-        <div class="bg-gradient-to-r from-[#3A493E] to-[#2C3A30] rounded-2xl p-8 md:p-12 text-white overflow-hidden relative">
-            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                     <h3 class="text-2xl md:text-3xl font-bold mb-4">
-                        <span data-ml="വിറ്റാമിൻ ഡിയും യുവത്വവും">Vitamin D & Anti-Aging Powerhouse</span>
-                    </h3>
-                    <div class="space-y-4 text-white/90">
-                        <p class="flex gap-3">
-                            <i class="fas fa-sun mt-1 text-yellow-400"></i>
-                            <span data-ml="സൂര്യപ്രകാശത്തിൽ വെച്ചാൽ വിറ്റാമിൻ ഡി ഉത്പാദിപ്പിക്കുന്നു. കാൽസ്യം ആഗിരണം ചെയ്യാൻ സഹായിക്കുന്നു.">Natural Vitamin D factory: Converts sunlight to Vitamin D2 within 30-60 mins, boosting Calcium absorption by 30-40%.</span>
-                        </p>
-                        <p class="flex gap-3">
-                            <i class="fas fa-hourglass-half mt-1 text-yellow-400"></i>
-                            <span data-ml="എർഗോത്തിയോണിൻ എന്ന ആന്റിഓക്സിഡന്റ് കോശങ്ങളുടെ നാശം തടയുന്നു. കൊളാജൻ സംരക്ഷിക്കുന്നു.">Rich in Ergothioneine: Use natural "intelligent antioxidant" that targets eyes, liver, and bone marrow to fight aging and protect collagen.</span>
-                        </p>
-                    </div>
+        <!-- Health Benefits Summary -->
+        <div class="bg-gradient-to-r from-[#3A493E] to-[#2C3A30] rounded-2xl p-8 text-white">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2" data-ml="എന്തുകൊണ്ട് ഓയിസ്റ്റർ കൂണുകൾ?">✨ Why Oyster Mushrooms Are Superfoods</h3>
+                <p class="text-white/80" data-ml="പോഷകങ്ങൾ നിറഞ്ഞതും, കുറഞ്ഞ കലോറിയും, നിരവധി ആരോഗ്യ ഗുണങ്ങളും.">Packed with nutrients, low in calories, and full of health benefits</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-3">🌱</div>
+                    <div class="font-semibold mb-2" data-ml="വിറ്റാമിൻ ബി സമ്പുഷ്ടം">Rich in B Vitamins</div>
+                    <div class="text-sm text-white/80" data-ml="ഊർജ്ജത്തിനും നാഡീവ്യൂഹത്തിനും">Essential for energy metabolism and nervous system</div>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                     <h4 class="font-bold text-lg mb-4 text-center border-b border-white/20 pb-3">
-                        <span data-ml="എന്തുകൊണ്ട് ഇവ തിരഞ്ഞെടുക്കണം?">Why Switch to Meaty Mushrooms?</span>
-                     </h4>
-                     <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-green-400"></i>
-                            <span data-ml="പരിപ്പിനേക്കാൾ 2 മടങ്ങ് പ്രോട്ടീൻ">2x Protein vs Lentils (39% vs 24%)</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-green-400"></i>
-                            <span data-ml="ശബരിമല വ്രതകാലത്ത് ഊർജ്ജത്തിന്">Ideal energy source for fasting/Vrutham</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-green-400"></i>
-                            <span data-ml="പാകം ചെയ്താലും ഗുണം പോകില്ല">Heat-stable nutrients (Don't suffer in curry)</span>
-                        </li>
-                     </ul>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-3">💪</div>
+                    <div class="font-semibold mb-2" data-ml="പൂർണ്ണമായ പ്രോട്ടീൻ">Complete Protein</div>
+                    <div class="text-sm text-white/80" data-ml="എല്ലാ അമിനോ ആസിഡുകളും അടങ്ങിയിരിക്കുന്നു">Contains all essential amino acids for vegetarians</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-3">☀️</div>
+                    <div class="font-semibold mb-2" data-ml="വിറ്റാമിൻ ഡി">Natural Vitamin D</div>
+                    <div class="text-sm text-white/80" data-ml="സസ്യാഹാരത്തിലെ അപൂർവ്വ വിറ്റാമിൻ ഡി ഉറവിടം">One of the few plant sources of Vitamin D2</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-3">🎯</div>
+                    <div class="font-semibold mb-2" data-ml="കുറഞ്ഞ കലോറി">Low Calorie</div>
+                    <div class="text-sm text-white/80" data-ml="കൂടുതൽ പോഷകങ്ങൾ, കുറഞ്ഞ കലോറി">High nutrition density with minimal calories</div>
                 </div>
             </div>
-            
-            <!-- Decor -->
-            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
         </div>
     </div>
 </section>
