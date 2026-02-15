@@ -121,7 +121,7 @@ const products = [
         price: '₹80/200g',
         badge: 'High Protein',
         badgeML: 'കൂടുതൽ പ്രോട്ടീൻ',
-        badgeColor: 'bg-[#3A493E]'
+        badgeColor: 'bg-primary'
     },
     {
         name: 'Pink Oyster Mushrooms',
@@ -143,7 +143,7 @@ const products = [
         price: '₹200/100g',
         badge: 'Popular',
         badgeML: 'ജനപ്രിയമായത്',
-        badgeColor: 'bg-[#3A493E]'
+        badgeColor: 'bg-primary'
     }
 ];
 ---
@@ -162,17 +162,17 @@ const products = [
                 <h1 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-6">
                     <span data-ml="ഫ്രഷ് കൂണുകൾ,">Fresh Mushrooms,</span> <br>
                     <span data-ml="ദിവസവും വിളവെടുക്കുന്നത്">Harvested Daily from</span> 
-                    <span class="text-[#3A493E]" data-ml="വടകരയിൽ നിന്ന്">Vadakara</span>
+                    <span class="text-primary" data-ml="വടകരയിൽ നിന്ന്">Vadakara</span>
                 </h1>
                 <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0" data-ml="പാചക കുറിപ്പുകൾ മുതൽ പോഷക ഗുണങ്ങൾ വരെ - നിങ്ങളുടെ പ്രീമിയം ഓർഗാനിക് കൂണുകൾ പരമാവധി പ്രയോജനപ്പെടുത്തുന്നതിനുള്ള പൂർണ്ണമായ ഗൈഡ്.">
                     From cooking tips to nutritional benefits - your complete guide to making the most of your premium organic mushrooms.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="https://wa.me/918078937260" target="_blank" class="px-8 py-4 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    <a href="https://wa.me/918078937260" target="_blank" class="px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <span data-ml="ഇപ്പോൾ ഓർഡർ ചെയ്യൂ">Order Now</span>
                         <i class="fas fa-shopping-basket text-sm"></i>
                     </a>
-                    <a href="#cooking-videos" class="px-8 py-4 border-2 border-[#3A493E] text-[#3A493E] rounded-full hover:bg-[#E9F0EA] transition-all flex items-center justify-center gap-2">
+                    <a href="#cooking-videos" class="px-8 py-4 border-2 border-primary text-primary rounded-full hover:bg-primary-light transition-all flex items-center justify-center gap-2">
                         <span data-ml="പാചക വീഡിയോകൾ">Watch Videos</span>
                         <i class="fas fa-play text-sm"></i>
                     </a>
@@ -181,19 +181,19 @@ const products = [
                 <!-- Trust Badges -->
                 <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto lg:mx-0">
                     <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-3xl font-bold text-[#3A493E] mb-1">100%</h3>
+                        <h3 class="text-3xl font-bold text-primary mb-1">100%</h3>
                         <p class="text-sm text-stone-600" data-ml="ഓർഗാനിക്">Organic</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-3xl font-bold text-[#3A493E] mb-1">10kg+</h3>
+                        <h3 class="text-3xl font-bold text-primary mb-1">10kg+</h3>
                         <p class="text-sm text-stone-600" data-ml="ദിവസവും വിളവെടുപ്പ്">Daily Harvest</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-3xl font-bold text-[#3A493E] mb-1">100+</h3>
+                        <h3 class="text-3xl font-bold text-primary mb-1">100+</h3>
                         <p class="text-sm text-stone-600" data-ml="സന്തുഷ്ടരായ ഉപഭോക്താക്കൾ">Happy Customers</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="text-3xl font-bold text-[#3A493E] mb-1">4.9</h3>
+                        <h3 class="text-3xl font-bold text-primary mb-1">4.9</h3>
                         <p class="text-sm text-stone-600" data-ml="റേറ്റിംഗ്">Star Rating</p>
                     </div>
                 </div>
@@ -202,20 +202,20 @@ const products = [
             <div class="relative" data-aos="fade-left">
                 <div class="relative max-w-2xl mx-auto animate-float">
                     <Image src={image1} alt="Fresh Oyster Mushrooms" class="w-full rounded-3xl" />
-                    <div class="absolute bottom-8 right-0 md:-right-8 z-20 bg-white/90 backdrop-blur-sm py-3 px-6 rounded-2xl shadow-lg border border-[#3A493E]/10 flex flex-col items-start text-left min-w-[200px]">
-                        <p class="text-lg font-bold text-[#3A493E]" data-ml="ബിന്ദു എൻ കെ">Bindu N K</p>
+                    <div class="absolute bottom-8 right-0 md:-right-8 z-20 bg-white/90 backdrop-blur-sm py-3 px-6 rounded-2xl shadow-lg border border-primary/10 flex flex-col items-start text-left min-w-[200px]">
+                        <p class="text-lg font-bold text-primary" data-ml="ബിന്ദു എൻ കെ">Bindu N K</p>
                         <p class="text-sm text-stone-600" data-ml="ഉടമ, മീറ്റി മഷ്റൂംസ്">Proprietor, Meaty Mushrooms</p>
                     </div>
                 </div>
-                <div class="absolute top-10 right-10 w-20 h-20 bg-[#E9F0EA] rounded-full -z-10"></div>
-                <div class="absolute bottom-10 left-10 w-32 h-32 bg-[#E9F0EA] rounded-full -z-10"></div>
+                <div class="absolute top-10 right-10 w-20 h-20 bg-primary-light rounded-full -z-10"></div>
+                <div class="absolute bottom-10 left-10 w-32 h-32 bg-primary-light rounded-full -z-10"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Excitement / Hook Section -->
-<section class="py-12 bg-[#3A493E] text-white overflow-hidden relative">
+<section class="py-12 bg-primary text-white overflow-hidden relative">
     <!-- Scrolling Marquee / Ticker -->
     <div class="absolute top-0 left-0 right-0 h-full opacity-10 pointer-events-none overflow-hidden flex items-center">
         <div class="whitespace-nowrap animate-marquee text-9xl font-bold uppercase tracking-widest text-white">
@@ -224,7 +224,7 @@ const products = [
     </div>
     
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <span class="inline-block py-1 px-3 rounded-full bg-yellow-400 text-[#3A493E] text-xs font-bold uppercase tracking-wider mb-4 animate-bounce">Limited Daily Harvest</span>
+        <span class="inline-block py-1 px-3 rounded-full bg-yellow-400 text-primary text-xs font-bold uppercase tracking-wider mb-4 animate-bounce">Limited Daily Harvest</span>
         <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             <span data-ml="നിങ്ങൾ 'വെജിറ്റേറിയൻ ഇറച്ചി' കഴിച്ചിട്ടുണ്ടോ?">Have You Tasted the "Vegetarian Meat"?</span>
         </h2>
@@ -262,19 +262,19 @@ const products = [
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
              <a href="#nutrition" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-leaf text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
+                <i class="fas fa-leaf text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
                 <h3 class="font-semibold text-stone-900" data-ml="പോഷക ഗുണങ്ങൾ">Nutrition Facts</h3>
             </a>
             <a href="#cooking-videos" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-video text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
+                <i class="fas fa-video text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
                 <h3 class="font-semibold text-stone-900" data-ml="പാചക വീഡിയോകൾ">Cooking Videos</h3>
             </a>
             <a href="/recipes" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-utensils text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
+                <i class="fas fa-utensils text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
                 <h3 class="font-semibold text-stone-900" data-ml="റെസിപ്പികൾ">Recipes</h3>
             </a>
             <a href="#safety" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-shield-alt text-3xl text-[#3A493E] mb-3 group-hover:scale-110 transition-transform"></i>
+                <i class="fas fa-shield-alt text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
                 <h3 class="font-semibold text-stone-900" data-ml="ഭക്ഷ്യ സുരക്ഷ">Food Safety</h3>
             </a>
         </div>
@@ -285,14 +285,14 @@ const products = [
 <section class="py-16 bg-stone-50 border-y border-stone-200" id="faq-section">
     <div class="max-w-4xl mx-auto px-6">
         <div class="text-center mb-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-[#3A493E]/10 text-[#3A493E] text-xs font-bold uppercase tracking-wider mb-3">No Hesitation / മടിക്കേണ്ട</span>
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">No Hesitation / മടിക്കേണ്ട</span>
             <h2 class="text-3xl font-bold text-stone-900 mb-4" data-ml="ആദ്യമായിട്ടാണോ വാങ്ങുന്നത്?">First Time Buying?</h2>
             <p class="text-stone-600 max-w-2xl mx-auto" data-ml="നിങ്ങളുടെ സംശയങ്ങൾക്കുള്ള മറുപടി ഇതാ. 100% വിശ്വസിച്ച് വാങ്ങാം.">Common doubts cleared. Buy with 100% confidence.</p>
         </div>
 
         <div class="space-y-3">
              <!-- Q1: Taste/Texture ( The #1 Doubt) -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-[#3A493E]/20 transition-all duration-300">
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
                 <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
                     <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
                         <span class="w-8 h-8 bg-green-100/50 text-green-700 rounded-full flex items-center justify-center text-sm">👅</span>
@@ -309,7 +309,7 @@ const products = [
             </details>
 
             <!-- Q2: Cooking Difficulty -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-[#3A493E]/20 transition-all duration-300">
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
                 <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
                     <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
                         <span class="w-8 h-8 bg-orange-100/50 text-orange-700 rounded-full flex items-center justify-center text-sm">🍳</span>
@@ -321,12 +321,12 @@ const products = [
                 </summary>
                 <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
                     <p class="mb-2" data-ml="തീരെയില്ല! കഴുകേണ്ട ആവശ്യമില്ല. കൈകൊണ്ട് കീറി നേരിട്ട് കറിയിലിടാം."><strong>Easier than vegetables!</strong> No washing needed (just wipe if dirty). Tear by hand. Cooks in 5-10 minutes.</p>
-                    <p><a href="#cooking-videos" class="text-[#3A493E] font-medium underline text-sm">Watch our 5-min recipe video below.</a></p>
+                    <p><a href="#cooking-videos" class="text-primary font-medium underline text-sm">Watch our 5-min recipe video below.</a></p>
                 </div>
             </details>
             
              <!-- Q3: Health (Snippet) -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-[#3A493E]/20 transition-all duration-300">
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
                 <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
                     <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
                         <span class="text-red-500">💓</span>
@@ -344,7 +344,7 @@ const products = [
         
         <!-- View All Button -->
         <div class="mt-8 text-center">
-            <button id="open-faq-modal" class="inline-flex items-center gap-2 px-6 py-3 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all shadow-md group">
+            <button id="open-faq-modal" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-md group">
                 <span data-ml="കൂടുതൽ സംശയങ്ങൾ?">View All Common Doubts</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
@@ -370,7 +370,7 @@ const products = [
             <!-- Sticky Header -->
             <div class="bg-white border-b border-stone-200 p-4 md:p-6 flex items-center justify-between shrink-0 sticky top-0 z-10">
                 <div>
-                    <h3 class="text-xl md:text-2xl font-bold text-[#3A493E]" data-ml="സംശയനിവാരണം">All Common Doubts</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-primary" data-ml="സംശയനിവാരണം">All Common Doubts</h3>
                     <p class="text-sm text-stone-500" data-ml="നിങ്ങൾ അറിയാൻ ആഗ്രഹിക്കുന്നതെല്ലാം">Everything you wanted to ask</p>
                 </div>
                 <button id="close-faq-modal" class="w-10 h-10 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors">
@@ -383,7 +383,7 @@ const products = [
                 
                 <!-- Category 1: Essentials -->
                 <div>
-                    <h4 class="text-sm font-bold text-[#3A493E] uppercase tracking-wider mb-4 border-b border-[#3A493E]/10 pb-2">Essentials / അടിസ്ഥാന കാര്യങ്ങൾ</h4>
+                    <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Essentials / അടിസ്ഥാന കാര്യങ്ങൾ</h4>
                     <div class="space-y-3">
                         <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
                             <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
@@ -417,7 +417,7 @@ const products = [
 
                 <!-- Category 2: Health & Safety -->
                 <div>
-                     <h4 class="text-sm font-bold text-[#3A493E] uppercase tracking-wider mb-4 border-b border-[#3A493E]/10 pb-2">Health / ആരോഗ്യം</h4>
+                     <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Health / ആരോഗ്യം</h4>
                     <div class="space-y-3">
                          <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
                             <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
@@ -451,7 +451,7 @@ const products = [
 
                 <!-- Category 3: Buying & Cooking -->
                 <div>
-                     <h4 class="text-sm font-bold text-[#3A493E] uppercase tracking-wider mb-4 border-b border-[#3A493E]/10 pb-2">Buying / വാങ്ങുന്ന വിധം</h4>
+                     <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Buying / വാങ്ങുന്ന വിധം</h4>
                     <div class="space-y-3">
                         <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
                             <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
@@ -487,7 +487,7 @@ const products = [
             
             <!-- Sticky Footer CTA -->
             <div class="p-4 border-t border-stone-200 bg-white md:bg-stone-50 shrink-0 text-center">
-                <a href="https://wa.me/918078937260" target="_blank" class="w-full md:w-auto inline-flex justify-center items-center gap-2 px-8 py-3 bg-[#3A493E] text-white rounded-full hover:bg-[#2C3A30] transition-all font-bold">
+                <a href="https://wa.me/918078937260" target="_blank" class="w-full md:w-auto inline-flex justify-center items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all font-bold">
                     <i class="fab fa-whatsapp"></i>
                     <span data-ml="ഞങ്ങളുമായി ചാറ്റ് ചെയ്യൂ">Chat with Chef/Farmer</span>
                 </a>
@@ -532,7 +532,7 @@ const products = [
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">
                 <span data-ml="എൽം ഓയിസ്റ്റർ കൂണിന്റെ അത്ഭുത ഗുണങ്ങൾ">The Power of Elm Oyster Mushrooms</span>
             </h2>
@@ -543,9 +543,9 @@ const products = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             
             <!-- 1. Protein & Muscle -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-dumbbell text-2xl text-[#3A493E] group-hover:text-white"></i>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
+                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-dumbbell text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold text-stone-900 mb-3">
                     <span data-ml="മികച്ച പ്രോട്ടീൻ & മസിൽ ബിൽഡിംഗ്">Superior Protein & Muscle</span>
@@ -553,15 +553,15 @@ const products = [
                 <p class="text-stone-600 text-sm leading-relaxed mb-4">
                     <span data-ml="സാധാരണ ഓയിസ്റ്റർ കൂണുകളേക്കാൾ (23-39%) പ്രോട്ടീൻ അടങ്ങിയിരിക്കുന്നു. രാജ്മയ്ക്കും മാംസാഹാരത്തിനും തുല്യം. ലൈസിൻ, ല്യൂസിൻ തുടങ്ങിയ അമിനോ ആസിഡുകളാൽ സമ്പന്നം.">Contains 23-39% protein (dry weight), significantly higher than common oysters. Rich in Lysine & Leucine, equivalent to legumes and meat for muscle building.</span>
                 </p>
-                <div class="bg-white p-3 rounded-lg border border-[#3A493E]/10">
-                    <p class="text-xs font-semibold text-[#3A493E]" data-ml="ജിമ്മിൽ പോകുന്നവർക്കും കുട്ടികൾക്കും ഉത്തമം">Perfect for fitness enthusiasts & kids</p>
+                <div class="bg-white p-3 rounded-lg border border-primary/10">
+                    <p class="text-xs font-semibold text-primary" data-ml="ജിമ്മിൽ പോകുന്നവർക്കും കുട്ടികൾക്കും ഉത്തമം">Perfect for fitness enthusiasts & kids</p>
                 </div>
             </div>
 
             <!-- 2. Immune Support -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-shield-virus text-2xl text-[#3A493E] group-hover:text-white"></i>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
+                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-shield-virus text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold text-stone-900 mb-3">
                     <span data-ml="രോഗപ്രതിരോധ ശേഷി">Immune System Modulation</span>
@@ -572,9 +572,9 @@ const products = [
             </div>
 
             <!-- 3. Heart Health -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-heartbeat text-2xl text-[#3A493E] group-hover:text-white"></i>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
+                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-heartbeat text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold text-stone-900 mb-3">
                     <span data-ml="ഹൃദയാരോഗ്യം & കൊളസ്ട്രോൾ">Heart & Cholesterol</span>
@@ -585,9 +585,9 @@ const products = [
             </div>
 
             <!-- 4. Diabetes -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-tint text-2xl text-[#3A493E] group-hover:text-white"></i>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
+                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-tint text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold text-stone-900 mb-3">
                     <span data-ml="പ്രമേഹ നിയന്ത്രണം">Diabetes Management</span>
@@ -598,9 +598,9 @@ const products = [
             </div>
 
             <!-- 5. Anti-Inflammatory -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-joint text-2xl text-[#3A493E] group-hover:text-white"></i>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
+                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-joint text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold text-stone-900 mb-3">
                     <span data-ml="നീർവീക്കവും വേദനയും കുറയ്ക്കുന്നു">Pain & Inflammation Relief</span>
@@ -611,9 +611,9 @@ const products = [
             </div>
 
             <!-- 6. Liver & Brain -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-brain text-2xl text-[#3A493E] group-hover:text-white"></i>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
+                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-brain text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h3 class="text-xl font-bold text-stone-900 mb-3">
                     <span data-ml="കരൾ & തലച്ചോർ സംരക്ഷണം">Liver & Neuro Protection</span>
@@ -624,10 +624,10 @@ const products = [
             </div>
             
             <!-- 7. Culinary (Spanning 2 cols on huge screens, or just regular card) -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-[#3A493E]/10 hover:shadow-lg transition-all group md:col-span-2 lg:col-span-3 text-center">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group md:col-span-2 lg:col-span-3 text-center">
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-[#3A493E]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3A493E] transition-colors">
-                        <i class="fas fa-utensils text-3xl text-[#3A493E] group-hover:text-white"></i>
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i class="fas fa-utensils text-3xl text-primary group-hover:text-white"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-stone-900 mb-4">
                         <span data-ml="രുചിയിലും ഘടനയിലും രാജാവ്">The "Meaty" Culinary Experience</span>
@@ -636,9 +636,9 @@ const products = [
                         <span data-ml="ഇറച്ചി പോലെയുള്ള ഘടന. പാചകം ചെയ്യുമ്പോൾ ഉടഞ്ഞുപോകില്ല. വറുത്തരച്ച കറികൾക്കും പെപ്പർ ഫ്രൈക്കും ഏറ്റവും അനുയോജ്യം. രുചികരവും എന്നാൽ ഇറച്ചി കഴിക്കുന്ന സംതൃപ്തിയും നൽകുന്നു.">Unlike common mushrooms that shrink, Elm Oysters hold their shape and "meaty" texture. Perfect for traditional Kerala curries, roasts, and pepper dry fry. Provides high satiety like meat.</span>
                     </p>
                     <div class="flex flex-wrap justify-center gap-4">
-                        <span class="px-4 py-2 bg-white rounded-full border border-[#3A493E]/20 text-sm font-medium text-[#3A493E]" data-ml="വെള്ളം പിടിച്ചുനിർത്തുന്നു">Retains Water & Shape</span>
-                        <span class="px-4 py-2 bg-white rounded-full border border-[#3A493E]/20 text-sm font-medium text-[#3A493E]" data-ml="ഇറച്ചിക്ക് തുല്യം">Meat Alternative</span>
-                        <span class="px-4 py-2 bg-white rounded-full border border-[#3A493E]/20 text-sm font-medium text-[#3A493E]" data-ml="നാരുകൾ ധാരാളം">High Satiety</span>
+                        <span class="px-4 py-2 bg-white rounded-full border border-primary/20 text-sm font-medium text-primary" data-ml="വെള്ളം പിടിച്ചുനിർത്തുന്നു">Retains Water & Shape</span>
+                        <span class="px-4 py-2 bg-white rounded-full border border-primary/20 text-sm font-medium text-primary" data-ml="ഇറച്ചിക്ക് തുല്യം">Meat Alternative</span>
+                        <span class="px-4 py-2 bg-white rounded-full border border-primary/20 text-sm font-medium text-primary" data-ml="നാരുകൾ ധാരാളം">High Satiety</span>
                     </div>
                 </div>
             </div>
@@ -646,7 +646,7 @@ const products = [
         </div>
 
         <!-- Vitamin D & Anti-Aging Summary -->
-        <div class="bg-gradient-to-r from-[#3A493E] to-[#2C3A30] rounded-2xl p-8 md:p-12 text-white overflow-hidden relative">
+        <div class="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 md:p-12 text-white overflow-hidden relative">
             <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
                 <div>
                      <h3 class="text-2xl md:text-3xl font-bold mb-4">
@@ -695,11 +695,11 @@ const products = [
 <section id="nutrition" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പൂർണ്ണമായ പോഷക വിവരങ്ങൾ">Complete Nutritional Facts</h2>
             <p class="text-stone-600 mb-4" data-ml="100 ഗ്രാം ഫ്രഷ് കൂണിലെ പോഷക ഗുണങ്ങൾ">Per 100g fresh weight - Discover the incredible health benefits and complete nutritional profile.</p>
-            <div class="inline-block bg-white px-4 py-2 rounded-lg border border-[#3A493E]/20">
-                <p class="text-sm text-[#3A493E] font-medium">
+            <div class="inline-block bg-white px-4 py-2 rounded-lg border border-primary/20">
+                <p class="text-sm text-primary font-medium">
                     <span class="font-semibold">RDA</span> = Recommended Daily Allowance for adults
                 </p>
             </div>
@@ -710,84 +710,84 @@ const products = [
             <!-- Left Column: Macronutrients & Vitamins -->
             <div class="space-y-8">
                 <!-- Macronutrients -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
                     <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                             <span class="text-xl">🧪</span>
                         </div>
                         <span data-ml="മാക്രോന്യൂട്രിയന്റുകൾ">Macronutrients</span>
                     </h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-[#3A493E] mb-1">33</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">33</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="കലോറി">Calories (kcal)</div>
-                            <div class="text-xs text-[#3A493E]/70">2% RDA</div>
+                            <div class="text-xs text-primary/70">2% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-[#3A493E] mb-1">3.3g</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">3.3g</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="പ്രോട്ടീൻ">Protein</div>
-                            <div class="text-xs text-[#3A493E]/70">7% RDA</div>
+                            <div class="text-xs text-primary/70">7% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-[#3A493E] mb-1">0.4g</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">0.4g</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="കൊഴുപ്പ്">Total Fat</div>
-                            <div class="text-xs text-[#3A493E]/70">1% RDA</div>
+                            <div class="text-xs text-primary/70">1% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-[#3A493E] mb-1">6.1g</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-2xl font-bold text-primary mb-1">6.1g</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="കാർബോഹൈഡ്രേറ്റ്">Carbohydrates</div>
-                            <div class="text-xs text-[#3A493E]/70">2% RDA</div>
+                            <div class="text-xs text-primary/70">2% RDA</div>
                         </div>
                     </div>
                     <div class="mt-4 grid grid-cols-2 gap-4">
-                        <div class="bg-[#3A493E]/3 p-3 rounded-lg">
-                            <div class="text-lg font-semibold text-[#3A493E]">2.3g</div>
+                        <div class="bg-primary/3 p-3 rounded-lg">
+                            <div class="text-lg font-semibold text-primary">2.3g</div>
                             <div class="text-xs text-stone-600" data-ml="നാരുകൾ">Dietary Fiber (9% RDA)</div>
                         </div>
-                        <div class="bg-[#3A493E]/3 p-3 rounded-lg">
-                            <div class="text-lg font-semibold text-[#3A493E]">1.1g</div>
+                        <div class="bg-primary/3 p-3 rounded-lg">
+                            <div class="text-lg font-semibold text-primary">1.1g</div>
                             <div class="text-xs text-stone-600" data-ml="പ്രകൃതിദത്ത പഞ്ചസാര">Natural Sugar</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Key Vitamins -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
                     <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                             <span class="text-xl">🌿</span>
                         </div>
                         <span data-ml="പ്രധാന വിറ്റാമിനുകൾ">Key Vitamins</span>
                     </h3>
                     <div class="space-y-4">
-                        <div class="bg-[#3A493E]/10 p-4 rounded-xl border border-[#3A493E]/20">
+                        <div class="bg-primary/10 p-4 rounded-xl border border-primary/20">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <div class="font-semibold text-[#3A493E] mb-1" data-ml="വിറ്റാമിൻ ഡി2">Vitamin D2</div>
+                                    <div class="font-semibold text-primary mb-1" data-ml="വിറ്റാമിൻ ഡി2">Vitamin D2</div>
                                     <div class="text-sm text-stone-600">0.5-4.9µg</div>
                                 </div>
                                 <div class="text-right">
-                                    <div class="text-lg font-bold text-[#3A493E]">20-200%</div>
-                                    <div class="text-xs text-[#3A493E]/70">RDA</div>
+                                    <div class="text-lg font-bold text-primary">20-200%</div>
+                                    <div class="text-xs text-primary/70">RDA</div>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
-                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                            <div class="bg-primary/5 p-3 rounded-lg">
                                 <div class="text-sm font-medium text-stone-700">Vitamin B2</div>
-                                <div class="text-[#3A493E] font-semibold">27% RDA</div>
+                                <div class="text-primary font-semibold">27% RDA</div>
                             </div>
-                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                            <div class="bg-primary/5 p-3 rounded-lg">
                                 <div class="text-sm font-medium text-stone-700">Vitamin B3</div>
-                                <div class="text-[#3A493E] font-semibold">31% RDA</div>
+                                <div class="text-primary font-semibold">31% RDA</div>
                             </div>
-                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                            <div class="bg-primary/5 p-3 rounded-lg">
                                 <div class="text-sm font-medium text-stone-700">Vitamin B5</div>
-                                <div class="text-[#3A493E] font-semibold">26% RDA</div>
+                                <div class="text-primary font-semibold">26% RDA</div>
                             </div>
-                            <div class="bg-[#3A493E]/5 p-3 rounded-lg">
+                            <div class="bg-primary/5 p-3 rounded-lg">
                                 <div class="text-sm font-medium text-stone-700">Folate (B9)</div>
-                                <div class="text-[#3A493E] font-semibold">10% RDA</div>
+                                <div class="text-primary font-semibold">10% RDA</div>
                             </div>
                         </div>
                     </div>
@@ -797,96 +797,96 @@ const products = [
             <!-- Right Column: Minerals & Bioactive Compounds -->
             <div class="space-y-8">
                 <!-- Essential Minerals -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
                     <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                             <span class="text-xl">💪</span>
                         </div>
                         <span data-ml="ധാതുക്കൾ">Essential Minerals</span>
                     </h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-[#3A493E] mb-1">361mg</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-primary mb-1">361mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="പൊട്ടാസ്യം">Potassium</div>
-                            <div class="text-xs text-[#3A493E]/70">10% RDA</div>
+                            <div class="text-xs text-primary/70">10% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-[#3A493E] mb-1">120mg</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-primary mb-1">120mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="ഫോസ്ഫറസ്">Phosphorus</div>
-                            <div class="text-xs text-[#3A493E]/70">17% RDA</div>
+                            <div class="text-xs text-primary/70">17% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-[#3A493E] mb-1">1.3-2.7mg</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-primary mb-1">1.3-2.7mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="ഇരുമ്പ്">Iron</div>
-                            <div class="text-xs text-[#3A493E]/70">15% RDA</div>
+                            <div class="text-xs text-primary/70">15% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-[#3A493E] mb-1">0.2mg</div>
+                        <div class="bg-primary/5 p-4 rounded-xl">
+                            <div class="text-lg font-bold text-primary mb-1">0.2mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="ചെമ്പ്">Copper</div>
-                            <div class="text-xs text-[#3A493E]/70">22% RDA</div>
+                            <div class="text-xs text-primary/70">22% RDA</div>
                         </div>
                     </div>
                     <div class="mt-4 grid grid-cols-2 gap-4">
-                        <div class="bg-[#3A493E]/3 p-3 rounded-lg text-center">
+                        <div class="bg-primary/3 p-3 rounded-lg text-center">
                             <div class="text-sm font-medium text-stone-700" data-ml="സിങ്ക്">Zinc</div>
-                            <div class="text-[#3A493E] font-semibold">10% RDA</div>
+                            <div class="text-primary font-semibold">10% RDA</div>
                         </div>
-                        <div class="bg-[#3A493E]/3 p-3 rounded-lg text-center">
+                        <div class="bg-primary/3 p-3 rounded-lg text-center">
                             <div class="text-sm font-medium text-stone-700" data-ml="മാംഗനീസ്">Manganese</div>
-                            <div class="text-[#3A493E] font-semibold">13% RDA</div>
+                            <div class="text-primary font-semibold">13% RDA</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Bioactive Compounds -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#3A493E]/10">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
                     <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-[#3A493E]/10 rounded-full flex items-center justify-center">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                             <span class="text-xl">🧠</span>
                         </div>
                         <span data-ml="ജൈവ സംയുക്തങ്ങൾ">Bioactive Compounds</span>
                     </h3>
                     <div class="space-y-4">
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                                     <span class="text-lg">🛡️</span>
                                 </div>
                                 <div>
-                                    <div class="font-semibold text-[#3A493E]">Beta-glucans</div>
+                                    <div class="font-semibold text-primary">Beta-glucans</div>
                                     <div class="text-sm text-stone-600" data-ml="രോഗപ്രതിരോധ ശേഷി വർദ്ധിപ്പിക്കുന്നു">Immune system support & anti-tumor properties</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                                     <span class="text-lg">⚡</span>
                                 </div>
                                 <div>
-                                    <div class="font-semibold text-[#3A493E]">Ergothioneine</div>
+                                    <div class="font-semibold text-primary">Ergothioneine</div>
                                     <div class="text-sm text-stone-600" data-ml="ശക്തമായ ആന്റിഓക്‌സിഡന്റ്">Powerful antioxidant that protects DNA & cells</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                                     <span class="text-lg">❤️</span>
                                 </div>
                                 <div>
-                                    <div class="font-semibold text-[#3A493E]">Lovastatin</div>
+                                    <div class="font-semibold text-primary">Lovastatin</div>
                                     <div class="text-sm text-stone-600" data-ml="കൊളസ്ട്രോൾ കുറയ്ക്കുന്നു">Natural cholesterol-lowering compound</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#3A493E]/5 p-4 rounded-xl border border-[#3A493E]/20">
+                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                                     <span class="text-lg">🔥</span>
                                 </div>
                                 <div>
-                                    <div class="font-semibold text-[#3A493E]">Polyphenols</div>
+                                    <div class="font-semibold text-primary">Polyphenols</div>
                                     <div class="text-sm text-stone-600" data-ml="നീർവീക്കം തടയുന്നു">Anti-inflammatory & antioxidant properties</div>
                                 </div>
                             </div>
@@ -897,7 +897,7 @@ const products = [
         </div>
 
         <!-- Health Benefits Summary -->
-        <div class="bg-gradient-to-r from-[#3A493E] to-[#2C3A30] rounded-2xl p-8 text-white">
+        <div class="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 text-white">
             <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold mb-2" data-ml="എന്തുകൊണ്ട് ഓയിസ്റ്റർ കൂണുകൾ?">✨ Why Oyster Mushrooms Are Superfoods</h3>
                 <p class="text-white/80" data-ml="പോഷകങ്ങൾ നിറഞ്ഞതും, കുറഞ്ഞ കലോറിയും, നിരവധി ആരോഗ്യ ഗുണങ്ങളും.">Packed with nutrients, low in calories, and full of health benefits</p>
@@ -935,7 +935,7 @@ const products = [
 <section id="cooking-videos" class="py-20 bg-[#F8FAF8]">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="പാചകം പഠിക്കാം">Learn to Cook</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="പാചകം പഠിക്കാം">Learn to Cook</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പാചക വീഡിയോകളും ട്യൂട്ടോറിയലുകളും">Cooking Videos & Tutorials</h2>
             <p class="text-stone-600" data-ml="ഞങ്ങളുടെ വിദഗ്ദ്ധ വീഡിയോ ഗൈഡുകൾ ഉപയോഗിച്ച് കൂൺ പാചകം ചെയ്യുന്ന കലയിൽ പ്രാവീണ്യം നേടുക.">Master the art of cooking mushrooms with our expert video guides in Malayalam.</p>
         </div>
@@ -953,7 +953,7 @@ const products = [
                     <div class="p-6">
                         <h3 class="text-lg font-semibold text-stone-900 mb-2" data-ml={video.titleML || video.title}>{video.title}</h3>
                         <p class="text-stone-600 text-sm mb-4" data-ml={video.descriptionML || video.description}>{video.description}</p>
-                        <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors">
+                        <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank" class="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-dark transition-colors">
                             <span data-ml="യൂട്യൂബിൽ കാണുക">Watch on YouTube</span>
                             <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
@@ -977,7 +977,7 @@ const products = [
 <section id="recipes" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="റെസിപ്പി ശേഖരം">Recipe Collection</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="റെസിപ്പി ശേഖരം">Recipe Collection</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="ലളിതം. സ്വാദിഷ്ടം. ആരോഗ്യം.">Simple. Delicious. Healthy.</h2>
             <p class="text-stone-600" data-ml="കൂൺ പാചകം തുടങ്ങാൻ മൂന്ന് തിരഞ്ഞെടുത്ത റെസിപ്പികൾ.">Three carefully curated recipes to get you started with mushroom cooking.</p>
         </div>
@@ -1017,7 +1017,7 @@ const products = [
                                     <span data-ml="4 പേർക്ക്">Serves 4</span>
                                 </span>
                             </div>
-                            <a href={`/recipes/recipe-${index + 1}`} class="text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group-hover:underline">
+                            <a href={`/recipes/recipe-${index + 1}`} class="text-primary font-medium hover:text-primary-dark transition-colors group-hover:underline">
                                 <span data-ml="റെസിപ്പി കാണുക">View Recipe</span> →
                             </a>
                         </div>
@@ -1027,7 +1027,7 @@ const products = [
         </div>
 
         <div class="text-center mt-16">
-            <a href="/recipes" class="inline-flex items-center gap-3 px-8 py-4 border border-[#3A493E] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all group">
+            <a href="/recipes" class="inline-flex items-center gap-3 px-8 py-4 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all group">
                 <span data-ml="എല്ലാ റെസിപ്പികളും കാണുക">Browse All Recipes</span>
                 <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
             </a>
@@ -1041,7 +1041,7 @@ const products = [
 <section class="py-20 bg-[#F8FAF8]">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ">Our Products</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ">Our Products</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പ്രീമിയം കൂൺ ഇനങ്ങൾ">Premium Mushroom Varieties</h2>
             <p class="text-stone-600" data-ml="ഞങ്ങളുടെ പ്രീമിയം ഓർഗാനിക് കൂണുകൾ കണ്ടെത്തൂ, പരമാവധി ഫ്രഷ്‌നസും പോഷകങ്ങളും ഉറപ്പാക്കാൻ ദിവസവും വിളവെടുക്കുന്നു.">Discover our range of premium organic mushrooms, harvested daily to ensure maximum freshness and nutrition.</p>
         </div>
@@ -1056,8 +1056,8 @@ const products = [
                     <h3 class="text-xl font-semibold text-stone-900 mb-2" data-ml={product.nameML || product.name}>{product.name}</h3>
                     <p class="text-stone-600 text-sm mb-4" data-ml={product.descriptionML || product.description}>{product.description}</p>
                     <div class="flex items-center justify-between">
-                        <span class="text-[#3A493E] font-semibold">{product.price}</span>
-                        {/* <button class="px-4 py-2 bg-[#E9F0EA] text-[#3A493E] rounded-full hover:bg-[#3A493E] hover:text-white transition-all flex items-center gap-2 text-sm">
+                        <span class="text-primary font-semibold">{product.price}</span>
+                        {/* <button class="px-4 py-2 bg-primary-light text-primary rounded-full hover:bg-primary hover:text-white transition-all flex items-center gap-2 text-sm">
                             <i class="fas fa-shopping-basket"></i>
                             Add to Cart
                         </button> */}
@@ -1067,7 +1067,7 @@ const products = [
         </div>
 
         <div class="text-center mt-12">
-            <a href="/products" class="inline-flex items-center gap-2 text-[#3A493E] font-medium hover:text-[#2C3A30] transition-colors group">
+            <a href="/products" class="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-dark transition-colors group">
                 <span data-ml="എല്ലാ ഉൽപ്പന്നങ്ങളും കാണുക">View All Products</span>
                 <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
             </a>
@@ -1080,7 +1080,7 @@ const products = [
     <div class="max-w-7xl mx-auto px-6">
         <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="എന്തുകൊണ്ട് ഞങ്ങളെ തിരഞ്ഞെടുക്കണം">Why Choose Us</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="എന്തുകൊണ്ട് ഞങ്ങളെ തിരഞ്ഞെടുക്കണം">Why Choose Us</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="മീറ്റി മഷ്റൂംസ് പ്രത്യേകത">The Meaty Mushrooms Difference</h2>
             <p class="text-stone-600" data-ml="കൂൺ കൃഷിയിൽ ഞങ്ങളെ വ്യത്യസ്തരാക്കുന്നത് എന്താണെന്ന് കണ്ടെത്തൂ.">Discover what sets us apart in the world of mushroom cultivation.</p>
         </div>
@@ -1089,8 +1089,8 @@ const products = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Feature 1 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="0">
-                <div class="w-16 h-16 bg-[#E9F0EA] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-leaf text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-leaf text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="100% ഓർഗാനിക്">100% Organic</h3>
                 <p class="text-stone-600 text-sm leading-relaxed" data-ml="കീടനാശിനികളും കൃത്രിമ രാസവസ്തുക്കളും ഇല്ലാതെ ജൈവ രീതിയിൽ കൃഷി ചെയ്യുന്നത്.">Our mushrooms are grown using organic methods, free from pesticides and artificial additives.</p>
@@ -1098,8 +1098,8 @@ const products = [
 
             <!-- Feature 2 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-[#E9F0EA] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-clock text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-clock text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="അതേ ദിവസം ഡെലിവറി">Same Day Delivery</h3>
                 <p class="text-stone-600 text-sm leading-relaxed" data-ml="വിളവെടുത്ത് മണിക്കൂറുകൾക്കുള്ളിൽ ഫ്രഷ് കൂണുകൾ നിങ്ങളുടെ വീട്ടിലെത്തും.">Fresh mushrooms delivered to your doorstep within hours of harvesting.</p>
@@ -1107,8 +1107,8 @@ const products = [
 
             <!-- Feature 3 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-[#E9F0EA] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-flask text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-flask text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="ലാബ് ടെസ്റ്റ് ചെയ്തത്">Lab Tested</h3>
                 <p class="text-stone-600 text-sm leading-relaxed" data-ml="സുരക്ഷയും ഗുണനിലവാരവും ഉറപ്പുവരുത്താൻ കൃത്യമായ പരിശോധനകൾ.">Regular quality checks ensure the highest standards of safety and nutrition.</p>
@@ -1116,8 +1116,8 @@ const products = [
 
             <!-- Feature 4 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-16 h-16 bg-[#E9F0EA] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-handshake text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-handshake text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="പ്രാദേശിക കൂട്ടായ്മ">Local Community</h3>
                 <p class="text-stone-600 text-sm leading-relaxed" data-ml="വടകരയിലെ പ്രാദേശിക കർഷകരെ പിന്തുണയ്ക്കുന്നു.">Supporting local farmers and contributing to sustainable agriculture in Vadakara.</p>
@@ -1125,8 +1125,8 @@ const products = [
 
             <!-- Feature 5 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-16 h-16 bg-[#E9F0EA] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-seedling text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-seedling text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="സുസ്ഥിര കൃഷി">Sustainable Farming</h3>
                 <p class="text-stone-600 text-sm leading-relaxed" data-ml="പരിസ്ഥിതി സൗഹൃദമായ കൃഷി രീതികൾ.">Eco-friendly cultivation methods that prioritize environmental conservation.</p>
@@ -1134,8 +1134,8 @@ const products = [
 
             <!-- Feature 6 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="500">
-                <div class="w-16 h-16 bg-[#E9F0EA] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E] transition-colors">
-                    <i class="fas fa-phone-alt text-[#3A493E] text-2xl group-hover:text-white transition-colors"></i>
+                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-phone-alt text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="വിദഗ്ദ്ധ സഹായം">Expert Support</h3>
                 <p class="text-stone-600 text-sm leading-relaxed" data-ml="നിങ്ങളുടെ സംശയങ്ങൾക്കും കൃഷി അറിവുകൾക്കുമായി ഞങ്ങളുടെ ടീം കൂടെയുണ്ട്.">Our team is always available to assist with your queries and provide growing tips.</p>
@@ -1148,7 +1148,7 @@ const products = [
 <section id="safety" class="py-20 bg-[#F8FAF8]">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-sm font-medium text-[#3A493E] tracking-wider uppercase block mb-3" data-ml="സുരക്ഷയും ഗുണനിലവാരവും">Safety & Quality</span>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="സുരക്ഷയും ഗുണനിലവാരവും">Safety & Quality</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="ഭക്ഷ്യ സുരക്ഷയും രജിസ്ട്രേഷനുകളും">Food Safety & Registrations</h2>
             <p class="text-stone-600" data-ml="ഗുണനിലവാരത്തിലും സുരക്ഷയിലും വിട്ടുവീഴ്ചയില്ലാത്ത പ്രതിബദ്ധത. ഓരോ കൂണും ഉയർന്ന സുരക്ഷാ മാനദണ്ഡങ്ങൾ പാലിക്കുന്നുണ്ടെന്ന് ഞങ്ങൾ ഉറപ്പാക്കുന്നു.">Our commitment to quality and safety standards you can trust. We follow strict guidelines to ensure every mushroom meets the highest safety standards.</p>
         </div>
@@ -1156,17 +1156,17 @@ const products = [
         <!-- Registration Cards - Full Width Grid -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
             <!-- FSSAI License -->
-            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-all duration-300 border border-[#3A493E]/10 group">
-                <div class="w-24 h-24 bg-[#3A493E]/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#3A493E]/10 transition-colors">
-                    <i class="fas fa-certificate text-[#3A493E] text-4xl"></i>
+            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-all duration-300 border border-primary/10 group">
+                <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary/10 transition-colors">
+                    <i class="fas fa-certificate text-primary text-4xl"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-stone-900 mb-4" data-ml="FSSAI രജിസ്റ്റേർഡ്">FSSAI Registered</h3>
-                <div class="bg-[#3A493E]/5 p-6 rounded-xl mb-6 border border-[#3A493E]/20">
-                    <p class="text-[#3A493E] font-mono text-xl font-bold tracking-wider">21325234000380</p>
+                <div class="bg-primary/5 p-6 rounded-xl mb-6 border border-primary/20">
+                    <p class="text-primary font-mono text-xl font-bold tracking-wider">21325234000380</p>
                 </div>
                 <p class="text-stone-600 leading-relaxed" data-ml="ഇന്ത്യൻ ഫുഡ് സേഫ്റ്റി ആൻഡ് സ്റ്റാൻഡേർഡ് അതോറിറ്റി രജിസ്ട്രേഷൻ. ഞങ്ങളുടെ സൗകര്യം കൃത്യ പരിശോധനകൾക്ക് വിധേയമാവുകയും കർശനമായ ശുചിത്വ പാലിക്കുകയും ചെയ്യുന്നു.">Registered with Food Safety and Standards Authority of India. Our facility undergoes regular inspections and maintains strict hygiene protocols.</p>
-                <div class="mt-6 pt-6 border-t border-[#3A493E]/10">
-                    <div class="flex items-center justify-center gap-2 text-sm text-[#3A493E]">
+                <div class="mt-6 pt-6 border-t border-primary/10">
+                    <div class="flex items-center justify-center gap-2 text-sm text-primary">
                         <i class="fas fa-check-circle"></i>
                         <span data-ml="സാധുവായത്">Valid & Verified</span>
                     </div>
@@ -1174,17 +1174,17 @@ const products = [
             </div>
 
             <!-- MSME Registration -->
-            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-all duration-300 border border-[#3A493E]/10 group">
-                <div class="w-24 h-24 bg-[#3A493E]/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#3A493E]/10 transition-colors">
-                    <i class="fas fa-industry text-[#3A493E] text-4xl"></i>
+            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-all duration-300 border border-primary/10 group">
+                <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary/10 transition-colors">
+                    <i class="fas fa-industry text-primary text-4xl"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-stone-900 mb-4" data-ml="MSME രജിസ്റ്റേർഡ്">MSME Registered</h3>
-                <div class="bg-[#3A493E]/5 p-6 rounded-xl mb-6 border border-[#3A493E]/20">
-                    <p class="text-[#3A493E] font-mono text-xl font-bold tracking-wider">UDYAM-KL-08-0086495</p>
+                <div class="bg-primary/5 p-6 rounded-xl mb-6 border border-primary/20">
+                    <p class="text-primary font-mono text-xl font-bold tracking-wider">UDYAM-KL-08-0086495</p>
                 </div>
                 <p class="text-stone-600 leading-relaxed" data-ml="ചെറുകിട വ്യവസായ വികസന നിയമപ്രകാരം രജിസ്റ്റർ ചെയ്തത്. പ്രാദേശിക സമ്പദ്‌വ്യവസ്ഥയെയും സുസ്ഥിര ബിസിനസ്സ് രീതികളെയും പിന്തുണയ്ക്കുന്നു.">Registered under Micro, Small & Medium Enterprises Development Act. Supporting local economy and sustainable business practices.</p>
-                <div class="mt-6 pt-6 border-t border-[#3A493E]/10">
-                    <div class="flex items-center justify-center gap-2 text-sm text-[#3A493E]">
+                <div class="mt-6 pt-6 border-t border-primary/10">
+                    <div class="flex items-center justify-center gap-2 text-sm text-primary">
                         <i class="fas fa-check-circle"></i>
                         <span data-ml="സർക്കാർ അംഗീകൃത">Government Recognized</span>
                     </div>
@@ -1193,7 +1193,7 @@ const products = [
         </div>
 
         <!-- Storage & Handling Instructions - Enhanced -->
-        <div class="bg-white rounded-2xl p-10 shadow-sm border border-[#3A493E]/10">
+        <div class="bg-white rounded-2xl p-10 shadow-sm border border-primary/10">
             <div class="text-center mb-10">
                 <h3 class="text-2xl font-bold text-stone-900 mb-4" data-ml="സംഭരണവും കൈകാര്യം ചെയ്യലും">Storage & Handling Guidelines</h3>
                 <p class="text-stone-600 max-w-2xl mx-auto" data-ml="കൂണുകളുടെ ഫ്രഷ്‌നസും ഗുണനിലവാരവും നിലനിർത്താൻ ഈ ലളിതമായ നിർദ്ദേശങ്ങൾ പാലിക്കുക.">Follow these simple guidelines to maintain the freshness and quality of your mushrooms for maximum shelf life and nutritional value.</p>
@@ -1201,48 +1201,48 @@ const products = [
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center group">
-                    <div class="w-16 h-16 bg-[#3A493E]/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/10 transition-colors">
-                        <i class="fas fa-snowflake text-[#3A493E] text-2xl"></i>
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-snowflake text-primary text-2xl"></i>
                     </div>
                     <h4 class="font-bold text-stone-900 mb-3" data-ml="തണുത്ത സംഭരണം">Cold Storage</h4>
-                    <div class="bg-[#3A493E]/5 p-4 rounded-xl mb-4">
-                        <p class="text-2xl font-bold text-[#3A493E] mb-1">7 <span data-ml="ദിവസം">Days</span></p>
+                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
+                        <p class="text-2xl font-bold text-primary mb-1">7 <span data-ml="ദിവസം">Days</span></p>
                         <p class="text-xs text-stone-600" data-ml="ഫ്രിഡ്ജിൽ">In Refrigerator</p>
                     </div>
                     <p class="text-sm text-stone-600 leading-relaxed" data-ml="ഫ്രിഡ്ജിൽ (2-4°C) സൂക്ഷിച്ചാൽ 7 ദിവസം വരെ ഫ്രഷ് ആയിരിക്കും.">Store in refrigerator (2-4°C) for maximum freshness up to 7 days.</p>
                 </div>
                 
                 <div class="text-center group">
-                    <div class="w-16 h-16 bg-[#3A493E]/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/10 transition-colors">
-                        <i class="fas fa-thermometer-half text-[#3A493E] text-2xl"></i>
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-thermometer-half text-primary text-2xl"></i>
                     </div>
                     <h4 class="font-bold text-stone-900 mb-3" data-ml="സാധാരണ താപനിലയിൽ">Room Temperature</h4>
-                    <div class="bg-[#3A493E]/5 p-4 rounded-xl mb-4">
-                        <p class="text-2xl font-bold text-[#3A493E] mb-1">1 <span data-ml="ദിവസം">Day</span></p>
+                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
+                        <p class="text-2xl font-bold text-primary mb-1">1 <span data-ml="ദിവസം">Day</span></p>
                         <p class="text-xs text-stone-600" data-ml="സാധാരണ സംഭരണം">Normal Storage</p>
                     </div>
                     <p class="text-sm text-stone-600 leading-relaxed" data-ml="സാധാരണ താപനിലയിൽ, ഒരു ദിവസത്തിനുള്ളിൽ ഉപയോഗിക്കുക.">At room temperature, consume within 1 day for best quality and safety.</p>
                 </div>
                 
                 <div class="text-center group">
-                    <div class="w-16 h-16 bg-[#3A493E]/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/10 transition-colors">
-                        <i class="fas fa-box-open text-[#3A493E] text-2xl"></i>
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-box-open text-primary text-2xl"></i>
                     </div>
                     <h4 class="font-bold text-stone-900 mb-3" data-ml="പാക്കേജിംഗ് ശ്രദ്ധിക്കുക">Packaging Care</h4>
-                    <div class="bg-[#3A493E]/5 p-4 rounded-xl mb-4">
-                        <p class="text-lg font-bold text-[#3A493E] mb-1" data-ml="ഒറിജിനൽ">Original</p>
+                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
+                        <p class="text-lg font-bold text-primary mb-1" data-ml="ഒറിജിനൽ">Original</p>
                         <p class="text-xs text-stone-600" data-ml="പാക്കേജിംഗ്">Packaging</p>
                     </div>
                     <p class="text-sm text-stone-600 leading-relaxed" data-ml=" വായു സഞ്ചാരമുള്ള കവറിൽ സൂക്ഷിക്കുക. പ്ലാസ്റ്റിക് കവറിൽ നനവുണ്ടെങ്കിൽ പേപ്പർ ബാഗിലേക്ക് മാറ്റുക.">Keep in breathable packaging. Transfer to paper bag if plastic feels damp.</p>
                 </div>
                 
                 <div class="text-center group">
-                    <div class="w-16 h-16 bg-[#3A493E]/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#3A493E]/10 transition-colors">
-                        <i class="fas fa-tint text-[#3A493E] text-2xl"></i>
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-tint text-primary text-2xl"></i>
                     </div>
                     <h4 class="font-bold text-stone-900 mb-3" data-ml="തയ്യാറാക്കുമ്പോൾ">Preparation</h4>
-                    <div class="bg-[#3A493E]/5 p-4 rounded-xl mb-4">
-                        <p class="text-lg font-bold text-[#3A493E] mb-1" data-ml="മൃദുവായി">Gentle</p>
+                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
+                        <p class="text-lg font-bold text-primary mb-1" data-ml="മൃദുവായി">Gentle</p>
                         <p class="text-xs text-stone-600" data-ml="കഴുകുക">Cleaning</p>
                     </div>
                     <p class="text-sm text-stone-600 leading-relaxed" data-ml="പാചകം ചെയ്യുന്നതിന് തൊട്ടുമുമ്പ് തണുത്ത വെള്ളത്തിൽ മൃദുവായി കഴുകുക.">Rinse gently under cold water just before cooking. Pat dry with paper towel.</p>
@@ -1250,30 +1250,30 @@ const products = [
             </div>
 
             <!-- Additional Tips -->
-            <div class="mt-10 pt-8 border-t border-[#3A493E]/10">
+            <div class="mt-10 pt-8 border-t border-primary/10">
                 <h4 class="text-lg font-bold text-stone-900 mb-6 text-center" data-ml="കൂടുതൽ ഫ്രഷ്‌നസിനുള്ള നുറുങ്ങുകൾ">Pro Tips for Maximum Freshness</h4>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="flex items-start gap-3 p-4 bg-[#3A493E]/3 rounded-xl">
-                        <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center shrink-0 mt-1">
-                            <i class="fas fa-lightbulb text-[#3A493E] text-sm"></i>
+                    <div class="flex items-start gap-3 p-4 bg-primary/3 rounded-xl">
+                        <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-lightbulb text-primary text-sm"></i>
                         </div>
                         <div>
                             <h5 class="font-semibold text-stone-900 mb-1" data-ml="ഈർപ്പം ഒഴിവാക്കുക">Avoid Moisture</h5>
                             <p class="text-sm text-stone-600" data-ml="പാചകം ചെയ്യാൻ തയ്യാറാകുന്നത് വരെ കഴുകരുത്. അമിത ഈർപ്പം കേടാകാൻ കാരണമാകും.">Don't wash until ready to cook. Excess moisture reduces shelf life.</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-3 p-4 bg-[#3A493E]/3 rounded-xl">
-                        <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center shrink-0 mt-1">
-                            <i class="fas fa-eye text-[#3A493E] text-sm"></i>
+                    <div class="flex items-start gap-3 p-4 bg-primary/3 rounded-xl">
+                        <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-eye text-primary text-sm"></i>
                         </div>
                         <div>
                             <h5 class="font-semibold text-stone-900 mb-1" data-ml="പരിശോധിക്കുക">Visual Check</h5>
                             <p class="text-sm text-stone-600" data-ml="ഫ്രഷ് കൂണുകൾ ഉറപ്പുള്ളതും ഉണങ്ങിയതും പാടുകൾ ഇല്ലാത്തതുമായിരിക്കണം.">Fresh mushrooms should be firm, dry, and free from dark spots.</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-3 p-4 bg-[#3A493E]/3 rounded-xl">
-                        <div class="w-8 h-8 bg-[#3A493E]/20 rounded-full flex items-center justify-center shrink-0 mt-1">
-                            <i class="fas fa-utensils text-[#3A493E] text-sm"></i>
+                    <div class="flex items-start gap-3 p-4 bg-primary/3 rounded-xl">
+                        <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-utensils text-primary text-sm"></i>
                         </div>
                         <div>
                             <h5 class="font-semibold text-stone-900 mb-1" data-ml="പാചക ടിപ്പുകൾ">Cooking Tips</h5>
