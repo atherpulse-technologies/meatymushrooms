@@ -11,7 +11,9 @@ const recipes = [
     {
         id: 1,
         name: 'Mushroom Biryani',
+        nameML: 'കൂൺ ബിരിയാണി',
         description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices. A perfect blend of flavors that will tantalize your taste buds.',
+        descriptionML: 'സുഗന്ധവ്യഞ്ജനങ്ങളും കൂണും ചേർത്ത സ്പെഷ്യൽ ബിരിയാണി.',
         image: biryani,
         cookTime: '45 min',
         difficulty: 'Medium',
@@ -19,13 +21,16 @@ const recipes = [
         rating: 5,
         reviews: 24,
         category: 'Main Course',
+        categoryML: 'മെയിൻ കോഴ്സ്',
         ingredients: ['Basmati Rice', 'Fresh Mushrooms', 'Onions', 'Yogurt', 'Biryani Spices', 'Ghee', 'Fresh Herbs'],
         calories: 320
     },
     {
         id: 2,
         name: 'Creamy Mushroom Soup',
+        nameML: 'ക്രീമി മഷ്റൂം സൂപ്പ്',
         description: 'Rich and creamy soup perfect for cold evenings with fresh herbs. Comfort food at its finest.',
+        descriptionML: 'നല്ല കട്ടിയുള്ള ക്രീമി സൂപ്പ്. വൈകുന്നേരങ്ങളിൽ കഴിക്കാൻ ഉത്തമം.',
         image: soup,
         cookTime: '25 min',
         difficulty: 'Easy',
@@ -33,13 +38,16 @@ const recipes = [
         rating: 4,
         reviews: 18,
         category: 'Soup',
+        categoryML: 'സൂപ്പ്',
         ingredients: ['Fresh Mushrooms', 'Heavy Cream', 'Onions', 'Garlic', 'Vegetable Stock', 'Thyme', 'Butter', 'Black Pepper'],
         calories: 180
     },
     {
         id: 3,
         name: 'Quick Mushroom Stir Fry',
+        nameML: 'മഷ്റൂം സ്റ്റിർ ഫ്രൈ',
         description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce. Perfect for busy weeknights.',
+        descriptionML: 'പച്ചക്കറികളും കൂണും ചേർത്തുള്ള വേഗത്തിൽ തയ്യാറാക്കാവുന്ന വിഭവം.',
         image: fry,
         cookTime: '15 min',
         difficulty: 'Easy',
@@ -47,13 +55,16 @@ const recipes = [
         rating: 5,
         reviews: 31,
         category: 'Quick Meal',
+        categoryML: 'ലഘുഭ ഭക്ഷണം',
         ingredients: ['Mixed Mushrooms', 'Bell Peppers', 'Soy Sauce', 'Garlic', 'Ginger', 'Green Onions'],
         calories: 220
     },
     {
         id: 4,
-        name: 'കൂൺ കട്ലറ്റ് (Mushroom Cutlet)',
+        name: 'Mushroom Cutlet',
+        nameML: 'കൂൺ കട്ലറ്റ്',
         description: 'Traditional Kerala style mushroom cutlets with spices and herbs. Perfect snack for tea time.',
+        descriptionML: 'നാടൻ രുചിയിൽ കൂൺ കട്ലറ്റ്. ചായക്കൊപ്പം കഴിക്കാൻ മികച്ചത്.',
         image: fry,
         cookTime: '35 min',
         difficulty: 'Medium',
@@ -61,13 +72,16 @@ const recipes = [
         rating: 5,
         reviews: 15,
         category: 'Appetizer',
-        ingredients: ['കൂൺ (Mushroom)', 'ഉരുളക്കിഴങ്ങ് (Potato)', 'ഇഞ്ചി (Ginger)', 'സവാള (Onion)', 'പച്ചമുളക് (Green Chili)', 'മസാല (Spices)'],
+        categoryML: 'ലഘുഭ ഭക്ഷണം',
+        ingredients: ['Mushroom', 'Potato', 'Ginger', 'Onion', 'Green Chili', 'Spices'],
         calories: 285
     },
     {
         id: 5,
-        name: 'കൂൺ സൂപ്പ് (Malayalam Mushroom Soup)',
+        name: 'Kerala Mushroom Soup',
+        nameML: 'നാടൻ കൂൺ സൂപ്പ്',
         description: 'Traditional Kerala style creamy mushroom soup with cardamom and pepper. Perfect comfort food.',
+        descriptionML: 'ഏലക്കയും കുരുമുളകും ചേർത്ത നാടൻ സൂപ്പ്.',
         image: soup,
         cookTime: '25 min',
         difficulty: 'Easy',
@@ -75,13 +89,16 @@ const recipes = [
         rating: 5,
         reviews: 12,
         category: 'Soup',
-        ingredients: ['കൂൺ (Mushroom)', 'ഉള്ളി (Onion)', 'വെണ്ണ (Butter)', 'പാൽ (Milk)', 'കോൺഫ്ളവർ (Cornflour)', 'മുട്ട (Egg)'],
+        categoryML: 'സൂപ്പ്',
+        ingredients: ['Mushroom', 'Onion', 'Butter', 'Milk', 'Cornflour', 'Egg'],
         calories: 165
     },
     {
         id: 6,
-        name: 'കൂൺ ഓംലറ്റ് (Mushroom Omelet)',
+        name: 'Mushroom Omelet',
+        nameML: 'കൂൺ ഓംലറ്റ്',
         description: 'Traditional Malayalam style mushroom omelet with fresh herbs and spices. Perfect breakfast dish.',
+        descriptionML: 'കൂൺ ചേർത്ത സ്പെഷ്യൽ ഓംലറ്റ്. പ്രാതലിന് ഉത്തമം.',
         image: fry,
         cookTime: '15 min',
         difficulty: 'Easy',
@@ -89,7 +106,8 @@ const recipes = [
         rating: 5,
         reviews: 8,
         category: 'Quick Meal',
-        ingredients: ['കൂൺ (Mushroom)', 'മുട്ട (Egg)', 'ചെറിയ ഉള്ളി (Shallots)', 'ഇഞ്ചിവെളുത്തുള്ളി (Ginger-Garlic)', 'മല്ലിയില (Coriander)', 'വെളിച്ചെണ്ണ (Coconut Oil)'],
+        categoryML: 'ലഘുഭ ഭക്ഷണം',
+        ingredients: ['Mushroom', 'Egg', 'Shallots', 'Ginger-Garlic', 'Coriander', 'Coconut Oil'],
         calories: 190
     }
 ];
@@ -101,13 +119,13 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
 
 <main class="min-h-screen bg-white pt-20">
     <!-- Hero Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-stone-50">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Simple<br>
-                <span class="text-[#3A493E]">Mushroom Recipes</span>
+                <span data-ml="ലളിതമായ">Simple</span><br>
+                <span class="text-primary" data-ml="കൂൺ വിഭവങ്ങൾ">Mushroom Recipes</span>
             </h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12" data-ml="ഫ്രഷ് കൂൺ കൊണ്ട് എളുപ്പത്തിൽ തയ്യാറാക്കാവുന്ന രുചികരമായ വിഭവങ്ങൾ.">
                 Easy-to-follow recipes that turn fresh mushrooms into extraordinary meals. 
                 Perfect for home cooks of all skill levels.
             </p>
@@ -116,7 +134,7 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
             <div class="max-w-md mx-auto mb-8">
                 <div class="relative">
                     <input type="text" placeholder="Search recipes..." 
-                           class="w-full px-6 py-4 pl-12 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-[#3A493E] focus:border-transparent">
+                           class="w-full px-6 py-4 pl-12 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                     <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
             </div>
@@ -124,16 +142,16 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
             <!-- Quick Stats -->
             <div class="grid grid-cols-3 gap-8 max-w-md mx-auto">
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-[#3A493E] mb-1">15+</div>
-                    <div class="text-sm text-gray-600">Recipes</div>
+                    <div class="text-2xl font-bold text-primary mb-1">15+</div>
+                    <div class="text-sm text-gray-600" data-ml="റെസിപ്പികൾ">Recipes</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-[#3A493E] mb-1">5-45</div>
-                    <div class="text-sm text-gray-600">Minutes</div>
+                    <div class="text-2xl font-bold text-primary mb-1">5-45</div>
+                    <div class="text-sm text-gray-600" data-ml="മിനിറ്റ്">Minutes</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-[#3A493E] mb-1">4.8★</div>
-                    <div class="text-sm text-gray-600">Avg Rating</div>
+                    <div class="text-2xl font-bold text-primary mb-1">4.8★</div>
+                    <div class="text-sm text-gray-600" data-ml="റേറ്റിംഗ്">Avg Rating</div>
                 </div>
             </div>
         </div>
@@ -144,7 +162,7 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-wrap items-center justify-center gap-3">
                 {categories.map(category => (
-                    <button class="category-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 hover:border-[#3A493E] hover:text-[#3A493E] transition-all font-medium">
+                    <button class="category-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 hover:border-primary hover:text-primary transition-all font-medium">
                         {category}
                     </button>
                 ))}
@@ -163,7 +181,7 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
                                 <Image src={recipe.image} alt={recipe.name} 
                                        class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
                                 <div class="absolute top-4 left-4">
-                                    <span class="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                                    <span class="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1 rounded-full text-sm font-medium" data-ml={recipe.categoryML}>
                                         {recipe.category}
                                     </span>
                                 </div>
@@ -175,10 +193,10 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
                             </div>
                             
                             <div class="space-y-3">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#3A493E] transition-colors">
+                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors" data-ml={recipe.nameML}>
                                     {recipe.name}
                                 </h3>
-                                <p class="text-gray-600 leading-relaxed">{recipe.description}</p>
+                                <p class="text-gray-600 leading-relaxed" data-ml={recipe.descriptionML}>{recipe.description}</p>
                                 
                                 <!-- Recipe Meta -->
                                 <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
@@ -205,7 +223,7 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
                                     <ul class="text-sm text-gray-600 space-y-1">
                                         {recipe.ingredients.map(ingredient => (
                                             <li class="flex items-center gap-2">
-                                                <span class="w-1.5 h-1.5 bg-[#3A493E] rounded-full"></span>
+                                                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
                                                 {ingredient}
                                             </li>
                                         ))}
@@ -230,14 +248,14 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-stone-50">
         <div class="max-w-2xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Never Miss a Recipe</h2>
-            <p class="text-gray-600 mb-8">Get our latest mushroom recipes and cooking tips delivered to your inbox.</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" data-ml="എല്ലാ റെസിപ്പികളും ലഭിക്കാൻ">Never Miss a Recipe</h2>
+            <p class="text-gray-600 mb-8" data-ml="ഏറ്റവും പുതിയ റെസിപ്പികളും പാചക കുറിപ്പുകളും ഇമെയിലിലൂടെ നേടൂ.">Get our latest mushroom recipes and cooking tips delivered to your inbox.</p>
             <form class="flex gap-4 max-w-md mx-auto">
                 <input type="email" placeholder="Enter your email" 
-                       class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3A493E]">
-                <button class="px-6 py-3 bg-[#3A493E] text-white rounded-lg hover:bg-[#2C3A30] transition-colors font-medium">
+                       class="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <button class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium" data-ml="സബ്സ്ക്രൈബ്">
                     Subscribe
                 </button>
             </form>
@@ -255,18 +273,18 @@ const categories = ['All', 'Main Course', 'Soup', 'Quick Meal', 'Appetizer', 'Si
             button.addEventListener('click', function() {
                 // Remove active state from all buttons
                 filterButtons.forEach(btn => {
-                    btn.classList.remove('border-[#3A493E]', 'text-[#3A493E]', 'bg-[#3A493E]', 'text-white');
+                    btn.classList.remove('border-primary', 'text-primary', 'bg-primary', 'text-white');
                     btn.classList.add('border-gray-200', 'text-gray-600');
                 });
                 
                 // Add active state to clicked button
                 this.classList.remove('border-gray-200', 'text-gray-600');
-                this.classList.add('border-[#3A493E]', 'bg-[#3A493E]', 'text-white');
+                this.classList.add('border-primary', 'bg-primary', 'text-white');
             });
         });
         
         // Set initial active state
-        filterButtons[0].classList.add('border-[#3A493E]', 'bg-[#3A493E]', 'text-white');
+        filterButtons[0].classList.add('border-primary', 'bg-primary', 'text-white');
         filterButtons[0].classList.remove('border-gray-200', 'text-gray-600');
     });
 </script>

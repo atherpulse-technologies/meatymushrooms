@@ -180,8 +180,20 @@ import SEO from "../components/seo.astro";
         }
 
         function initTheme() {
-            const savedTheme = localStorage.getItem('app_theme') || 'forest';
-            setTheme(savedTheme);
+            // Check if this is a new session
+            const isSessionStarted = sessionStorage.getItem('session_started');
+            
+            if (!isSessionStarted) {
+                // New session: Pick a random theme
+                const themeKeys = Object.keys(themes);
+                const randomTheme = themeKeys[Math.floor(Math.random() * themeKeys.length)];
+                setTheme(randomTheme);
+                sessionStorage.setItem('session_started', 'true');
+            } else {
+                // Existing session: Respect saved preference
+                const savedTheme = localStorage.getItem('app_theme') || 'forest';
+                setTheme(savedTheme);
+            }
         }
         
         const savedLang = localStorage.getItem('app_language');
@@ -248,7 +260,7 @@ import SEO from "../components/seo.astro";
                         <a href="/products" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഉൽപ്പന്നങ്ങൾ">Products</a>
                         <a href="/farm" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഞങ്ങളുടെ ഫാം">Our Farm</a>
                         <a href="/recipes" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="പാചകക്കുറിപ്പുകൾ">Recipes</a>
-                        <a href="#contact" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ബന്ധപ്പെടുക">Contact</a>
+                        <a href="https://wa.me/918078937260" target="_blank" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ബന്ധപ്പെടുക">Contact</a>
                     </nav>
                     
                     <div class="flex items-center gap-3">
@@ -297,7 +309,7 @@ import SEO from "../components/seo.astro";
                 <a href="/products" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഉൽപ്പന്നങ്ങൾ">Products</a>
                 <a href="/farm" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഞങ്ങളുടെ ഫാം">Our Farm</a>
                 <a href="/recipes" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="പാചകക്കുറിപ്പുകൾ">Recipes</a>
-                <a href="#contact" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ബന്ധപ്പെടുക">Contact</a>
+                <a href="https://wa.me/918078937260" target="_blank" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ബന്ധപ്പെടുക">Contact</a>
                 
                 <div class="flex items-center justify-between pt-4 border-t border-stone-100 mt-2">
                     <span class="text-sm font-medium text-stone-600" data-ml="ഭാഷ മാറ്റുക">Change Language</span>
