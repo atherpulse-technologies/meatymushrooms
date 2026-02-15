@@ -75,9 +75,12 @@ import SEO from "../components/seo.astro";
     <script is:inline>
         function initLanguage() {
             const savedLang = localStorage.getItem('lang');
-            if (savedLang === 'ml') {
+            // Default to Malayalam if no preference is saved ('null') or if 'ml' is explicitly saved
+            if (savedLang === 'ml' || savedLang === null) {
                 document.documentElement.classList.add('lang-ml');
                 updateLanguageText(true);
+                // Save default preference
+                if (savedLang === null) localStorage.setItem('lang', 'ml');
             }
         }
 
@@ -142,7 +145,7 @@ import SEO from "../components/seo.astro";
 <body class="bg-[#FFFDF9]">
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-6 py-2">
+        <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <a href="/" class="flex flex-col items-center leading-none group">
