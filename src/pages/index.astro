@@ -157,13 +157,16 @@ const products = [
     
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center lg:text-left" data-aos="fade-right">
+            <div class="text-center lg:text-left">
 
                 <h1 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-6">
                     <span data-ml="വടകരയിൽ നിന്ന് ദിവസവും വിളവെടുക്കുന്ന ഫ്രഷ് കൂണുകൾ">Fresh Mushrooms, harvested daily from Vadakara</span>
                 </h1>
                 <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0" data-ml="പാചക കുറിപ്പുകൾ മുതൽ പോഷക ഗുണങ്ങൾ വരെ - നിങ്ങളുടെ പ്രീമിയം ഓർഗാനിക് കൂണുകൾ പരമാവധി പ്രയോജനപ്പെടുത്തുന്നതിനുള്ള പൂർണ്ണമായ ഗൈഡ്.">
                     From cooking tips to nutritional benefits - your complete guide to making the most of your premium organic mushrooms.
+                </p>
+                <p class="text-sm text-stone-500 mb-8 max-w-xl mx-auto lg:mx-0" data-ml="വടകര, കോഴിക്കോട്, കാലിക്കറ്റ് മേഖലകളിൽ ഫ്രഷ് കൂണുകൾ ലഭ്യമാണ്.">
+                    Looking for mushrooms in Vadakara, mushrooms in Kozhikode, mushrooms in Calicut, or Kerala mushrooms? We deliver fresh harvests directly from our farm.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="https://wa.me/918078937260" target="_blank" class="px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-xl hover:-translate-y-1">
@@ -178,26 +181,26 @@ const products = [
 
                 <!-- Trust Badges -->
                 <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto lg:mx-0">
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
                         <p class="text-3xl font-bold text-primary mb-1">100%</p>
                         <p class="text-sm text-stone-600" data-ml="ഓർഗാനിക്">Organic</p>
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
                         <p class="text-3xl font-bold text-primary mb-1">10kg+</p>
                         <p class="text-sm text-stone-600" data-ml="ദിവസവും വിളവെടുപ്പ്">Daily Harvest</p>
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center">
                         <p class="text-3xl font-bold text-primary mb-1">100+</p>
                         <p class="text-sm text-stone-600" data-ml="സന്തുഷ്ടരായ ഉപഭോക്താക്കൾ">Happy Customers</p>
                     </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center">
                         <p class="text-3xl font-bold text-primary mb-1">4.9</p>
                         <p class="text-sm text-stone-600" data-ml="റേറ്റിംഗ്">Star Rating</p>
                     </div>
                 </div>
             </div>
 
-            <div class="relative" data-aos="fade-left">
+            <div class="relative">
                 <div class="relative max-w-2xl mx-auto animate-float">
                     <Image src={image1} alt="Fresh Oyster Mushrooms" class="w-full rounded-3xl" widths={[480, 768, 960]} sizes="(max-width: 768px) 92vw, (max-width: 1200px) 50vw, 640px" loading="eager" fetchpriority="high" quality={72} />
                     <div class="absolute bottom-8 right-0 md:-right-8 z-20 bg-white/90 backdrop-blur-sm py-3 px-6 rounded-2xl shadow-lg border border-primary/10 flex flex-col items-start text-left min-w-[200px]">
@@ -943,7 +946,7 @@ const products = [
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cookingVideos.map((video, index) => (
-                <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
                     <div class="relative">
                         <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt={video.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -985,7 +988,7 @@ const products = [
 
         <div class="grid lg:grid-cols-3 gap-12">
             {recipes.map((recipe, index) => (
-                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay={index * 150}>
+                <div class="group cursor-pointer">
                     <div class="relative mb-8 overflow-hidden rounded-3xl">
                         <Image src={recipe.image} alt={recipe.name} class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500"></div>
@@ -1049,7 +1052,7 @@ const products = [
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
-                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100">
                     <div class="relative mb-6 overflow-hidden rounded-xl">
                         <Image src={product.image} alt={product.name} class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
                         <span class={`absolute top-4 right-4 ${product.badgeColor} text-white text-sm px-3 py-1 rounded-full`} data-ml={product.badgeML || product.badge}>{product.badge}</span>
@@ -1089,7 +1092,7 @@ const products = [
         <!-- Features Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Feature 1 -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="0">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-leaf text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
@@ -1098,7 +1101,7 @@ const products = [
             </div>
 
             <!-- Feature 2 -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-clock text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
@@ -1107,7 +1110,7 @@ const products = [
             </div>
 
             <!-- Feature 3 -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-flask text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
@@ -1116,7 +1119,7 @@ const products = [
             </div>
 
             <!-- Feature 4 -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-handshake text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
@@ -1125,7 +1128,7 @@ const products = [
             </div>
 
             <!-- Feature 5 -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-seedling text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
@@ -1134,7 +1137,7 @@ const products = [
             </div>
 
             <!-- Feature 6 -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-phone-alt text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>

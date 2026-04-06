@@ -12,24 +12,12 @@ import SEO from "../components/seo.astro";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meaty Mushrooms - Premium Organic Mushrooms from Makkool</title>
     <SEO />
     
     <!-- Tailwind CSS -->
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     
-    <!-- Fonts and icon styles are loaded in SEO component -->
-
-
-
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
-
-
-
+    <!-- External fonts and icon styles removed for faster mobile performance -->
 
     
     <style is:global>
@@ -64,23 +52,23 @@ import SEO from "../components/seo.astro";
         .text-primary\/70 { color: rgba(var(--color-primary-rgb), 0.7); }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
         }
         /* Malayalam Specific Styles */
         html.lang-ml body {
-            font-family: 'Manjari', sans-serif;
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
             font-size: 0.9em; 
             line-height: 1.6;
         }
         html.lang-ml h1, html.lang-ml h2, html.lang-ml h3, html.lang-ml h4 {
-            font-family: 'Manjari', sans-serif;
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
             font-weight: 700;
         }
         .font-pattaya {
-            font-family: 'Pattaya', sans-serif;
+            font-family: inherit;
         }
         .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
+            font-family: inherit;
         }
         @keyframes float {
             0% { transform: translateY(0px); }
@@ -92,100 +80,72 @@ import SEO from "../components/seo.astro";
         }
     </style>
     <script is:inline>
-        function initLanguage() {
-            const savedLang = localStorage.getItem('lang');
-            if (savedLang === 'ml' || savedLang === null) {
-                document.documentElement.classList.add('lang-ml');
-                updateLanguageText(true);
-                if (savedLang === null) localStorage.setItem('lang', 'ml');
+        function updateLanguageText(isMl) {
+            if (isMl) {
+                document.querySelectorAll('[data-ml]').forEach(el => {
+                    if (!el.dataset.en) el.dataset.en = el.textContent;
+                    el.textContent = el.dataset.ml;
+                });
+                document.querySelectorAll('[data-ml-placeholder]').forEach(el => {
+                    if (!el.dataset.enPlaceholder) el.dataset.enPlaceholder = el.placeholder;
+                    el.placeholder = el.dataset.mlPlaceholder;
+                });
+                return;
             }
+
+            document.querySelectorAll('[data-ml][data-en]').forEach(el => {
+                el.textContent = el.dataset.en;
+            });
+            document.querySelectorAll('[data-ml-placeholder][data-en-placeholder]').forEach(el => {
+                el.placeholder = el.dataset.enPlaceholder;
+            });
+        }
+
+        function updateToggleButtons(isMl) {
+            const desktopBtn = document.getElementById('lang-toggle-desktop');
+            const mobileBtn = document.getElementById('lang-toggle-mobile');
+
+            [desktopBtn, mobileBtn].forEach(btn => {
+                if (!btn) return;
+                const enSpan = btn.querySelector('.lang-en');
+                const mlSpan = btn.querySelector('.lang-ml-text');
+                if (isMl) {
+                    enSpan.classList.add('opacity-50', 'font-normal');
+                    enSpan.classList.remove('font-bold', 'opacity-100');
+                    mlSpan.classList.add('opacity-100', 'font-bold');
+                    mlSpan.classList.remove('opacity-50', 'font-normal');
+                } else {
+                    enSpan.classList.add('opacity-100', 'font-bold');
+                    enSpan.classList.remove('opacity-50', 'font-normal');
+                    mlSpan.classList.add('opacity-50', 'font-normal');
+                    mlSpan.classList.remove('opacity-100', 'font-bold');
+                }
+            });
         }
 
         function toggleLanguage() {
-            const isMl = document.documentElement.classList.toggle('lang-ml');
+            const isMl = !document.documentElement.classList.contains('lang-ml');
+            document.documentElement.classList.toggle('lang-ml', isMl);
             localStorage.setItem('app_language', isMl ? 'ml' : 'en');
             updateLanguageText(isMl);
             updateToggleButtons(isMl);
         }
 
-        function updateLanguageText(isMl) {
-            document.querySelectorAll('[data-ml]').forEach(el => {
-                if (!el.dataset.en) el.dataset.en = el.textContent;
-                if (isMl) {
-                    el.textContent = el.dataset.ml;
-                } else {
-                    el.textContent = el.dataset.en;
-                }
-            });
-            document.querySelectorAll('[data-ml-placeholder]').forEach(el => {
-                if (!el.dataset.enPlaceholder) el.dataset.enPlaceholder = el.placeholder;
-                el.placeholder = isMl ? el.dataset.mlPlaceholder : el.dataset.enPlaceholder;
-            });
-        }
-
-        function updateToggleButtons(isMl) {
-             const desktopBtn = document.getElementById('lang-toggle-desktop');
-             const mobileBtn = document.getElementById('lang-toggle-mobile');
-             
-             [desktopBtn, mobileBtn].forEach(btn => {
-                 if(btn) {
-                     const enSpan = btn.querySelector('.lang-en');
-                     const mlSpan = btn.querySelector('.lang-ml-text');
-                     if(isMl) {
-                         enSpan.classList.add('opacity-50', 'font-normal');
-                         enSpan.classList.remove('font-bold', 'opacity-100');
-                         mlSpan.classList.add('opacity-100', 'font-bold');
-                         mlSpan.classList.remove('opacity-50', 'font-normal');
-                     } else {
-                         enSpan.classList.add('opacity-100', 'font-bold');
-                         enSpan.classList.remove('opacity-50', 'font-normal');
-                         mlSpan.classList.add('opacity-50', 'font-normal');
-                         mlSpan.classList.remove('opacity-100', 'font-bold');
-                     }
-                 }
-             });
-        }
-        
-        // --- Fixed Brand Theme ---
-        // Using only burgundy/red (berry) as the fixed brand color.
-        const themes = {
-            berry: { primary: '#8B1E3F', rgb: '139, 30, 63', dark: '#6D1530', light: '#F6E6EB' }
-        };
-
-        function setTheme(themeName) {
-            const theme = themes[themeName] || themes.berry;
-            
-            const root = document.documentElement;
-            root.style.setProperty('--color-primary', theme.primary);
-            root.style.setProperty('--color-primary-rgb', theme.rgb);
-            root.style.setProperty('--color-primary-dark', theme.dark);
-            root.style.setProperty('--color-primary-light', theme.light);
-            
-            localStorage.setItem('app_theme', 'berry');
-        }
-
-        function initTheme() {
-            setTheme('berry');
-        }
-        
         const savedLang = localStorage.getItem('app_language');
-        const shouldBeMl = savedLang === 'ml' || savedLang === null;
-        
+        const shouldBeMl = savedLang === 'ml';
+
         if (shouldBeMl) {
             document.documentElement.classList.add('lang-ml');
-            if (savedLang === null) localStorage.setItem('app_language', 'ml');
         }
-        
-        // Use fixed brand color (burgundy)
-        setTheme('berry');
 
         document.addEventListener('DOMContentLoaded', () => {
-             const isMl = document.documentElement.classList.contains('lang-ml');
-             updateLanguageText(isMl);
-             updateToggleButtons(isMl);
-             
-             document.getElementById('lang-toggle-desktop')?.addEventListener('click', toggleLanguage);
-             document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
+            if (shouldBeMl) {
+                updateLanguageText(true);
+            }
+            updateToggleButtons(shouldBeMl);
+
+            document.getElementById('lang-toggle-desktop')?.addEventListener('click', toggleLanguage);
+            document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
         });
     </script>
 </head>
@@ -214,11 +174,10 @@ import SEO from "../components/seo.astro";
                         <button id="lang-toggle-desktop" class="flex items-center gap-2 text-sm bg-stone-100 px-4 py-2 rounded-full hover:bg-stone-200 transition-colors border border-stone-200">
                             <span class="lang-en font-bold text-primary">English</span>
                             <span class="text-stone-300">|</span>
-                            <span class="lang-ml-text opacity-50 text-primary font-medium" style="font-family: 'Manjari', sans-serif;">മലയാളം</span>
+                            <span class="lang-ml-text opacity-50 text-primary font-medium">മലയാളം</span>
                         </button>
                         
                         <a href="https://wa.me/918078937260" target="_blank" class="px-6 py-2.5 bg-primary text-white rounded-full hover:bg-primary-dark hover:shadow-lg transition-all flex items-center gap-2 text-sm font-medium">
-                            <i class="fas fa-shopping-basket text-xs"></i>
                             <span data-ml="ഓർഡർ ചെയ്യൂ">Order Now</span>
                         </a>
                     </div>
@@ -226,7 +185,7 @@ import SEO from "../components/seo.astro";
 
                 <!-- Mobile Menu Button -->
                 <button class="lg:hidden p-2" id="mobile-menu-button" aria-label="Open mobile menu" aria-controls="mobile-menu" aria-expanded="false">
-                    <i class="fas fa-bars text-xl text-stone-600"></i>
+                    <span class="text-xl text-stone-600 leading-none" aria-hidden="true">☰</span>
                 </button>
             </div>
         </div>
@@ -245,12 +204,11 @@ import SEO from "../components/seo.astro";
                     <button id="lang-toggle-mobile" class="flex items-center gap-2 text-sm bg-stone-100 px-4 py-2 rounded-full hover:bg-stone-200 transition-colors border border-stone-200">
                         <span class="lang-en font-bold text-primary">English</span>
                         <span class="text-stone-300">|</span>
-                        <span class="lang-ml-text opacity-50 text-primary font-medium" style="font-family: 'Manjari', sans-serif;">മലയാളം</span>
+                        <span class="lang-ml-text opacity-50 text-primary font-medium">മലയാളം</span>
                     </button>
                 </div>
 
                 <a href="https://wa.me/918078937260" target="_blank" class="w-full px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 text-sm font-medium mt-2">
-                    <i class="fas fa-shopping-basket text-xs"></i>
                     <span data-ml="ഓർഡർ ചെയ്യൂ">Order Now</span>
                 </a>
             </div>

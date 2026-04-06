@@ -9,25 +9,28 @@ export interface Props {
 }
 
 const {
-  title = "Meaty Mushrooms - Premium Organic Mushrooms from Makkool, Kozhikode",
-  description = "Meaty Mushrooms is Vadakara, Calicut's largest mushroom producer, offering fresh oyster mushrooms, mushroom powder, and more. Grown naturally in Kerala for freshness and quality.",
+  title = "Meaty Mushrooms - Premium Organic Mushrooms from Vadakara, Kozhikode",
+  description = "Meaty Mushrooms is Vadakara and Kozhikode (Calicut)'s trusted mushroom farm, offering fresh-from-Vadakara oyster mushrooms, mushroom powder, and value-added mushroom products in Kerala.",
   canonical = "https://www.meatymushrooms.in",
   image = "https://www.meatymushrooms.in/assets/images/og-image.jpg",
   type = "website",
-  keywords = "Meaty Mushrooms, oyster mushrooms Kerala, fresh mushrooms Kozhikode, organic mushrooms India, mushroom powder, mushroom achar, mushroom pappadam, spawn production, mushroom farm Kerala"
+  keywords = "mushrooms vadakara, mushrooms kozhikkode, mushrooms calicut, kerala mushrooms, meaty mushrooms, oyster mushrooms kerala, fresh mushrooms vadakara, fresh mushrooms kozhikkode, fresh mushrooms calicut, organic mushrooms kerala, mushroom farm vadakara, mushroom farm kozhikkode, mushroom farm calicut, mushroom supplier kerala, mushroom wholesale kerala, edible mushrooms kerala, oyster mushroom farm kerala, mushroom powder kerala, buy mushrooms vadakara, buy mushrooms kozhikkode, buy mushrooms calicut, fresh oyster mushrooms kerala, mushroom cultivation kerala, mushroom products kerala, mushroom achar kerala, mushroom pappadam kerala, spawn production kerala, mushroom delivery kozhikkode"
 } = Astro.props;
 
 const jsonLD = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   "name": "Meaty Mushrooms",
   "url": "https://www.meatymushrooms.in",
   "logo": "https://www.meatymushrooms.in/assets/images/logo.png",
-  "description": "Meaty Mushrooms is Vadakara, Calicut's largest mushroom producer, offering fresh oyster mushrooms, mushroom powder, and upcoming value-added mushroom products like achar, pappadam, and spawn.",
+  "description": "Meaty Mushrooms is a Kerala mushroom farm based in Makkoolpeedika, Vadakara, serving Kozhikode (Calicut) with fresh-from-Vadakara oyster mushrooms and mushroom products.",
+  "keywords": "mushrooms vadakara, mushrooms kozhikkode, mushrooms calicut, kerala mushrooms, oyster mushrooms kerala, fresh mushrooms kerala",
+  "areaServed": ["Vadakara", "Kozhikode", "Calicut", "Kerala"],
+  "telephone": "+91-80789-37260",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Keethadi Road, Makkoolpeedika",
-    "addressLocality": "Makkool",
+    "addressLocality": "Vadakara",
     "addressRegion": "Kerala",
     "postalCode": "673104",
     "addressCountry": "IN"
@@ -40,9 +43,6 @@ const jsonLD = {
 };
 ---
 
-<!-- Preload Critical Assets -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" as="style" crossorigin>
-
 <!-- Favicon Links -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -50,20 +50,15 @@ const jsonLD = {
 <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
 <link rel="manifest" href="/favicon/site.webmanifest">
 
-<!-- Preconnect to External Domains -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- DNS Prefetch -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
-
 <!-- SEO Meta Tags -->
 <title>{title}</title>
 <meta name="description" content={description}>
 <meta name="robots" content="index, follow">
 <meta name="author" content="Meaty Mushrooms">
 <meta name="keywords" content={keywords}>
+<meta name="geo.region" content="IN-KL">
+<meta name="geo.placename" content="Vadakara, Kozhikode, Kerala">
+<meta name="ICBM" content="11.6085, 75.5917">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type}>
@@ -86,17 +81,3 @@ const jsonLD = {
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(jsonLD)}></script>
 
-<!-- Optimized Font Loading -->
-<link rel="preload" 
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600&family=Pattaya&family=Manjari:wght@400;700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600&family=Pattaya&family=Manjari:wght@400;700&display=swap">
-</noscript>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
-<noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</noscript>

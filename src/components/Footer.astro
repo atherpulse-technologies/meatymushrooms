@@ -10,14 +10,14 @@
                     </a>
                     <p class="text-gray-300 text-sm">Premium organic mushrooms cultivated with care in Vadakara, Kerala. Fresh from farm to your plate.</p>
                     <div class="flex space-x-4">
-                        <a href="https://wa.me/918078937260" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/918078937260" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors text-xs font-semibold">
+                            WA
                         </a>
-                        <a href="https://www.instagram.com/meatymushrooms" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/meatymushrooms" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors text-xs font-semibold">
+                            IG
                         </a>
-                        <a href="https://www.facebook.com/meatymushrooms" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook page" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/meatymushrooms" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook page" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors text-xs font-semibold">
+                            FB
                         </a>
                     </div>
                 </div>
@@ -39,15 +39,15 @@
                     <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-sm">
-                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span aria-hidden="true" class="mt-1">•</span>
                             <span class="text-gray-300">Keethadi Road, Makkoolpeedika<br>Vadakara, Kozhikode<br>Kerala, India</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm">
-                            <i class="fas fa-phone-alt"></i>
+                            <span aria-hidden="true">•</span>
                             <a href="tel:+918078937260" class="text-gray-300 hover:text-white transition-colors">+91 80789 37260</a>
                         </li>
                         <li class="flex items-center gap-3 text-sm">
-                            <i class="fas fa-envelope"></i>
+                            <span aria-hidden="true">•</span>
                             <a href="mailto:info@meatymushrooms.in" class="text-gray-300 hover:text-white transition-colors">info@meatymushrooms.in</a>
                         </li>
                     </ul>
@@ -83,7 +83,7 @@
                     <a href="https://atherpulse.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/5 rounded-full text-xs text-white/80 hover:text-white hover:bg-white/10 transition-all border border-white/5 group">
                         <span class="font-normal">Made by</span>
                         <span class="font-semibold text-white/90 group-hover:text-white">Atherpulse Technologies</span>
-                        <i class="fas fa-external-link-alt text-[10px] ml-0.5 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        <span aria-hidden="true" class="text-[10px] ml-0.5 opacity-50 group-hover:opacity-100 transition-opacity">↗</span>
                     </a>
 
                     <div class="flex items-center gap-6">
@@ -96,39 +96,7 @@
         </div>
     </footer>
 
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <script is:inline>
-        function initAOSWhenIdle() {
-            const loadAOS = () => {
-                const css = document.createElement('link');
-                css.rel = 'stylesheet';
-                css.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
-                document.head.appendChild(css);
-
-                const script = document.createElement('script');
-                script.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
-                script.defer = true;
-                script.onload = () => {
-                    if (typeof window.AOS !== 'undefined') {
-                        window.AOS.init({
-                            duration: 900,
-                            once: true,
-                            easing: 'ease-out-cubic'
-                        });
-                    }
-                };
-                document.body.appendChild(script);
-            };
-
-            if ('requestIdleCallback' in window) {
-                window.requestIdleCallback(loadAOS, { timeout: 1500 });
-            } else {
-                window.setTimeout(loadAOS, 500);
-            }
-        }
-
-        window.addEventListener('load', initAOSWhenIdle);
-
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -141,10 +109,9 @@
                     mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
                     mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
                     mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-                    const icon = mobileMenuButton.querySelector('i');
+                    const icon = mobileMenuButton.querySelector('span[aria-hidden="true"]');
                     if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
+                        icon.textContent = isOpen ? '✕' : '☰';
                     }
                 });
             }
