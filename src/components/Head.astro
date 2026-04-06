@@ -45,11 +45,11 @@ import SEO from "../components/seo.astro";
     
     <style is:global>
         :root {
-            /* Default Theme (Forest) */
-            --color-primary: #3A493E;
-            --color-primary-rgb: 58, 73, 62;
-            --color-primary-dark: #2C3A30;
-            --color-primary-light: #E9F0EA; /* Light bg */
+            /* Fixed Brand Theme (Berry/Burgundy) */
+            --color-primary: #8B1E3F;
+            --color-primary-rgb: 139, 30, 63;
+            --color-primary-dark: #6D1530;
+            --color-primary-light: #F6E6EB; 
             --color-accent: #fbbf24; /* Amber-400 */
         }
 
@@ -157,18 +157,14 @@ import SEO from "../components/seo.astro";
              });
         }
         
-        // --- Theme Switcher Logic ---
+        // --- Fixed Brand Theme ---
+        // Using only burgundy/red (berry) as the fixed brand color.
         const themes = {
-            forest: { primary: '#3A493E', rgb: '58, 73, 62', dark: '#2C3A30', light: '#E9F0EA' },
-            ocean:  { primary: '#006D77', rgb: '0, 109, 119', dark: '#004E56', light: '#E6F3F4' },
-            earth:  { primary: '#B05E27', rgb: '176, 94, 39', dark: '#8A481D', light: '#F9EFE9' },
-            berry:  { primary: '#8B1E3F', rgb: '139, 30, 63', dark: '#6D1530', light: '#F6E6EB' },
-            spicy:  { primary: '#C04E3F', rgb: '192, 78, 63', dark: '#9A3B2E', light: '#F8EDEC' }
+            berry: { primary: '#8B1E3F', rgb: '139, 30, 63', dark: '#6D1530', light: '#F6E6EB' }
         };
 
         function setTheme(themeName) {
-            const theme = themes[themeName];
-            if (!theme) return;
+            const theme = themes[themeName] || themes.berry;
             
             const root = document.documentElement;
             root.style.setProperty('--color-primary', theme.primary);
@@ -176,24 +172,11 @@ import SEO from "../components/seo.astro";
             root.style.setProperty('--color-primary-dark', theme.dark);
             root.style.setProperty('--color-primary-light', theme.light);
             
-            localStorage.setItem('app_theme', themeName);
+            localStorage.setItem('app_theme', 'berry');
         }
 
         function initTheme() {
-            // Check if this is a new session
-            const isSessionStarted = sessionStorage.getItem('session_started');
-            
-            if (!isSessionStarted) {
-                // New session: Pick a random theme
-                const themeKeys = Object.keys(themes);
-                const randomTheme = themeKeys[Math.floor(Math.random() * themeKeys.length)];
-                setTheme(randomTheme);
-                sessionStorage.setItem('session_started', 'true');
-            } else {
-                // Existing session: Respect saved preference
-                const savedTheme = localStorage.getItem('app_theme') || 'forest';
-                setTheme(savedTheme);
-            }
+            setTheme('berry');
         }
         
         const savedLang = localStorage.getItem('app_language');
@@ -204,8 +187,8 @@ import SEO from "../components/seo.astro";
             if (savedLang === null) localStorage.setItem('app_language', 'ml');
         }
         
-        // Run specific init logic immediately
-        initTheme();
+        // Use fixed brand color (burgundy)
+        setTheme('berry');
 
         document.addEventListener('DOMContentLoaded', () => {
              const isMl = document.documentElement.classList.contains('lang-ml');
@@ -214,31 +197,6 @@ import SEO from "../components/seo.astro";
              
              document.getElementById('lang-toggle-desktop')?.addEventListener('click', toggleLanguage);
              document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
-             
-             // Theme Button Logic
-             const themeBtn = document.getElementById('theme-toggle-btn');
-             const themeMenu = document.getElementById('theme-menu');
-             
-             if (themeBtn && themeMenu) {
-                 themeBtn.addEventListener('click', (e) => {
-                     e.stopPropagation();
-                     themeMenu.classList.toggle('hidden');
-                 });
-                 
-                 document.addEventListener('click', (e) => {
-                     if (!themeBtn.contains(e.target) && !themeMenu.contains(e.target)) {
-                         themeMenu.classList.add('hidden');
-                     }
-                 });
-                 
-                 document.querySelectorAll('.theme-option').forEach(btn => {
-                     btn.addEventListener('click', () => {
-                         const theme = btn.dataset.theme;
-                         setTheme(theme);
-                         themeMenu.classList.add('hidden');
-                     });
-                 });
-             }
         });
     </script>
 </head>
@@ -264,24 +222,6 @@ import SEO from "../components/seo.astro";
                     </nav>
                     
                     <div class="flex items-center gap-3">
-                        <!-- Theme Toggle -->
-                        <div class="relative">
-                            <button id="theme-toggle-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 transition-colors border border-stone-200" title="Change Theme">
-                                <i class="fas fa-palette"></i>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="theme-menu" class="hidden absolute top-12 right-0 bg-white rounded-xl shadow-xl border border-stone-100 p-3 w-48 z-50 animate-in fade-in zoom-in duration-200">
-                                <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2 block px-2">Select Theme</span>
-                                <div class="grid grid-cols-5 gap-2">
-                                    <button class="theme-option w-8 h-8 rounded-full bg-[#3A493E] hover:scale-110 transition-transform ring-2 ring-transparent hover:ring-[#3A493E]/30" data-theme="forest" title="Forest"></button>
-                                    <button class="theme-option w-8 h-8 rounded-full bg-[#006D77] hover:scale-110 transition-transform ring-2 ring-transparent hover:ring-[#006D77]/30" data-theme="ocean" title="Ocean"></button>
-                                    <button class="theme-option w-8 h-8 rounded-full bg-[#B05E27] hover:scale-110 transition-transform ring-2 ring-transparent hover:ring-[#B05E27]/30" data-theme="earth" title="Earth"></button>
-                                    <button class="theme-option w-8 h-8 rounded-full bg-[#8B1E3F] hover:scale-110 transition-transform ring-2 ring-transparent hover:ring-[#8B1E3F]/30" data-theme="berry" title="Berry"></button>
-                                    <button class="theme-option w-8 h-8 rounded-full bg-[#C04E3F] hover:scale-110 transition-transform ring-2 ring-transparent hover:ring-[#C04E3F]/30" data-theme="spicy" title="Spicy"></button>
-                                </div>
-                            </div>
-                        </div>
-
                         <button id="lang-toggle-desktop" class="flex items-center gap-2 text-sm bg-stone-100 px-4 py-2 rounded-full hover:bg-stone-200 transition-colors border border-stone-200">
                             <span class="lang-en font-bold text-primary">English</span>
                             <span class="text-stone-300">|</span>
