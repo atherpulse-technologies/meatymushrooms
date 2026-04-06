@@ -179,19 +179,19 @@ const products = [
                 <!-- Trust Badges -->
                 <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto lg:mx-0">
                     <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-3xl font-bold text-primary mb-1">100%</h3>
+                        <p class="text-3xl font-bold text-primary mb-1">100%</p>
                         <p class="text-sm text-stone-600" data-ml="ഓർഗാനിക്">Organic</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-3xl font-bold text-primary mb-1">10kg+</h3>
+                        <p class="text-3xl font-bold text-primary mb-1">10kg+</p>
                         <p class="text-sm text-stone-600" data-ml="ദിവസവും വിളവെടുപ്പ്">Daily Harvest</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-3xl font-bold text-primary mb-1">100+</h3>
+                        <p class="text-3xl font-bold text-primary mb-1">100+</p>
                         <p class="text-sm text-stone-600" data-ml="സന്തുഷ്ടരായ ഉപഭോക്താക്കൾ">Happy Customers</p>
                     </div>
                     <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="text-3xl font-bold text-primary mb-1">4.9</h3>
+                        <p class="text-3xl font-bold text-primary mb-1">4.9</p>
                         <p class="text-sm text-stone-600" data-ml="റേറ്റിംഗ്">Star Rating</p>
                     </div>
                 </div>
@@ -199,7 +199,7 @@ const products = [
 
             <div class="relative" data-aos="fade-left">
                 <div class="relative max-w-2xl mx-auto animate-float">
-                    <Image src={image1} alt="Fresh Oyster Mushrooms" class="w-full rounded-3xl" />
+                    <Image src={image1} alt="Fresh Oyster Mushrooms" class="w-full rounded-3xl" widths={[480, 768, 960]} sizes="(max-width: 768px) 92vw, (max-width: 1200px) 50vw, 640px" loading="eager" fetchpriority="high" quality={72} />
                     <div class="absolute bottom-8 right-0 md:-right-8 z-20 bg-white/90 backdrop-blur-sm py-3 px-6 rounded-2xl shadow-lg border border-primary/10 flex flex-col items-start text-left min-w-[200px]">
                         <p class="text-lg font-bold text-primary" data-ml="ബിന്ദു എൻ കെ">Bindu N K</p>
                         <p class="text-sm text-stone-600" data-ml="ഉടമ, മീറ്റി മഷ്റൂംസ്">Proprietor, Meaty Mushrooms</p>
@@ -234,22 +234,22 @@ const products = [
             <div class="text-center">
                 <div class="text-3xl mb-2">🚀</div>
                 <div class="font-bold text-lg" data-ml="ഉപാപചയ പ്രവർത്തനം">Metabolism</div>
-                <div class="text-xs text-white/60">B-Vitamin Boost</div>
+                <div class="text-xs text-white/80">B-Vitamin Boost</div>
             </div>
              <div class="text-center">
                 <div class="text-3xl mb-2">🛡️</div>
                 <div class="font-bold text-lg" data-ml="രോഗപ്രതിരോധം">Immunity Boost</div>
-                <div class="text-xs text-white/60">Beta-Glucans</div>
+                <div class="text-xs text-white/80">Beta-Glucans</div>
             </div>
              <div class="text-center">
                 <div class="text-3xl mb-2">🧠</div>
                 <div class="font-bold text-lg" data-ml="ബുദ്ധിശക്തി">Brain Power</div>
-                <div class="text-xs text-white/60">Neuro-protective</div>
+                <div class="text-xs text-white/80">Neuro-protective</div>
             </div>
              <div class="text-center">
                 <div class="text-3xl mb-2">❤️</div>
                 <div class="font-bold text-lg" data-ml="ഹൃദയാരോഗ്യം">Heart Health</div>
-                <div class="text-xs text-white/60">Zero Cholesterol</div>
+                <div class="text-xs text-white/80">Zero Cholesterol</div>
             </div>
         </div>
     </div>
@@ -722,22 +722,22 @@ const products = [
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-2xl font-bold text-primary mb-1">33</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="കലോറി">Calories (kcal)</div>
-                            <div class="text-xs text-primary/70">2% RDA</div>
+                            <div class="text-xs text-primary">2% RDA</div>
                         </div>
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-2xl font-bold text-primary mb-1">3.3g</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="പ്രോട്ടീൻ">Protein</div>
-                            <div class="text-xs text-primary/70">7% RDA</div>
+                            <div class="text-xs text-primary">7% RDA</div>
                         </div>
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-2xl font-bold text-primary mb-1">0.4g</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="കൊഴുപ്പ്">Total Fat</div>
-                            <div class="text-xs text-primary/70">1% RDA</div>
+                            <div class="text-xs text-primary">1% RDA</div>
                         </div>
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-2xl font-bold text-primary mb-1">6.1g</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="കാർബോഹൈഡ്രേറ്റ്">Carbohydrates</div>
-                            <div class="text-xs text-primary/70">2% RDA</div>
+                            <div class="text-xs text-primary">2% RDA</div>
                         </div>
                     </div>
                     <div class="mt-4 grid grid-cols-2 gap-4">
@@ -769,7 +769,7 @@ const products = [
                                 </div>
                                 <div class="text-right">
                                     <div class="text-lg font-bold text-primary">20-200%</div>
-                                    <div class="text-xs text-primary/70">RDA</div>
+                                    <div class="text-xs text-primary">RDA</div>
                                 </div>
                             </div>
                         </div>
@@ -809,22 +809,22 @@ const products = [
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-lg font-bold text-primary mb-1">361mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="പൊട്ടാസ്യം">Potassium</div>
-                            <div class="text-xs text-primary/70">10% RDA</div>
+                            <div class="text-xs text-primary">10% RDA</div>
                         </div>
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-lg font-bold text-primary mb-1">120mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="ഫോസ്ഫറസ്">Phosphorus</div>
-                            <div class="text-xs text-primary/70">17% RDA</div>
+                            <div class="text-xs text-primary">17% RDA</div>
                         </div>
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-lg font-bold text-primary mb-1">1.3-2.7mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="ഇരുമ്പ്">Iron</div>
-                            <div class="text-xs text-primary/70">15% RDA</div>
+                            <div class="text-xs text-primary">15% RDA</div>
                         </div>
                         <div class="bg-primary/5 p-4 rounded-xl">
                             <div class="text-lg font-bold text-primary mb-1">0.2mg</div>
                             <div class="text-sm text-stone-600 mb-1" data-ml="ചെമ്പ്">Copper</div>
-                            <div class="text-xs text-primary/70">22% RDA</div>
+                            <div class="text-xs text-primary">22% RDA</div>
                         </div>
                     </div>
                     <div class="mt-4 grid grid-cols-2 gap-4">

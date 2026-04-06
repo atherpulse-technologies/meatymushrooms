@@ -18,26 +18,15 @@ import SEO from "../components/seo.astro";
     <!-- Tailwind CSS -->
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&family=Pattaya&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- AOS Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Fonts and icon styles are loaded in SEO component -->
 
 
 
-<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
 
 
 
@@ -121,11 +110,11 @@ import SEO from "../components/seo.astro";
 
         function updateLanguageText(isMl) {
             document.querySelectorAll('[data-ml]').forEach(el => {
-                if (!el.dataset.en) el.dataset.en = el.innerText;
+                if (!el.dataset.en) el.dataset.en = el.textContent;
                 if (isMl) {
-                    el.innerText = el.dataset.ml;
+                    el.textContent = el.dataset.ml;
                 } else {
-                    el.innerText = el.dataset.en;
+                    el.textContent = el.dataset.en;
                 }
             });
             document.querySelectorAll('[data-ml-placeholder]').forEach(el => {
@@ -236,14 +225,14 @@ import SEO from "../components/seo.astro";
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-button">
+                <button class="lg:hidden p-2" id="mobile-menu-button" aria-label="Open mobile menu" aria-controls="mobile-menu" aria-expanded="false">
                     <i class="fas fa-bars text-xl text-stone-600"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div class="hidden lg:hidden" id="mobile-menu">
+        <div class="hidden lg:hidden" id="mobile-menu" aria-hidden="true">
             <div class="px-6 py-5 space-y-4 bg-white border-t border-stone-200">
                 <a href="/" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഹോം">Home</a>
                 <a href="/products" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഉൽപ്പന്നങ്ങൾ">Products</a>

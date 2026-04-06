@@ -10,13 +10,13 @@
                     </a>
                     <p class="text-gray-300 text-sm">Premium organic mushrooms cultivated with care in Vadakara, Kerala. Fresh from farm to your plate.</p>
                     <div class="flex space-x-4">
-                        <a href="https://wa.me/918078937260" target="_blank" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+                        <a href="https://wa.me/918078937260" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+                        <a href="https://www.instagram.com/meatymushrooms" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram profile" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+                        <a href="https://www.facebook.com/meatymushrooms" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook page" class="w-10 h-10 bg-primary-dark rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
@@ -80,7 +80,7 @@
                         <p class="text-gray-300 text-sm">© 2024 Meaty Mushrooms. All rights reserved.</p>
                     </div>
 
-                    <a href="https://atherpulse.in" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/5 rounded-full text-xs text-white/60 hover:text-white hover:bg-white/10 transition-all border border-white/5 group">
+                    <a href="https://atherpulse.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/5 rounded-full text-xs text-white/80 hover:text-white hover:bg-white/10 transition-all border border-white/5 group">
                         <span class="font-normal">Made by</span>
                         <span class="font-semibold text-white/90 group-hover:text-white">Atherpulse Technologies</span>
                         <i class="fas fa-external-link-alt text-[10px] ml-0.5 opacity-50 group-hover:opacity-100 transition-opacity"></i>
@@ -98,20 +98,36 @@
 
     <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <script is:inline>
-        // Wait for both DOM and AOS script to be ready
-        window.addEventListener('load', () => {
-            // Check if AOS is loaded
-            if (typeof window.AOS !== 'undefined') {
-                // Initialize AOS
-                window.AOS.init({
-                    duration: 1000,
-                    once: true,
-                    easing: 'ease-out-cubic'
-                });
+        function initAOSWhenIdle() {
+            const loadAOS = () => {
+                const css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+                document.head.appendChild(css);
+
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+                script.defer = true;
+                script.onload = () => {
+                    if (typeof window.AOS !== 'undefined') {
+                        window.AOS.init({
+                            duration: 900,
+                            once: true,
+                            easing: 'ease-out-cubic'
+                        });
+                    }
+                };
+                document.body.appendChild(script);
+            };
+
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(loadAOS, { timeout: 1500 });
             } else {
-                console.warn('AOS is not loaded');
+                window.setTimeout(loadAOS, 500);
             }
-        });
+        }
+
+        window.addEventListener('load', initAOSWhenIdle);
 
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {
@@ -121,6 +137,10 @@
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+                    mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
+                    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
                     const icon = mobileMenuButton.querySelector('i');
                     if (icon) {
                         icon.classList.toggle('fa-bars');
