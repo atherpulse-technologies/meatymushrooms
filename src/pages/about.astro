@@ -1,20 +1,95 @@
 ---
-
-
-// import Layout from "../layouts/Layout.astro";
-import BlogLayout from "../layouts/BlogLayout.astro";
-
-
+import Head from "../components/Head.astro";
+import Footer from "../components/Footer.astro";
 ---
 
+<Head title="About Us - Meaty Mushrooms | Fresh Oyster Mushrooms from Vadakara" />
 
-<BlogLayout>
+<main class="min-h-screen bg-white pt-20">
+    <!-- Header -->
+    <section class="pt-16 pb-12 bg-stone-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <nav class="flex items-center gap-2 text-sm text-stone-500 mb-6">
+                <a href="/" class="hover:text-primary">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-primary">About Us</span>
+            </nav>
+            
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">About Meaty Mushrooms</h1>
+                <p class="text-lg text-stone-600 max-w-2xl mx-auto">Fresh oyster mushrooms grown with care in Vadakara, Kerala. From our farm to your kitchen.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Our Story -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-bold text-stone-900 mb-4">Our Story</h2>
+                    <p class="text-stone-600 leading-relaxed mb-4">
+                        Meaty Mushrooms was founded with a simple belief: everyone deserves access to fresh, 
+                        chemical-free mushrooms at an affordable price. Based in Makkoolpeedika, Vadakara, 
+                        our farm produces premium oyster mushrooms using natural cultivation methods.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed mb-4">
+                        Our mushrooms are known for their firm, meaty texture — earning them the nickname 
+                        "vegetarian meat" among our customers. They hold their shape during cooking, 
+                        absorb flavors beautifully, and work perfectly in traditional Kerala curries, 
+                        stir-fries, roasts, and soups.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed">
+                        We harvest every morning to ensure you get the freshest mushrooms possible. 
+                        No middlemen, no long storage — just farm-fresh produce delivered to your doorstep.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-stone-50 rounded-xl p-6">
+                        <h3 class="font-bold text-stone-900 mb-2">Our Mission</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            To make fresh, nutritious mushrooms accessible to every household in Vadakara, 
+                            Kozhikode, and across Kerala — while maintaining the highest standards of 
+                            quality and safety.
+                        </p>
+                    </div>
+                    <div class="bg-stone-50 rounded-xl p-6">
+                        <h3 class="font-bold text-stone-900 mb-2">Why Choose Us</h3>
+                        <ul class="text-stone-600 text-sm space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1"></i>
+                                <span>Harvested fresh every morning — same-day delivery available</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1"></i>
+                                <span>Grown without chemical pesticides or fertilizers</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1"></i>
+                                <span>FSSAI registered and MSME certified facility</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-primary mt-1"></i>
+                                <span>Direct from farm — no middlemen, fair prices</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- CTA -->
+    <section class="py-16 bg-primary">
+        <div class="max-w-3xl mx-auto px-6 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Ready to try our mushrooms?</h2>
+            <p class="text-white/80 mb-8">Order fresh oyster mushrooms directly from our farm.</p>
+            <a href="https://wa.me/918078937260" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-full hover:bg-gray-100 transition-all font-semibold">
+                <i class="fab fa-whatsapp"></i>
+                Order on WhatsApp
+            </a>
+        </div>
+    </section>
+</main>
 
-    this is a about page
-
-
-
-
-</BlogLayout>
+<Footer />

@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import CartDrawer from "../../components/CartDrawer.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { getProductBySlug, products } from "../../data/products";
+
+export async function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const related = products.filter((entry) => entry.category === product.category && entry.slug !== product.slug).slice(0, 3);
+const qtyInputId = `qty-${product.slug}`;
+---
+
+<BaseLayout
+  title={`${product.name} | Maa's Magic`}
+  description={product.longDescription}
+  canonicalPath={`/products/${product.slug}`}
+>
+  <SiteHeader currentPath={`/products/${product.slug}`} />
+  <CartDrawer />
+
+  <main id="main-content" class="pb-20">
+    <section class="border-b border-stone-200 bg-white py-10">
+      <div class="mx-auto w-[min(1160px,92%)]">
+        <a href="/#menu" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to products
+        </a>
+
+        <div class="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <article class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+            <div class="rounded-xl border border-stone-200 bg-stone-50 p-4">
+              <img src="/productmockup.jpg" alt={`${product.name} product image`} class="h-[360px] w-full object-contain" />
+            </div>
+            <div class="mt-4 grid grid-cols-3 gap-3">
+              <div class="rounded-lg border border-stone-200 bg-white p-2">
+                <img src="/productmockup.jpg" alt="Thumb 1" class="h-20 w-full object-contain" />
+              </div>
+              <div class="rounded-lg border border-stone-200 bg-white p-2">
+                <img src="/productmockup.jpg" alt="Thumb 2" class="h-20 w-full object-contain" />
+              </div>
+              <div class="rounded-lg border border-stone-200 bg-white p-2">
+                <img src="/productmockup.jpg" alt="Thumb 3" class="h-20 w-full object-contain" />
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+            <span class="rounded-full bg-emerald-100/90 px-3 py-1 text-[11px] font-extrabold tracking-wide text-emerald-800">Available</span>
+            <h1 class="mt-3 font-display text-4xl font-bold text-slate-900">{product.name}</h1>
+            <p class="mt-1 text-sm font-semibold text-slate-500">{product.malayalam}</p>
+            <p class="mt-3 text-sm text-slate-600">{product.tagline}</p>
+
+            <div class="mt-5 flex items-center justify-between rounded-xl bg-brand-50 px-4 py-3">
+              <p class="text-sm text-slate-600">Price</p>
+              <p class="text-xl font-bold text-slate-900">₹{product.price} <span class="text-sm font-semibold text-slate-500">| {product.unit}</span></p>
+            </div>
+
+            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-lg bg-stone-100 p-3">
+                <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Spice</p>
+                <p class="mt-1 text-sm font-semibold text-slate-800">{product.spiceLevel}</p>
+              </div>
+              <div class="rounded-lg bg-stone-100 p-3">
+                <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Shelf Life</p>
+                <p class="mt-1 text-sm font-semibold text-slate-800">{product.shelfLife}</p>
+              </div>
+              <div class="rounded-lg bg-stone-100 p-3">
+                <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Category</p>
+                <p class="mt-1 text-sm font-semibold text-slate-800">{product.category === "veg" ? "Vegetarian" : "Non-Vegetarian"}</p>
+              </div>
+            </div>
+
+            <p class="mt-5 text-slate-600">{product.longDescription}</p>
+
+            <div class="mt-6 flex items-center gap-3">
+              <label for={qtyInputId} class="text-sm font-semibold text-slate-600">Qty</label>
+              <input id={qtyInputId} type="number" min="1" value="1" class="w-20 rounded-lg border border-stone-300 px-3 py-2 text-sm font-semibold" />
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-3">
+              <button
+                class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-slate-800"
+                data-add-to-cart
+                data-product-slug={product.slug}
+                data-product-name={product.name}
+                data-product-price={product.price}
+                data-product-image="/productmockup.jpg"
+                data-qty-input={qtyInputId}
+              >
+                <i class="fa-solid fa-cart-plus"></i>
+                Add to Cart
+              </button>
+              <button class="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white hover:bg-brand-600" data-open-cart>
+                <i class="fa-solid fa-credit-card"></i>
+                Go to Checkout
+              </button>
+            </div>
+
+            <section class="mt-7 rounded-xl border border-stone-200 bg-stone-50 p-4">
+              <h2 class="font-display text-xl font-bold text-slate-900">Highlights</h2>
+              <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                {product.highlights.map((point) => (
+                  <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check mt-0.5 text-emerald-600"></i> {point}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section class="mt-4 rounded-xl border border-stone-200 bg-stone-50 p-4">
+              <h2 class="font-display text-xl font-bold text-slate-900">Best Pairings</h2>
+              <div class="mt-3 flex flex-wrap gap-2">
+                {product.pairings.map((item) => (
+                  <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700">{item}</span>
+                ))}
+              </div>
+            </section>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="mx-auto w-[min(1160px,92%)]">
+        <h2 class="font-display text-3xl font-bold text-slate-900">Related products</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {related.map((item) => <ProductCard product={item} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

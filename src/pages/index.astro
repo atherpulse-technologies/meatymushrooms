@@ -3,17 +3,11 @@ import { Image } from 'astro:assets';
 import "../assets/css/styles.css";
 import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
-import Solutions from "../components/Solutions.astro";
+import CartDrawer from "../components/store/CartDrawer.astro";
+import ProductCard from "../components/store/ProductCard.astro";
+import { products } from "../data/products";
 
 import image1 from '../assets/images/hero-image-v2.jpg';
-import banner from '../assets/images/banner.jpg';
-import image2 from '../assets/images/image2.webp';  
-import oyster from '../assets/images/oyster.jpg';
-import pink from '../assets/images/pink.jpg';
-import biryani from '../assets/images/biryani.png';
-import soup from '../assets/images/soup.png';
-import fry from '../assets/images/fry.png';
-import powder from '../assets/images/powder.png';
 
 // Cooking Videos Data
 const cookingVideos = [
@@ -21,138 +15,58 @@ const cookingVideos = [
         id: 'bkkQLRKoHrI',
         title: 'Delicious Oyster Mushrooms Recipe',
         titleML: 'രുചികരമായ ഓയസ്റ്റർ മഷ്റൂം റെസിപ്പി',
-        description: 'കൂൺ - Must-try delicious oyster mushroom recipe by Anusithara Vlog',
-        descriptionML: 'അനുസിത്താര വ്ലോഗിന്റെ കൂൺ - തീർച്ചയായും പരീക്ഷിച്ചുനോക്കേണ്ട രുചികരമായ ഓയസ്റ്റർ കൂൺ റെസിപ്പി',
+        description: 'Must-try delicious oyster mushroom recipe by Anusithara Vlog',
+        descriptionML: 'അനുസിത്താര വ്ലോഗിന്റെ രുചികരമായ ഓയസ്റ്റർ കൂൺ റെസിപ്പി',
         label: 'Malayalam'
     },
     {
         id: 'lDbEHOhiy10',
         title: 'Mushroom Mezhukkupuratti',
         titleML: 'കൂൺ മെഴുക്കുപുരട്ടി',
-        description: 'മെഴുക്കുപുരട്ടി - Traditional Kerala style mushroom stir-fry recipe',
-        descriptionML: 'മെഴുക്കുപുരട്ടി - പരമ്പരാഗത കേരള സ്റ്റൈൽ കൂൺ മെഴുക്കുപുരട്ടി റെസിപ്പി',
+        description: 'Traditional Kerala style mushroom stir-fry recipe',
+        descriptionML: 'പരമ്പരാഗത കേരള സ്റ്റൈൽ കൂൺ മെഴുക്കുപുരട്ടി റെസിപ്പി',
         label: 'Malayalam'
     },
     {
         id: 'GrXU5RMYotE',
         title: 'Mushroom Thoran',
         titleML: 'കൂൺ തോരൻ',
-        description: 'ചിപ്പിക്കൂൺ കൊണ്ട് രുചികരമായ ഒരു തോരൻ - Delicious mushroom thoran recipe',
-        descriptionML: 'ചിപ്പിക്കൂൺ കൊണ്ട് രുചികരമായ ഒരു തോരൻ - സ്വാദിഷ്ടമായ കൂൺ തോരൻ റെസിപ്പി',
+        description: 'Delicious mushroom thoran recipe',
+        descriptionML: 'സ്വാദിഷ്ടമായ കൂൺ തോരൻ റെസിപ്പി',
         label: 'Malayalam'
     },
     {
         id: 'WgZUNb2BjCU',
         title: 'Easy Mushroom Masala',
         titleML: 'ലളിതമായ കൂൺ മസാല',
-        description: 'വളരെപ്പെട്ടന്ന് ഉണ്ടാക്കാവുന്ന ഒരു കൂൺ മസാല - Perfect for beginners',
-        descriptionML: 'വളരെപ്പെട്ടന്ന് ഉണ്ടാക്കാവുന്ന ഒരു കൂൺ മസാല - തുടക്കക്കാർക്ക് അനുയോജ്യം',
+        description: 'Perfect for beginners',
+        descriptionML: 'തുടക്കക്കാർക്ക് അനുയോജ്യം',
         label: 'Malayalam'
     },
     {
         id: 'fM83Vo_F_hA',
         title: 'Restaurant Style Mushroom Gravy',
         titleML: 'റെസ്റ്റോറന്റ് സ്റ്റൈൽ കൂൺ ഗ്രേവി',
-        description: 'കൂൺ ഗ്രേവി - റസ്റ്റോറന്റ് രുചിയിൽ വീട്ടിൽ തയ്യാറാക്കാം',
-        descriptionML: 'കൂൺ ഗ്രേവി - റസ്റ്റോറന്റ് രുചിയിൽ വീട്ടിൽ തയ്യാറാക്കാം',
+        description: 'Restaurant taste at home',
+        descriptionML: 'റസ്റ്റോറന്റ് രുചിയിൽ വീട്ടിൽ തയ്യാറാക്കാം',
         label: 'Malayalam'
     },
     {
         id: '9OT6AbTeuVI',
-        title: 'Quick Mushroom Recipe',
+        title: 'Quick Mushroom with Rice',
         titleML: 'പെട്ടെന്നൊരു കൂൺ റെസിപ്പി',
-        description: 'കൊറച്ചു ചിപ്പി കൂൺ കിട്ടിയട്ടുണ്ട് - Perfect with rice',
-        descriptionML: 'കുറച്ചു ചിപ്പി കൂൺ കിട്ടിയിട്ടുണ്ട് - ചോറിനൊപ്പം മികച്ചത്',
+        description: 'Perfect quick meal with rice',
+        descriptionML: 'ചോറിനൊപ്പം മികച്ചത്',
         label: 'Shorts'
-    }
-];
-
-// Recipes Data
-const recipes = [
-    {
-        name: 'Mushroom Biryani',
-        nameML: 'കൂൺ ബിരിയാണി',
-        description: 'Aromatic basmati rice cooked with tender mushrooms and traditional spices.',
-        descriptionML: 'സുഗന്ധമുള്ള ബസ്മതി അരിയും മൃദുവായ കൂണും പരമ്പരാഗത സുഗന്ധവ്യഞ്ജനങ്ങളും ചേർത്ത് പാകം ചെയ്തത്.',
-        image: biryani,
-        cookTime: '45 min',
-        difficulty: 'Medium',
-        cuisine: 'Indian',
-        rating: 5,
-        reviews: 24,
-        link: '/recipes#mushroom-biryani'
-    },
-    {
-        name: 'Creamy Mushroom Soup',
-        nameML: 'ക്രീമി മഷ്റൂം സൂപ്പ്',
-        description: 'Rich and creamy soup perfect for cold evenings with fresh herbs.',
-        descriptionML: 'തണുത്ത സായാഹ്നങ്ങൾക്ക് അനുയോജ്യമായ, ഫ്രഷ് സസ്യങ്ങൾ ചേർത്ത സമൃദ്ധമായ ക്രീമി സൂപ്പ്.',
-        image: soup,
-        cookTime: '25 min',
-        difficulty: 'Easy',
-        cuisine: 'Continental',
-        rating: 4,
-        reviews: 18,
-        link: '/recipes#mushroom-soup'
-    },
-    {
-        name: 'Quick Mushroom Stir Fry',
-        nameML: 'കൂൺ സ്റ്റൈർ ഫ്രൈ',
-        description: 'Fast and healthy stir-fry with colorful vegetables and savory sauce.',
-        descriptionML: 'നിറപ്പകിട്ടാർന്ന പച്ചക്കറികളും സ്വാദിഷ്ടമായ സോസും ചേർത്ത വേഗത്തിലുള്ളതും ആരോഗ്യകരവുമായ വിഭവം.',
-        image: fry,
-        cookTime: '15 min',
-        difficulty: 'Easy',
-        cuisine: 'Asian',
-        rating: 5,
-        reviews: 31,
-        link: '/recipes#mushroom-stir-fry'
-    }
-];
-
-// Products Data
-const products = [
-    {
-        name: 'Elm Oyster Mushrooms',
-        nameML: 'എൽം ഓയിസ്റ്റർ കൂൺ',
-        description: 'Known as the "Meaty Mushroom". Superior protein (23-39% dry weight), firm texture that doesn\'t shrink, and rich in natural umami.',
-        descriptionML: '"മീറ്റി മഷ്റൂം" എന്നറിയപ്പെടുന്നു. ഉയർന്ന അളവിൽ പ്രോട്ടീൻ (23-39% ഡ്രൈ വെയ്റ്റ്), പാകം ചെയ്താലും ഉടഞ്ഞുപോകാത്ത ദൃഢമായ ഘടന, സ്വാഭാവിക രുചി.',
-        image: oyster,
-        price: '₹80/200g',
-        badge: 'High Protein',
-        badgeML: 'കൂടുതൽ പ്രോട്ടീൻ',
-        badgeColor: 'bg-primary'
-    },
-    {
-        name: 'Pink Oyster Mushrooms',
-        nameML: 'പിങ്ക് ഓയസ്റ്റർ കൂൺ',
-        description: 'Visually stunning with a delicate seafood-like flavor. Perfect for gourmet dishes.',
-        descriptionML: 'കാഴ്ചയിൽ മനോഹരം, കടൽ വിഭവങ്ങളുടെ രുചി. സ്പെഷ്യൽ വിഭവങ്ങൾക്ക് അനുയോജ്യം.',
-        image: pink,
-        price: '₹80/150g',
-        badge: 'New',
-        badgeML: 'പുതിയത്',
-        badgeColor: 'bg-[#D87D88]'
-    },
-    {
-        name: 'Mushroom Powder',
-        nameML: 'കൂൺ പൊടി',
-        description: '100% pure mushroom powder. Add to smoothies, soups, and dishes for extra nutrition.',
-        descriptionML: '100% ശുദ്ധമായ കൂൺ പൊടി. സ്മൂത്തികൾ, സൂപ്പുകൾ, വിഭവങ്ങൾ എന്നിവയിൽ കൂടുതൽ പോഷകങ്ങൾക്കായി ചേർക്കുക.',
-        image: powder,
-        price: '₹200/100g',
-        badge: 'Popular',
-        badgeML: 'ജനപ്രിയമായത്',
-        badgeColor: 'bg-primary'
     }
 ];
 ---
 
-
 <Head/>
+<CartDrawer />
 
-<!-- Product Welcome Section -->
-<section class="min-h-screen pt-48 pb-20 relative overflow-hidden">
+<!-- Hero Section -->
+<section class="min-h-screen pt-48 pb-8 relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&blur=100')] opacity-5 z-0"></div>
     
     <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -160,53 +74,26 @@ const products = [
             <div class="text-center lg:text-left">
 
                 <h1 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-6">
-                    <span data-ml="വടകരയിൽ നിന്ന് ദിവസവും വിളവെടുക്കുന്ന ഫ്രഷ് കൂണുകൾ">Fresh Mushrooms, harvested daily from Vadakara</span>
+                    <span>Fresh Oyster Mushrooms, Harvested Daily in Vadakara</span>
                 </h1>
-                <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0" data-ml="പാചക കുറിപ്പുകൾ മുതൽ പോഷക ഗുണങ്ങൾ വരെ - നിങ്ങളുടെ പ്രീമിയം ഓർഗാനിക് കൂണുകൾ പരമാവധി പ്രയോജനപ്പെടുത്തുന്നതിനുള്ള പൂർണ്ണമായ ഗൈഡ്.">
-                    From cooking tips to nutritional benefits - your complete guide to making the most of your premium organic mushrooms.
-                </p>
-                <p class="text-sm text-stone-500 mb-8 max-w-xl mx-auto lg:mx-0" data-ml="വടകര, കോഴിക്കോട്, കാലിക്കറ്റ് മേഖലകളിൽ ഫ്രഷ് കൂണുകൾ ലഭ്യമാണ്.">
-                    Looking for mushrooms in Vadakara, mushrooms in Kozhikode, mushrooms in Calicut, or Kerala mushrooms? We deliver fresh harvests directly from our farm.
+                <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0">
+                    Taste the healthy "vegetarian meat." Farm-fresh and delivered straight to your kitchen.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="https://wa.me/918078937260" target="_blank" class="px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        <span data-ml="ഇപ്പോൾ ഓർഡർ ചെയ്യൂ">Order Now</span>
+                    <a href="#store" class="px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span>Order Fresh Now</span>
                         <i class="fas fa-shopping-basket text-sm"></i>
                     </a>
-                    <a href="#cooking-videos" class="px-8 py-4 border-2 border-primary text-primary rounded-full hover:bg-primary-light transition-all flex items-center justify-center gap-2">
-                        <span data-ml="പാചക വീഡിയോകൾ">Watch Videos</span>
+                    <a href="#videos" class="px-8 py-4 border-2 border-primary text-primary rounded-full hover:bg-primary-light transition-all flex items-center justify-center gap-2">
+                        <span>Watch Recipes</span>
                         <i class="fas fa-play text-sm"></i>
                     </a>
-                </div>
-
-                <!-- Trust Badges -->
-                <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto lg:mx-0">
-                    <div class="text-center">
-                        <p class="text-3xl font-bold text-primary mb-1">100%</p>
-                        <p class="text-sm text-stone-600" data-ml="ഓർഗാനിക്">Organic</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-3xl font-bold text-primary mb-1">10kg+</p>
-                        <p class="text-sm text-stone-600" data-ml="ദിവസവും വിളവെടുപ്പ്">Daily Harvest</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-3xl font-bold text-primary mb-1">100+</p>
-                        <p class="text-sm text-stone-600" data-ml="സന്തുഷ്ടരായ ഉപഭോക്താക്കൾ">Happy Customers</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-3xl font-bold text-primary mb-1">4.9</p>
-                        <p class="text-sm text-stone-600" data-ml="റേറ്റിംഗ്">Star Rating</p>
-                    </div>
                 </div>
             </div>
 
             <div class="relative">
                 <div class="relative max-w-2xl mx-auto animate-float">
                     <Image src={image1} alt="Fresh Oyster Mushrooms" class="w-full rounded-3xl" widths={[480, 768, 960]} sizes="(max-width: 768px) 92vw, (max-width: 1200px) 50vw, 640px" loading="eager" fetchpriority="high" quality={72} />
-                    <div class="absolute bottom-8 right-0 md:-right-8 z-20 bg-white/90 backdrop-blur-sm py-3 px-6 rounded-2xl shadow-lg border border-primary/10 flex flex-col items-start text-left min-w-[200px]">
-                        <p class="text-lg font-bold text-primary" data-ml="ബിന്ദു എൻ കെ">Bindu N K</p>
-                        <p class="text-sm text-stone-600" data-ml="ഉടമ, മീറ്റി മഷ്റൂംസ്">Proprietor, Meaty Mushrooms</p>
-                    </div>
                 </div>
                 <div class="absolute top-10 right-10 w-20 h-20 bg-primary-light rounded-full -z-10"></div>
                 <div class="absolute bottom-10 left-10 w-32 h-32 bg-primary-light rounded-full -z-10"></div>
@@ -215,737 +102,93 @@ const products = [
     </div>
 </section>
 
-<!-- Excitement / Hook Section -->
+<!-- Hook / Value Proposition Section -->
 <section class="py-12 bg-primary text-white overflow-hidden relative">
-    <!-- Scrolling Marquee / Ticker -->
     <div class="absolute top-0 left-0 right-0 h-full opacity-10 pointer-events-none overflow-hidden flex items-center">
         <div class="whitespace-nowrap animate-marquee text-9xl font-bold uppercase tracking-widest text-white">
-            Superfood • Protein • Immunity • Energy • Superfood • Protein • Immunity • Energy
+            Superfood - Protein - Immunity - Energy - Superfood - Protein - Immunity - Energy
         </div>
     </div>
     
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <span class="inline-block py-1 px-3 rounded-full bg-yellow-400 text-primary text-xs font-bold uppercase tracking-wider mb-4 animate-bounce">Limited Daily Harvest</span>
+        <span class="inline-block py-1 px-3 rounded-full bg-primary-light text-primary text-xs font-bold uppercase tracking-wider mb-4 animate-bounce">Limited Daily Harvest</span>
         <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            <span data-ml="നിങ്ങൾ 'വെജിറ്റേറിയൻ ഇറച്ചി' കഴിച്ചിട്ടുണ്ടോ?">Have You Tasted the "Vegetarian Meat"?</span>
+            <span>Have You Tasted the "Vegetarian Meat"?</span>
         </h2>
         <p class="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-3xl mx-auto">
-            <span data-ml="രുചിയിൽ ഇറച്ചി. ഗുണത്തിൽ അമൃതം. വടകരയിലെ പുതിയ ആരോഗ്യമന്ത്രം!">Tastes like meat. Nature's functional food. Vadakara's new health secret!</span>
+            <span>Tastes like meat. Nature's functional food. Vadakara's new health secret!</span>
         </p>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8 mt-8">
             <div class="text-center">
-                <div class="text-3xl mb-2">🚀</div>
-                <div class="font-bold text-lg" data-ml="ഉപാപചയ പ്രവർത്തനം">Metabolism</div>
+                <div class="text-3xl mb-2"><i class="fas fa-bolt text-stone-200"></i></div>
+                <div class="font-bold text-lg">Metabolism</div>
                 <div class="text-xs text-white/80">B-Vitamin Boost</div>
             </div>
              <div class="text-center">
-                <div class="text-3xl mb-2">🛡️</div>
-                <div class="font-bold text-lg" data-ml="രോഗപ്രതിരോധം">Immunity Boost</div>
+                <div class="text-3xl mb-2"><i class="fas fa-shield-alt text-stone-200"></i></div>
+                <div class="font-bold text-lg">Immunity Boost</div>
                 <div class="text-xs text-white/80">Beta-Glucans</div>
             </div>
              <div class="text-center">
-                <div class="text-3xl mb-2">🧠</div>
-                <div class="font-bold text-lg" data-ml="ബുദ്ധിശക്തി">Brain Power</div>
+                <div class="text-3xl mb-2"><i class="fas fa-brain text-stone-200"></i></div>
+                <div class="font-bold text-lg">Brain Power</div>
                 <div class="text-xs text-white/80">Neuro-protective</div>
             </div>
              <div class="text-center">
-                <div class="text-3xl mb-2">❤️</div>
-                <div class="font-bold text-lg" data-ml="ഹൃദയാരോഗ്യം">Heart Health</div>
+                <div class="text-3xl mb-2"><i class="fas fa-heart text-stone-200"></i></div>
+                <div class="font-bold text-lg">Heart Health</div>
                 <div class="text-xs text-white/80">Zero Cholesterol</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Quick Navigation -->
-<section class="py-12 bg-[#F8FAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-             <a href="#nutrition" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-leaf text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-semibold text-stone-900" data-ml="പോഷക ഗുണങ്ങൾ">Nutrition Facts</h3>
-            </a>
-            <a href="#cooking-videos" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-video text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-semibold text-stone-900" data-ml="പാചക വീഡിയോകൾ">Cooking Videos</h3>
-            </a>
-            <a href="/recipes" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-utensils text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-semibold text-stone-900" data-ml="റെസിപ്പികൾ">Recipes</h3>
-            </a>
-            <a href="#safety" class="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-all group border border-stone-100">
-                <i class="fas fa-shield-alt text-3xl text-primary mb-3 group-hover:scale-110 transition-transform"></i>
-                <h3 class="font-semibold text-stone-900" data-ml="ഭക്ഷ്യ സുരക്ഷ">Food Safety</h3>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ / First-Timer Doubts Section (Higher Priority) -->
-<section class="py-16 bg-stone-50 border-y border-stone-200" id="faq-section">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">No Hesitation / മടിക്കേണ്ട</span>
-            <h2 class="text-3xl font-bold text-stone-900 mb-4" data-ml="ആദ്യമായിട്ടാണോ വാങ്ങുന്നത്?">First Time Buying?</h2>
-            <p class="text-stone-600 max-w-2xl mx-auto" data-ml="നിങ്ങളുടെ സംശയങ്ങൾക്കുള്ള മറുപടി ഇതാ. 100% വിശ്വസിച്ച് വാങ്ങാം.">Common doubts cleared. Buy with 100% confidence.</p>
-        </div>
-
-        <div class="space-y-3">
-             <!-- Q1: Taste/Texture ( The #1 Doubt) -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-green-100/50 text-green-700 rounded-full flex items-center justify-center text-sm">👅</span>
-                        <span data-ml="ഇതിന് എന്താണ് രുചി? വഴുവഴുപ്പുണ്ടാകുമോ?">Taste: Is it slimy? Will I like it?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p class="mb-2" data-ml="ഇല്ല! എൽം ഓയിസ്റ്റർ കൂണിന് 'ഇറച്ചി' പോലെയുള്ള കട്ടിയുള്ള ഘടനയാണുള്ളത്."><strong>Not at all slimy!</strong> Unlike button mushrooms that can get soggy, these have a firm, meaty bite.</p>
-                    <p class="text-sm" data-ml="രുചി വളരെ ലളിതമാണ് (Umami) - ഏകദേശം കോഴിയിറച്ചി പോലെ.">It tastes savory and mild, very similar to chicken meat. It absorbs your curry flavors perfectly.</p>
-                </div>
-            </details>
-
-            <!-- Q2: Cooking Difficulty -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-orange-100/50 text-orange-700 rounded-full flex items-center justify-center text-sm">🍳</span>
-                        <span data-ml="ഇത് പാചകം ചെയ്യാൻ പ്രയാസമാണോ?">Is it hard to cook?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p class="mb-2" data-ml="തീരെയില്ല! കഴുകേണ്ട ആവശ്യമില്ല. കൈകൊണ്ട് കീറി നേരിട്ട് കറിയിലിടാം."><strong>Easier than vegetables!</strong> No washing needed (just wipe if dirty). Tear by hand. Cooks in 5-10 minutes.</p>
-                    <p><a href="#cooking-videos" class="text-primary font-medium underline text-sm">Watch our 5-min recipe video below.</a></p>
-                </div>
-            </details>
-            
-             <!-- Q3: Health (Snippet) -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
-                        <span class="text-red-500">💓</span>
-                        <span data-ml="പ്രമേഹ രോഗികൾക്ക് ഇത് കഴിക്കാമോ?">Is it good for Diabetes/BP/Cholesterol?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p data-ml="തീർച്ചയായും! ഇതിൽ അന്നജം കുറവും പോഷകങ്ങൾ കൂടുതലുമാണ്."><strong>Yes, Highly Recommended!</strong> Elm Oysters are low-carb, low-sodium, and zero-cholesterol. Studies show they may help regulate blood sugar and improve heart health.</p>
-                </div>
-            </details>
-        </div>
-        
-        <!-- View All Button -->
-        <div class="mt-8 text-center">
-            <button id="open-faq-modal" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-md group">
-                <span data-ml="കൂടുതൽ സംശയങ്ങൾ?">View All Common Doubts</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-            </button>
-            <p class="mt-4 text-sm text-stone-500">
-                <a href="https://wa.me/918078937260" target="_blank" class="hover:underline flex items-center justify-center gap-1">
-                    <i class="fab fa-whatsapp text-green-600"></i>
-                    <span data-ml="അല്ലെങ്കിൽ വാട്സ്ആപ്പിൽ ചോദിക്കൂ">Or Ask on WhatsApp</span>
-                </a>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Full Screen FAQ Modal -->
-<div id="faq-modal" class="fixed inset-0 z-[100] hidden" aria-hidden="true">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="close-faq-modal-backdrop"></div>
-    
-    <!-- Modal Content -->
-    <div class="absolute inset-x-0 bottom-0 md:inset-0 md:flex md:items-center md:justify-center pointer-events-none">
-        <div class="bg-[#F8FAF8] w-full md:w-[800px] md:h-[80vh] md:rounded-2xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto max-h-[90vh] md:max-h-[80vh]">
-            
-            <!-- Sticky Header -->
-            <div class="bg-white border-b border-stone-200 p-4 md:p-6 flex items-center justify-between shrink-0 sticky top-0 z-10">
-                <div>
-                    <h3 class="text-xl md:text-2xl font-bold text-primary" data-ml="സംശയനിവാരണം">All Common Doubts</h3>
-                    <p class="text-sm text-stone-500" data-ml="നിങ്ങൾ അറിയാൻ ആഗ്രഹിക്കുന്നതെല്ലാം">Everything you wanted to ask</p>
-                </div>
-                <button id="close-faq-modal" class="w-10 h-10 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors">
-                    <i class="fas fa-times text-stone-600 text-lg"></i>
-                </button>
-            </div>
-            
-            <!-- Scrollable Content -->
-            <div class="overflow-y-auto p-4 md:p-8 space-y-8 bg-[#F8FAF8]">
-                
-                <!-- Category 1: Essentials -->
-                <div>
-                    <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Essentials / അടിസ്ഥാന കാര്യങ്ങൾ</h4>
-                    <div class="space-y-3">
-                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="ഇതിന് ഇറച്ചിയുടെ രുചിയാണോ?">Does it really taste like meat?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="ഇതൊരു സസ്യാഹാരമാണ്, പക്ഷേ ഇതിന്റെ ഘടന (texture) ഇറച്ചി പോലെയാണ്. മസാല ചേർത്താൽ ഇറച്ചിക്കറി പോലെ തന്നെ തോന്നും.">It's 100% vegetarian, but the texture is fibrous and chewy like meat. It has a savory 'Umami' flavor that mimics meat when cooked with spices.</p>
-                            </div>
-                        </details>
-                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="ഇത് കേടാകാതെ എത്ര ദിവസം ഇരിക്കും?">Self Life: How long does it last?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="ഫ്രിഡ്ജിൽ 5-7 ദിവസം വരെ സൂക്ഷിക്കാം. പുറത്ത് സാധാരണ താപനിലയിൽ 1 ദിവസം."><strong>Fridge:</strong> 5-7 Days. Keep in a paper bag or perforated box.<br><strong>Room Temp:</strong> 1 Day. Use immediately for best taste.</p>
-                            </div>
-                        </details>
-                         <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="ഇത് ക്ലീൻ ചെയ്യാൻ പാടാണോ?">is it hard to clean?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="അല്ല. ഇത് കഴുകേണ്ട ആവശ്യമില്ല. കൈകൊണ്ട് കീറിയാൽ മതി.">No. In fact, you should <strong>NOT wash</strong> them heavily as they absorb water. Just wipe with a damp cloth or rinse quickly right before cooking. No cutting needed, just tear by hand.</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Category 2: Health & Safety -->
-                <div>
-                     <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Health / ആരോഗ്യം</h4>
-                    <div class="space-y-3">
-                         <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="കുട്ടികൾക്ക് കൊടുക്കാമോ?">Is it safe for kids/babies?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="ധൈര്യമായി കൊടുക്കാം! ഇത് ദഹിക്കാൻ എളുപ്പവും പ്രോട്ടീൻ നിറഞ്ഞതുമാണ്.">Yes! It's a superfood for growing kids. excellent for brain development and immunity. Purely organic, so no chemical risks.</p>
-                            </div>
-                        </details>
-                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="ഗർഭിണികൾക്ക് കഴിക്കാമോ?">Can pregnant women eat this?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="അതെ, ഇതിൽ ഫോളേറ്റ് (Folate) ധാരാളമുണ്ട്. ഡോക്ടറുടെ നിർദ്ദേശം തേടാം.">Yes, mushrooms are a natural source of Folate (Vitamin B9), which is crucial during pregnancy. However, always ensure it is cooked properly.</p>
-                            </div>
-                        </details>
-                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="ഇതിൽ മരുന്നുകളോ കെമിക്കലോ ഉണ്ടോ?">Any chemicals used?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="ഇല്ല. 100% ഓർഗാനിക് രീതിയിലാണ് കൃഷി.">Zero. We grow them on sterilized sawdust. No fertilizers, no pesticides, no preservatives. Direct from trusted farm.</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Category 3: Buying & Cooking -->
-                <div>
-                     <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Buying / വാങ്ങുന്ന വിധം</h4>
-                    <div class="space-y-3">
-                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="എത്രയാ വില?">What is the price?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p>
-    <span data-ml="സീസൺ അനുസരിച്ചു മാറും. ഏകദേശം 200g പാക്കറ്റിന് ₹80-₹100 റേഞ്ചിലാണ്.">Prices vary slightly by season but are generally affordable compared to premium meat.</span>
-    <a href="https://wa.me/918078937260?text=Hello,%20I%20would%20like%20to%20know%20today's%20mushroom%20price." target="_blank" class="text-primary font-semibold hover:underline" data-ml="ഇന്നത്തെ വിലയറിയാൻ വാട്സാപ്പിൽ ബന്ധപ്പെടുക.">Contact us on WhatsApp for today's price.</a>
-</p>
-                            </div>
-                        </details>
-                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="മിനിമം എത്ര ഓർഡർ ചെയ്യണം?">Is there a minimum order?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="ഇല്ല. ഒരു പാക്കറ്റ് (200g) വേണമെങ്കിലും വാങ്ങാം.">No minimums for pickup. For home delivery, we might suggest bulk orders to save on delivery charges.</p>
-                            </div>
-                        </details>
-                         <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
-                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
-                                <span data-ml="പാചകം ചെയ്യാൻ അറിയില്ല. സഹായിക്കുമോ?">I don't know recipes. Can you help?</span>
-                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
-                            </summary>
-                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
-                                <p data-ml="തീർച്ചയായും! ഞങ്ങളുടെ യൂട്യൂബ് ചാനലിൽ ധാരാളം റെസിപ്പികൾ ഉണ്ട്. പാക്കറ്റിന് പുറത്തും നിർദ്ദേശങ്ങളുണ്ട്.">Absolutely. We send recipe videos on WhatsApp. It's versatile - Fry, Curry, Roast, Soup, or Stir-fry. It fits everywhere.</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-            </div>
-            
-            <!-- Sticky Footer CTA -->
-            <div class="p-4 border-t border-stone-200 bg-white md:bg-stone-50 shrink-0 text-center">
-                <a href="https://wa.me/918078937260" target="_blank" class="w-full md:w-auto inline-flex justify-center items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all font-bold">
-                    <i class="fab fa-whatsapp"></i>
-                    <span data-ml="ഞങ്ങളുമായി ചാറ്റ് ചെയ്യൂ">Chat with Chef/Farmer</span>
-                </a>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<script>
-    // Modal Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('faq-modal');
-        const openBtn = document.getElementById('open-faq-modal');
-        const closeBtn = document.getElementById('close-faq-modal');
-        const closeBackdrop = document.getElementById('close-faq-modal-backdrop');
-
-        function openModal() {
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        if(openBtn) openBtn.addEventListener('click', openModal);
-        if(closeBtn) closeBtn.addEventListener('click', closeModal);
-        if(closeBackdrop) closeBackdrop.addEventListener('click', closeModal);
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-    });
-</script>
-
-<!-- Benefits Section (Restored) -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">
-                <span data-ml="എൽം ഓയിസ്റ്റർ കൂണിന്റെ അത്ഭുത ഗുണങ്ങൾ">The Power of Elm Oyster Mushrooms</span>
-            </h2>
-            <p class="text-stone-600 mb-4" data-ml="ശാസ്ത്രീയമായി തെളിയിക്കപ്പെട്ട 10 പ്രധാന ആരോഗ്യ ഗുണങ്ങൾ">Discover the scientifically proven health benefits of Hypsizygus ulmarius.</p>
-        </div>
-
-        <!-- Benefits Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            
-            <!-- 1. Protein & Muscle -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-dumbbell text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="മികച്ച പ്രോട്ടീൻ & മസിൽ ബിൽഡിംഗ്">Superior Protein & Muscle</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="സാധാരണ ഓയിസ്റ്റർ കൂണുകളേക്കാൾ (23-39%) പ്രോട്ടീൻ അടങ്ങിയിരിക്കുന്നു. രാജ്മയ്ക്കും മാംസാഹാരത്തിനും തുല്യം. ലൈസിൻ, ല്യൂസിൻ തുടങ്ങിയ അമിനോ ആസിഡുകളാൽ സമ്പന്നം.">Contains 23-39% protein (dry weight), significantly higher than common oysters. Rich in Lysine & Leucine, supporting muscle repair and recovery.</span>
-                </p>
-                <div class="bg-white p-3 rounded-lg border border-primary/10">
-                    <p class="text-xs font-semibold text-primary" data-ml="ജിമ്മിൽ പോകുന്നവർക്കും കുട്ടികൾക്കും ഉത്തമം">Perfect for fitness enthusiasts & kids</p>
-                </div>
-            </div>
-
-            <!-- 2. Immune Support -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-shield-virus text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="രോഗപ്രതിരോധ ശേഷി">Immune System Modulation</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="1,3-1,6 ബീറ്റാ-ഗ്ലൂക്കാനുകൾ വൈറസുകൾക്കെതിരെ പോരാടാൻ ശരീരത്തെ സഹായിക്കുന്നു. പാചകം ചെയ്താലും നശിക്കാത്ത ആന്റിഓക്സിഡന്റുകൾ.">Rich in Beta-Glucans that activate immune defense without causing inflammation. Supports interferon production to fight viruses. Heat-stable antioxidants.</span>
-                </p>
-            </div>
-
-            <!-- 3. Heart Health -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-heartbeat text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="ഹൃദയാരോഗ്യം & കൊളസ്ട്രോൾ">Heart & Cholesterol</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="പ്രകൃതിദത്ത ലൊവാസ്റ്റാറ്റിൻ കൊളസ്ട്രോൾ കുറയ്ക്കാൻ സഹായിക്കുന്നു. പൊട്ടാസ്യം ബിപി നിയന്ത്രിക്കാനും രക്തക്കുഴലുകൾ വികസിപ്പിക്കാനും സഹായിക്കുന്നു.">Contains natural Lovastatin to lower LDL cholesterol. High Potassium content helps regulate blood pressure and prevents plaque buildup in arteries.</span>
-                </p>
-            </div>
-
-            <!-- 4. Diabetes -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-tint text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="പ്രമേഹ നിയന്ത്രണം">Diabetes Management</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="രക്തത്തിലെ പഞ്ചസാര പെട്ടെന്ന് കൂടുന്നത് തടയുന്നു. ഇൻസുലിൻ പ്രവർത്തനം കാര്യക്ഷമമാക്കാനും പാൻക്രിയാസിനെ സംരക്ഷിക്കാനും സഹായിക്കുന്നു.">Regulates blood sugar spikes. Soluble fibers act like a gel to slow sugar absorption, improving insulin efficiency and protecting pancreatic beta cells.</span>
-                </p>
-            </div>
-
-            <!-- 5. Anti-Inflammatory -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-joint text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="നീർവീക്കവും വേദനയും കുറയ്ക്കുന്നു">Pain & Inflammation Relief</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="സന്ധിവേദനയ്ക്കും നീർവീക്കത്തിനും എതിരെ പ്രവർത്തിക്കുന്നു. മരുന്നുകൾക്കുള്ള പാർശ്വഫലങ്ങളില്ലാതെ പ്രകൃതിദത്ത വേദന സംഹാരിയായി പ്രവർത്തിക്കുന്നു.">Acts as a natural COX-2 inhibitor (like Ibuprofen) to reduce joint pain and inflammation without side effects. Protects cartilage health.</span>
-                </p>
-            </div>
-
-            <!-- 6. Liver & Brain -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-brain text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">
-                    <span data-ml="കരൾ & തലച്ചോർ സംരക്ഷണം">Liver & Neuro Protection</span>
-                </h3>
-                <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                    <span data-ml="ഓർമ്മശക്തി വർദ്ധിപ്പിക്കാനും കരളിനെ സംരക്ഷിക്കാനും സഹായിക്കുന്നു. മിൽക്ക് തിസിൽ പോലെ കരളിന് ഗുണകരം.">Protects liver function similar to Milk Thistle. Boosts Acetylcholine for memory and supports nerve growth and brain health.</span>
-                </p>
-            </div>
-            
-            <!-- 7. Culinary (Spanning 2 cols on huge screens, or just regular card) -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group md:col-span-2 lg:col-span-3 text-center">
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i class="fas fa-utensils text-3xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-stone-900 mb-4">
-                        <span data-ml="രുചിയിലും ഘടനയിലും രാജാവ്">The "Meaty" Culinary Experience</span>
-                    </h3>
-                    <p class="text-stone-600 leading-relaxed max-w-3xl mx-auto mb-6">
-                        <span data-ml="ഇറച്ചി പോലെയുള്ള ഘടന. പാചകം ചെയ്യുമ്പോൾ ഉടഞ്ഞുപോകില്ല. വറുത്തരച്ച കറികൾക്കും പെപ്പർ ഫ്രൈക്കും ഏറ്റവും അനുയോജ്യം. രുചികരവും എന്നാൽ ഇറച്ചി കഴിക്കുന്ന സംതൃപ്തിയും നൽകുന്നു.">Unlike common mushrooms that shrink, Elm Oysters hold their shape and "meaty" texture. Perfect for traditional Kerala curries, roasts, and pepper dry fry. Provides high satiety like meat.</span>
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="px-4 py-2 bg-white rounded-full border border-primary/20 text-sm font-medium text-primary" data-ml="വെള്ളം പിടിച്ചുനിർത്തുന്നു">Retains Water & Shape</span>
-                        <span class="px-4 py-2 bg-white rounded-full border border-primary/20 text-sm font-medium text-primary" data-ml="ഇറച്ചിക്ക് തുല്യം">Meat Alternative</span>
-                        <span class="px-4 py-2 bg-white rounded-full border border-primary/20 text-sm font-medium text-primary" data-ml="നാരുകൾ ധാരാളം">High Satiety</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Vitamin D & Anti-Aging Summary -->
-        <div class="bg-gradient-primary rounded-2xl p-8 md:p-12 text-white overflow-hidden relative">
-            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                     <h3 class="text-2xl md:text-3xl font-bold mb-4">
-                        <span data-ml="വിറ്റാമിൻ ഡിയും യുവത്വവും">Vitamin D & Anti-Aging Powerhouse</span>
-                    </h3>
-                    <div class="space-y-4 text-white/90">
-                        <p class="flex gap-3">
-                            <i class="fas fa-sun mt-1 text-yellow-400"></i>
-                            <span data-ml="സൂര്യപ്രകാശത്തിൽ വെച്ചാൽ വിറ്റാമിൻ ഡി ഉത്പാദിപ്പിക്കുന്നു. കാൽസ്യം ആഗിരണം ചെയ്യാൻ സഹായിക്കുന്നു.">Natural Vitamin D factory: Converts sunlight to Vitamin D2 within 30-60 mins, boosting Calcium absorption by 30-40%.</span>
-                        </p>
-                        <p class="flex gap-3">
-                            <i class="fas fa-hourglass-half mt-1 text-yellow-400"></i>
-                            <span data-ml="എർഗോത്തിയോണിൻ എന്ന ആന്റിഓക്സിഡന്റ് കോശങ്ങളുടെ നാശം തടയുന്നു. കൊളാജൻ സംരക്ഷിക്കുന്നു.">Rich in Ergothioneine: Use natural "intelligent antioxidant" that targets eyes, liver, and bone marrow to fight aging and protect collagen.</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                     <h4 class="font-bold text-lg mb-4 text-center border-b border-white/20 pb-3">
-                        <span data-ml="എന്തുകൊണ്ട് ഇവ തിരഞ്ഞെടുക്കണം?">Why Switch to Meaty Mushrooms?</span>
-                     </h4>
-                     <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-green-400"></i>
-                            <span data-ml="പരിപ്പിനേക്കാൾ 2 മടങ്ങ് പ്രോട്ടീൻ">High Protein Efficiency (Dry Weight)</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-green-400"></i>
-                            <span data-ml="ഊർജ്ജത്തിന്">Ideal energy source</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-green-400"></i>
-                            <span data-ml="പാകം ചെയ്താലും ഗുണം പോകില്ല">Heat-stable nutrients (Don't suffer in curry)</span>
-                        </li>
-                     </ul>
-                </div>
-            </div>
-            
-            <!-- Decor -->
-            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Nutritional Facts Section (Restored Detailed Version) -->
-<section id="nutrition" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="ആരോഗ്യ ഗുണങ്ങൾ">Health Benefits</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പൂർണ്ണമായ പോഷക വിവരങ്ങൾ">Complete Nutritional Facts</h2>
-            <p class="text-stone-600 mb-4" data-ml="100 ഗ്രാം ഫ്രഷ് കൂണിലെ പോഷക ഗുണങ്ങൾ">Per 100g fresh weight - Discover the incredible health benefits and complete nutritional profile.</p>
-            <div class="inline-block bg-white px-4 py-2 rounded-lg border border-primary/20">
-                <p class="text-sm text-primary font-medium">
-                    <span class="font-semibold">RDA</span> = Recommended Daily Allowance for adults
-                </p>
-            </div>
-        </div>
-
-        <!-- Main Nutritional Grid -->
-        <div class="grid lg:grid-cols-2 gap-8 mb-12">
-            <!-- Left Column: Macronutrients & Vitamins -->
-            <div class="space-y-8">
-                <!-- Macronutrients -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                            <span class="text-xl">🧪</span>
-                        </div>
-                        <span data-ml="മാക്രോന്യൂട്രിയന്റുകൾ">Macronutrients (Fresh Weight)</span>
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-primary mb-1">33</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="കലോറി">Calories (kcal)</div>
-                            <div class="text-xs text-primary">2% RDA</div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-primary mb-1">3.3g</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="പ്രോട്ടീൻ">Protein</div>
-                            <div class="text-xs text-primary">7% RDA</div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-primary mb-1">0.4g</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="കൊഴുപ്പ്">Total Fat</div>
-                            <div class="text-xs text-primary">1% RDA</div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-2xl font-bold text-primary mb-1">6.1g</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="കാർബോഹൈഡ്രേറ്റ്">Carbohydrates</div>
-                            <div class="text-xs text-primary">2% RDA</div>
-                        </div>
-                    </div>
-                    <div class="mt-4 grid grid-cols-2 gap-4">
-                        <div class="bg-primary/3 p-3 rounded-lg">
-                            <div class="text-lg font-semibold text-primary">2.3g</div>
-                            <div class="text-xs text-stone-600" data-ml="നാരുകൾ">Dietary Fiber (9% RDA)</div>
-                        </div>
-                        <div class="bg-primary/3 p-3 rounded-lg">
-                            <div class="text-lg font-semibold text-primary">1.1g</div>
-                            <div class="text-xs text-stone-600" data-ml="പ്രകൃതിദത്ത പഞ്ചസാര">Natural Sugar</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Key Vitamins -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                            <span class="text-xl">🌿</span>
-                        </div>
-                        <span data-ml="പ്രധാന വിറ്റാമിനുകൾ">Key Vitamins</span>
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="bg-primary/10 p-4 rounded-xl border border-primary/20">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <div class="font-semibold text-primary mb-1" data-ml="വിറ്റാമിൻ ഡി2">Vitamin D2</div>
-                                    <div class="text-sm text-stone-600">0.5-4.9µg</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-lg font-bold text-primary">20-200%</div>
-                                    <div class="text-xs text-primary">RDA</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="bg-primary/5 p-3 rounded-lg">
-                                <div class="text-sm font-medium text-stone-700">Vitamin B2</div>
-                                <div class="text-primary font-semibold">27% RDA</div>
-                            </div>
-                            <div class="bg-primary/5 p-3 rounded-lg">
-                                <div class="text-sm font-medium text-stone-700">Vitamin B3</div>
-                                <div class="text-primary font-semibold">31% RDA</div>
-                            </div>
-                            <div class="bg-primary/5 p-3 rounded-lg">
-                                <div class="text-sm font-medium text-stone-700">Vitamin B5</div>
-                                <div class="text-primary font-semibold">26% RDA</div>
-                            </div>
-                            <div class="bg-primary/5 p-3 rounded-lg">
-                                <div class="text-sm font-medium text-stone-700">Folate (B9)</div>
-                                <div class="text-primary font-semibold">10% RDA</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Minerals & Bioactive Compounds -->
-            <div class="space-y-8">
-                <!-- Essential Minerals -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                            <span class="text-xl">💪</span>
-                        </div>
-                        <span data-ml="ധാതുക്കൾ">Essential Minerals</span>
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-primary mb-1">361mg</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="പൊട്ടാസ്യം">Potassium</div>
-                            <div class="text-xs text-primary">10% RDA</div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-primary mb-1">120mg</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="ഫോസ്ഫറസ്">Phosphorus</div>
-                            <div class="text-xs text-primary">17% RDA</div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-primary mb-1">1.3-2.7mg</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="ഇരുമ്പ്">Iron</div>
-                            <div class="text-xs text-primary">15% RDA</div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl">
-                            <div class="text-lg font-bold text-primary mb-1">0.2mg</div>
-                            <div class="text-sm text-stone-600 mb-1" data-ml="ചെമ്പ്">Copper</div>
-                            <div class="text-xs text-primary">22% RDA</div>
-                        </div>
-                    </div>
-                    <div class="mt-4 grid grid-cols-2 gap-4">
-                        <div class="bg-primary/3 p-3 rounded-lg text-center">
-                            <div class="text-sm font-medium text-stone-700" data-ml="സിങ്ക്">Zinc</div>
-                            <div class="text-primary font-semibold">10% RDA</div>
-                        </div>
-                        <div class="bg-primary/3 p-3 rounded-lg text-center">
-                            <div class="text-sm font-medium text-stone-700" data-ml="മാംഗനീസ്">Manganese</div>
-                            <div class="text-primary font-semibold">13% RDA</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bioactive Compounds -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-primary/10">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                            <span class="text-xl">🧠</span>
-                        </div>
-                        <span data-ml="ജൈവ സംയുക്തങ്ങൾ">Bioactive Compounds</span>
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                                    <span class="text-lg">🛡️</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-primary">Beta-glucans</div>
-                                    <div class="text-sm text-stone-600" data-ml="രോഗപ്രതിരോധ ശേഷി വർദ്ധിപ്പിക്കുന്നു">Immune system support & anti-tumor properties</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                                    <span class="text-lg">⚡</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-primary">Ergothioneine</div>
-                                    <div class="text-sm text-stone-600" data-ml="ശക്തമായ ആന്റിഓക്‌സിഡന്റ്">Powerful antioxidant that protects DNA & cells</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                                    <span class="text-lg">❤️</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-primary">Lovastatin</div>
-                                    <div class="text-sm text-stone-600" data-ml="കൊളസ്ട്രോൾ കുറയ്ക്കുന്നു">Natural cholesterol-lowering compound</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                                    <span class="text-lg">🔥</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-primary">Polyphenols</div>
-                                    <div class="text-sm text-stone-600" data-ml="നീർവീക്കം തടയുന്നു">Anti-inflammatory & antioxidant properties</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Health Benefits Summary -->
-        <div class="bg-gradient-primary rounded-2xl p-8 text-white">
-            <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold mb-2" data-ml="എന്തുകൊണ്ട് ഓയിസ്റ്റർ കൂണുകൾ?">✨ Why Oyster Mushrooms Are Superfoods</h3>
-                <p class="text-white/80" data-ml="പോഷകങ്ങൾ നിറഞ്ഞതും, കുറഞ്ഞ കലോറിയും, നിരവധി ആരോഗ്യ ഗുണങ്ങളും.">Packed with nutrients, low in calories, and full of health benefits</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                    <div class="text-3xl mb-3">🌱</div>
-                    <div class="font-semibold mb-2" data-ml="വിറ്റാമിൻ ബി സമ്പുഷ്ടം">Rich in B Vitamins</div>
-                    <div class="text-sm text-white/80" data-ml="ഊർജ്ജത്തിനും നാഡീവ്യൂഹത്തിനും">Essential for energy metabolism and nervous system</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                    <div class="text-3xl mb-3">💪</div>
-                    <div class="font-semibold mb-2" data-ml="പൂർണ്ണമായ പ്രോട്ടീൻ">Complete Protein</div>
-                    <div class="text-sm text-white/80" data-ml="എല്ലാ അമിനോ ആസിഡുകളും അടങ്ങിയിരിക്കുന്നു">Contains all essential amino acids for vegetarians</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                    <div class="text-3xl mb-3">☀️</div>
-                    <div class="font-semibold mb-2" data-ml="വിറ്റാമിൻ ഡി">Natural Vitamin D</div>
-                    <div class="text-sm text-white/80" data-ml="സസ്യാഹാരത്തിലെ അപൂർവ്വ വിറ്റാമിൻ ഡി ഉറവിടം">One of the few plant sources of Vitamin D2</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                    <div class="text-3xl mb-3">🎯</div>
-                    <div class="font-semibold mb-2" data-ml="കുറഞ്ഞ കലോറി">Low Calorie</div>
-                    <div class="text-sm text-white/80" data-ml="കൂടുതൽ പോഷകങ്ങൾ, കുറഞ്ഞ കലോറി">High nutrition density with minimal calories</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<Solutions />
-
-<!-- Cooking Videos Section -->
-<section id="cooking-videos" class="py-20 bg-[#F8FAF8]">
+<!-- Store Section -->
+<section id="store" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="പാചകം പഠിക്കാം">Learn to Cook</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പാചക വീഡിയോകളും ട്യൂട്ടോറിയലുകളും">Cooking Videos & Tutorials</h2>
-            <p class="text-stone-600" data-ml="ഞങ്ങളുടെ വിദഗ്ദ്ധ വീഡിയോ ഗൈഡുകൾ ഉപയോഗിച്ച് കൂൺ പാചകം ചെയ്യുന്ന കലയിൽ പ്രാവീണ്യം നേടുക.">Master the art of cooking mushrooms with our expert video guides in Malayalam.</p>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Our Store</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Our Farm Fresh Products</h2>
+            <p class="text-stone-600">Select your items below. Fast checkout via WhatsApp.</p>
+        </div>
+
+        <!-- How to Order Teaser -->
+        <div class="bg-primary-light rounded-2xl p-6 mb-12 text-center border border-primary/10">
+            <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div class="flex items-center gap-3 justify-center">
+                    <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">1</span>
+                    <span class="text-sm font-medium text-stone-700">Add items to cart</span>
+                </div>
+                <div class="flex items-center gap-3 justify-center">
+                    <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">2</span>
+                    <span class="text-sm font-medium text-stone-700">Enter delivery details</span>
+                </div>
+                <div class="flex items-center gap-3 justify-center">
+                    <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">3</span>
+                    <span class="text-sm font-medium text-stone-700">Order on WhatsApp</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Products in Single Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => <ProductCard product={product} />)}
+        </div>
+    </div>
+</section>
+
+<!-- Cooking Videos Section -->
+<section id="videos" class="py-20 bg-[#F8FAF8]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Learn to Cook</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Learn to Cook in Minutes</h2>
+            <p class="text-stone-600">Oysters hold their shape and absorb traditional Kerala curry flavors perfectly.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cookingVideos.map((video, index) => (
+            {cookingVideos.map((video) => (
                 <div class="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
                     <div class="relative">
                         <img src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`} alt={video.title} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
@@ -956,9 +199,9 @@ const products = [
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-semibold text-stone-900 mb-2" data-ml={video.titleML || video.title}>{video.title}</h3>
-                        <p class="text-stone-600 text-sm mb-4" data-ml={video.descriptionML || video.description}>{video.description}</p>
+                        <p class="text-stone-600 text-sm mb-4">{video.description}</p>
                         <a href={`https://youtube.com/watch?v=${video.id}`} target="_blank" class="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-dark transition-colors">
-                            <span data-ml="യൂട്യൂബിൽ കാണുക">Watch on YouTube</span>
+                            <span>Watch on YouTube</span>
                             <i class="fas fa-external-link-alt text-sm"></i>
                         </a>
                     </div>
@@ -967,327 +210,357 @@ const products = [
         </div>
 
         <div class="text-center mt-12">
-
             <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all group">
                 <i class="fab fa-youtube"></i>
-                <span data-ml="കൂടുതൽ പാചക വീഡിയോകൾ">More Cooking Videos</span>
+                <span>More Cooking Videos</span>
                 <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
             </a>
         </div>
     </div>
 </section>
 
-<!-- Recipes Section (Redesigned - Fresh & Minimal) -->
-<section id="recipes" class="py-20 bg-white">
+<!-- Condensed Health Benefits -->
+<section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="റെസിപ്പി ശേഖരം">Recipe Collection</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="ലളിതം. സ്വാദിഷ്ടം. ആരോഗ്യം.">Simple. Delicious. Healthy.</h2>
-            <p class="text-stone-600" data-ml="കൂൺ പാചകം തുടങ്ങാൻ മൂന്ന് തിരഞ്ഞെടുത്ത റെസിപ്പികൾ.">Three carefully curated recipes to get you started with mushroom cooking.</p>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Health Benefits</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">
+                <span>Discover the Benefits of Oyster Mushrooms</span>
+            </h2>
+            <p class="text-stone-600 mb-4">Packed with nutrition and scientifically proven health benefits.</p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-12">
-            {recipes.map((recipe, index) => (
-                <div class="group cursor-pointer">
-                    <div class="relative mb-8 overflow-hidden rounded-3xl">
-                        <Image src={recipe.image} alt={recipe.name} class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <div class="flex items-center gap-4 mb-3">
-                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cuisine}</span>
-                                <span class="text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full" data-ml={recipe.cookTime}>{recipe.cookTime}</span>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2" data-ml={recipe.nameML || recipe.name}>{recipe.name}</h3>
-                            <div class="flex items-center gap-1 text-yellow-400">
-                                {Array(recipe.rating).fill(0).map(() => (
-                                    <i class="fas fa-star text-sm"></i>
-                                ))}
-                                <span class="text-white/80 ml-2 text-sm">({recipe.reviews} reviews)</span>
-                            </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- 1. Immune System Support -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-shield-virus text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Immune System Support</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Rich in naturally occurring beta-glucans that help support healthy immune function.
+                </p>
+            </div>
+
+            <!-- 2. High in Protein -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-dumbbell text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">High in Protein</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    A great plant-based protein source for everyday nutrition and muscle recovery.
+                </p>
+            </div>
+
+            <!-- 3. Naturally Rich in Vitamin D -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-sun text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Naturally Rich in Vitamin D</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    One of the few natural food sources that can provide Vitamin D when exposed to sunlight.
+                </p>
+            </div>
+
+            <!-- 4. Heart-Friendly Nutrition -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-heart text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Heart-Friendly Nutrition</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Contains compounds that may help support healthy cholesterol levels and heart wellness.
+                </p>
+            </div>
+
+            <!-- 5. Supports Brain Health -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-brain text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Supports Brain Health</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Contains antioxidants and bioactive compounds linked to cognitive and nerve health.
+                </p>
+            </div>
+
+            <!-- 6. Gut Health & Digestion -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-seedling text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Gut Health & Digestion</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Rich in dietary fiber that helps support digestion and a healthy gut microbiome.
+                </p>
+            </div>
+
+            <!-- 7. Low-Calorie Superfood -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-weight text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Low-Calorie Superfood</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Nutrient-dense, low in calories, and ideal for healthy everyday meals.
+                </p>
+            </div>
+
+            <!-- 8. Antioxidant Rich -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-shield text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-3">Antioxidant Rich</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Packed with antioxidants that help the body fight oxidative stress naturally.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Conversion FAQ -->
+<section class="py-16 bg-stone-50 border-y border-stone-200" id="faq-section">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">No Hesitation</span>
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">First Time Buying?</h2>
+            <p class="text-stone-600 max-w-2xl mx-auto">We answer your top questions so you can order with confidence.</p>
+        </div>
+
+        <div class="space-y-3">
+            <!-- Q1: Delivery Area -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-truck"></i></span>
+                        <span>Where do you deliver?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p>We deliver fresh harvests locally across the <strong>Vadakara and Kozhikode</strong> area to ensure maximum freshness.</p>
+                </div>
+            </details>
+
+            <!-- Q2: Freshness -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-clock"></i></span>
+                        <span>How long do they stay fresh?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p>Store them in your refrigerator (2-4<span>°C</span>) in their original breathable packaging, and they will stay perfectly fresh for up to <strong>4 days</strong>.</p>
+                </div>
+            </details>
+            
+            <!-- Q3: Washing -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-hand-holding-water"></i></span>
+                        <span>Do I need to wash them?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p><strong>Do not soak them.</strong> Simply wipe them with a damp cloth or give them a very gentle, quick rinse under cold water right before cooking.</p>
+                </div>
+            </details>
+
+            <!-- Q4: Texture -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-utensils"></i></span>
+                        <span>What is the texture like?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p>Unlike common button mushrooms that shrink and get soggy, our oyster mushrooms maintain a firm, satisfying <strong>"meaty" bite</strong> even in heavy curries.</p>
+                </div>
+            </details>
+        </div>
+        
+        <div class="mt-8 text-center">
+            <a href="https://wa.me/918078937260" target="_blank" class="hover:underline inline-flex items-center justify-center gap-1 text-sm text-stone-500">
+                <i class="fab fa-whatsapp text-green-600"></i>
+                <span>Still have questions? Ask us on WhatsApp</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Safety, Quality & Why Choose Us -->
+<section id="safety" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Grown Safely in Kerala -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Safety & Quality</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Grown Safely in Kerala</h2>
+            <p class="text-stone-600">Our commitment to quality and safety standards you can trust.</p>
+        </div>
+
+        <!-- Registration Badges -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-primary/10">
+                <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-certificate text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-2">FSSAI Registered</h3>
+                <p class="text-primary font-mono text-lg font-bold tracking-wider mb-3">21325234000380</p>
+                <p class="text-sm text-stone-600">Registered with Food Safety and Standards Authority of India.</p>
+            </div>
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-primary/10">
+                <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900 mb-2">MSME Registered</h3>
+                <p class="text-primary font-mono text-lg font-bold tracking-wider mb-3">UDYAM-KL-08-0086495</p>
+                <p class="text-sm text-stone-600">Registered under Micro, Small & Medium Enterprises Development Act.</p>
+            </div>
+        </div>
+
+        <!-- Storage & Handling - Split into 2 Cards -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- Card 1: Storage Rules -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10">
+                <h3 class="text-xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+                    <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><i class="fas fa-snowflake text-primary"></i></span>
+                    <span>Storage Rules</span>
+                </h3>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-temperature-low text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-stone-900">Cold Storage</p>
+                            <p class="text-sm text-stone-600">Store in the refrigerator (2-4<span>°C</span>) for a maximum of <strong>4 days</strong>.</p>
                         </div>
                     </div>
-                    
-                    <div class="space-y-4">
-                        <p class="text-stone-600 leading-relaxed" data-ml={recipe.descriptionML || recipe.description}>{recipe.description}</p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-4 text-sm text-stone-500">
-                                <span class="flex items-center gap-1">
-                                    <i class="fas fa-signal"></i>
-                                    {recipe.difficulty}
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <i class="fas fa-users"></i>
-                                    <span data-ml="4 പേർക്ക്">Serves 4</span>
-                                </span>
-                            </div>
-                            <a href={`/recipes/recipe-${index + 1}`} class="text-primary font-medium hover:text-primary-dark transition-colors group-hover:underline">
-                                <span data-ml="റെസിപ്പി കാണുക">View Recipe</span> →
-                            </a>
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-thermometer-half text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-stone-900">Room Temperature</p>
+                            <p class="text-sm text-stone-600">Consume within <strong>1 day</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-box-open text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-stone-900">Packaging</p>
+                            <p class="text-sm text-stone-600">Keep in breathable packaging.</p>
                         </div>
                     </div>
                 </div>
-            ))}
-        </div>
+            </div>
 
-        <div class="text-center mt-16">
-            <a href="/recipes" class="inline-flex items-center gap-3 px-8 py-4 border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all group">
-                <span data-ml="എല്ലാ റെസിപ്പികളും കാണുക">Browse All Recipes</span>
-                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-</section>
-
-<!-- Featured Products Section -->
-<section class="py-20 bg-[#F8FAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ">Our Products</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="പ്രീമിയം കൂൺ ഇനങ്ങൾ">Premium Mushroom Varieties</h2>
-            <p class="text-stone-600" data-ml="ഞങ്ങളുടെ പ്രീമിയം ഓർഗാനിക് കൂണുകൾ കണ്ടെത്തൂ, പരമാവധി ഫ്രഷ്‌നസും പോഷകങ്ങളും ഉറപ്പാക്കാൻ ദിവസവും വിളവെടുക്കുന്നു.">Discover our range of premium organic mushrooms, harvested daily to ensure maximum freshness and nutrition.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-                <div class="bg-white rounded-2xl p-6 group hover:shadow-xl transition-all duration-300 border border-stone-100">
-                    <div class="relative mb-6 overflow-hidden rounded-xl">
-                        <Image src={product.image} alt={product.name} class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
-                        <span class={`absolute top-4 right-4 ${product.badgeColor} text-white text-sm px-3 py-1 rounded-full`} data-ml={product.badgeML || product.badge}>{product.badge}</span>
+            <!-- Card 2: Prep & Handling -->
+            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10">
+                <h3 class="text-xl font-bold text-stone-900 mb-6 flex items-center gap-3">
+                    <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><i class="fas fa-hand-holding-water text-primary"></i></span>
+                    <span>Prep & Handling</span>
+                </h3>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-tint-slash text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-stone-900">Moisture Warning</p>
+                            <p class="text-sm text-stone-600">Do not wash until ready to cook to maximize shelf life.</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-2" data-ml={product.nameML || product.name}>{product.name}</h3>
-                    <p class="text-stone-600 text-sm mb-4" data-ml={product.descriptionML || product.description}>{product.description}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-primary font-semibold">{product.price}</span>
-                        {/* <button class="px-4 py-2 bg-primary-light text-primary rounded-full hover:bg-primary hover:text-white transition-all flex items-center gap-2 text-sm">
-                            <i class="fas fa-shopping-basket"></i>
-                            Add to Cart
-                        </button> */}
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-hand-sparkles text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-stone-900">Cleaning</p>
+                            <p class="text-sm text-stone-600">Gentle rinse under cold water or wipe with a damp cloth just before cooking.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-fire text-primary"></i></div>
+                        <div>
+                            <p class="font-semibold text-stone-900">Cooking</p>
+                            <p class="text-sm text-stone-600">Don't overcrowd the pan. Cook on medium-high heat.</p>
+                        </div>
                     </div>
                 </div>
-            ))}
+            </div>
         </div>
 
-        <div class="text-center mt-12">
-            <a href="/products" class="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-dark transition-colors group">
-                <span data-ml="എല്ലാ ഉൽപ്പന്നങ്ങളും കാണുക">View All Products</span>
-                <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Us Section (Logo only, no images) -->
-<section class="py-24 relative overflow-hidden bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        <!-- Section Header -->
+        <!-- Why Choose Us (Restored) -->
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="എന്തുകൊണ്ട് ഞങ്ങളെ തിരഞ്ഞെടുക്കണം">Why Choose Us</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="മീറ്റി മഷ്റൂംസ് പ്രത്യേകത">The Meaty Mushrooms Difference</h2>
-            <p class="text-stone-600" data-ml="കൂൺ കൃഷിയിൽ ഞങ്ങളെ വ്യത്യസ്തരാക്കുന്നത് എന്താണെന്ന് കണ്ടെത്തൂ.">Discover what sets us apart in the world of mushroom cultivation.</p>
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Why Choose Us</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">The Meaty Mushrooms Difference</h2>
+            <p class="text-stone-600">Discover what sets us apart in the world of mushroom cultivation.</p>
         </div>
 
-        <!-- Features Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-leaf text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="100% ഓർഗാനിക്">100% Organic</h3>
-                <p class="text-stone-600 text-sm leading-relaxed" data-ml="കീടനാശിനികളും കൃത്രിമ രാസവസ്തുക്കളും ഇല്ലാതെ ജൈവ രീതിയിൽ കൃഷി ചെയ്യുന്നത്.">Our mushrooms are grown using organic methods, free from pesticides and artificial additives.</p>
+                <h3 class="text-xl font-semibold text-stone-900 mb-3">100% Organic</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Our mushrooms are grown using organic methods, free from pesticides and artificial additives.</p>
             </div>
 
-            <!-- Feature 2 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-clock text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="അതേ ദിവസം ഡെലിവറി">Same Day Delivery</h3>
-                <p class="text-stone-600 text-sm leading-relaxed" data-ml="വിളവെടുത്ത് മണിക്കൂറുകൾക്കുള്ളിൽ ഫ്രഷ് കൂണുകൾ നിങ്ങളുടെ വീട്ടിലെത്തും.">Fresh mushrooms delivered to your doorstep within hours of harvesting.</p>
+                <h3 class="text-xl font-semibold text-stone-900 mb-3">Same Day Delivery</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Fresh mushrooms delivered to your doorstep within hours of harvesting.</p>
             </div>
 
-            <!-- Feature 3 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-flask text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="ലാബ് ടെസ്റ്റ് ചെയ്തത്">Lab Tested</h3>
-                <p class="text-stone-600 text-sm leading-relaxed" data-ml="സുരക്ഷയും ഗുണനിലവാരവും ഉറപ്പുവരുത്താൻ കൃത്യമായ പരിശോധനകൾ.">Regular quality checks ensure the highest standards of safety and nutrition.</p>
+                <h3 class="text-xl font-semibold text-stone-900 mb-3">Lab Tested</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Regular quality checks ensure the highest standards of safety and nutrition.</p>
             </div>
 
-            <!-- Feature 4 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-handshake text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="പ്രാദേശിക കൂട്ടായ്മ">Local Community</h3>
-                <p class="text-stone-600 text-sm leading-relaxed" data-ml="വടകരയിലെ പ്രാദേശിക കർഷകരെ പിന്തുണയ്ക്കുന്നു.">Supporting local farmers and contributing to sustainable agriculture in Vadakara.</p>
+                <h3 class="text-xl font-semibold text-stone-900 mb-3">Local Community</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Supporting local farmers and contributing to sustainable agriculture in Vadakara.</p>
             </div>
 
-            <!-- Feature 5 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-seedling text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="സുസ്ഥിര കൃഷി">Sustainable Farming</h3>
-                <p class="text-stone-600 text-sm leading-relaxed" data-ml="പരിസ്ഥിതി സൗഹൃദമായ കൃഷി രീതികൾ.">Eco-friendly cultivation methods that prioritize environmental conservation.</p>
+                <h3 class="text-xl font-semibold text-stone-900 mb-3">Sustainable Farming</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Eco-friendly cultivation methods that prioritize environmental conservation.</p>
             </div>
 
-            <!-- Feature 6 -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
                 <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
                     <i class="fas fa-phone-alt text-primary text-2xl group-hover:text-white transition-colors"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3" data-ml="വിദഗ്ദ്ധ സഹായം">Expert Support</h3>
-                <p class="text-stone-600 text-sm leading-relaxed" data-ml="നിങ്ങളുടെ സംശയങ്ങൾക്കും കൃഷി അറിവുകൾക്കുമായി ഞങ്ങളുടെ ടീം കൂടെയുണ്ട്.">Our team is always available to assist with your queries and provide growing tips.</p>
+                <h3 class="text-xl font-semibold text-stone-900 mb-3">Expert Support</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Our team is always available to assist with your queries and provide growing tips.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Food Safety & Certifications Section (Enhanced) -->
-<section id="safety" class="py-20 bg-[#F8FAF8]">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3" data-ml="സുരക്ഷയും ഗുണനിലവാരവും">Safety & Quality</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6" data-ml="ഭക്ഷ്യ സുരക്ഷയും രജിസ്ട്രേഷനുകളും">Food Safety & Registrations</h2>
-            <p class="text-stone-600" data-ml="ഗുണനിലവാരത്തിലും സുരക്ഷയിലും വിട്ടുവീഴ്ചയില്ലാത്ത പ്രതിബദ്ധത. ഓരോ കൂണും ഉയർന്ന സുരക്ഷാ മാനദണ്ഡങ്ങൾ പാലിക്കുന്നുണ്ടെന്ന് ഞങ്ങൾ ഉറപ്പാക്കുന്നു.">Our commitment to quality and safety standards you can trust. We follow strict guidelines to ensure every mushroom meets the highest safety standards.</p>
-        </div>
-
-        <!-- Registration Cards - Full Width Grid -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-            <!-- FSSAI License -->
-            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-all duration-300 border border-primary/10 group">
-                <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary/10 transition-colors">
-                    <i class="fas fa-certificate text-primary text-4xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-stone-900 mb-4" data-ml="FSSAI രജിസ്റ്റേർഡ്">FSSAI Registered</h3>
-                <div class="bg-primary/5 p-6 rounded-xl mb-6 border border-primary/20">
-                    <p class="text-primary font-mono text-xl font-bold tracking-wider">21325234000380</p>
-                </div>
-                <p class="text-stone-600 leading-relaxed" data-ml="ഇന്ത്യൻ ഫുഡ് സേഫ്റ്റി ആൻഡ് സ്റ്റാൻഡേർഡ് അതോറിറ്റി രജിസ്ട്രേഷൻ. ഞങ്ങളുടെ സൗകര്യം കൃത്യ പരിശോധനകൾക്ക് വിധേയമാവുകയും കർശനമായ ശുചിത്വ പാലിക്കുകയും ചെയ്യുന്നു.">Registered with Food Safety and Standards Authority of India. Our facility undergoes regular inspections and maintains strict hygiene protocols.</p>
-                <div class="mt-6 pt-6 border-t border-primary/10">
-                    <div class="flex items-center justify-center gap-2 text-sm text-primary">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-ml="സാധുവായത്">Valid & Verified</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MSME Registration -->
-            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-all duration-300 border border-primary/10 group">
-                <div class="w-24 h-24 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary/10 transition-colors">
-                    <i class="fas fa-industry text-primary text-4xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-stone-900 mb-4" data-ml="MSME രജിസ്റ്റേർഡ്">MSME Registered</h3>
-                <div class="bg-primary/5 p-6 rounded-xl mb-6 border border-primary/20">
-                    <p class="text-primary font-mono text-xl font-bold tracking-wider">UDYAM-KL-08-0086495</p>
-                </div>
-                <p class="text-stone-600 leading-relaxed" data-ml="ചെറുകിട വ്യവസായ വികസന നിയമപ്രകാരം രജിസ്റ്റർ ചെയ്തത്. പ്രാദേശിക സമ്പദ്‌വ്യവസ്ഥയെയും സുസ്ഥിര ബിസിനസ്സ് രീതികളെയും പിന്തുണയ്ക്കുന്നു.">Registered under Micro, Small & Medium Enterprises Development Act. Supporting local economy and sustainable business practices.</p>
-                <div class="mt-6 pt-6 border-t border-primary/10">
-                    <div class="flex items-center justify-center gap-2 text-sm text-primary">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-ml="സർക്കാർ അംഗീകൃത">Government Recognized</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Storage & Handling Instructions - Enhanced -->
-        <div class="bg-white rounded-2xl p-10 shadow-sm border border-primary/10">
-            <div class="text-center mb-10">
-                <h3 class="text-2xl font-bold text-stone-900 mb-4" data-ml="സംഭരണവും കൈകാര്യം ചെയ്യലും">Storage & Handling Guidelines</h3>
-                <p class="text-stone-600 max-w-2xl mx-auto" data-ml="കൂണുകളുടെ ഫ്രഷ്‌നസും ഗുണനിലവാരവും നിലനിർത്താൻ ഈ ലളിതമായ നിർദ്ദേശങ്ങൾ പാലിക്കുക.">Follow these simple guidelines to maintain the freshness and quality of your mushrooms for maximum shelf life and nutritional value.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center group">
-                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
-                        <i class="fas fa-snowflake text-primary text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-stone-900 mb-3" data-ml="തണുത്ത സംഭരണം">Cold Storage</h4>
-                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
-                        <p class="text-2xl font-bold text-primary mb-1">7 <span data-ml="ദിവസം">Days</span></p>
-                        <p class="text-xs text-stone-600" data-ml="ഫ്രിഡ്ജിൽ">In Refrigerator</p>
-                    </div>
-                    <p class="text-sm text-stone-600 leading-relaxed" data-ml="ഫ്രിഡ്ജിൽ (2-4°C) സൂക്ഷിച്ചാൽ 7 ദിവസം വരെ ഫ്രഷ് ആയിരിക്കും.">Store in refrigerator (2-4°C) for maximum freshness up to 7 days.</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
-                        <i class="fas fa-thermometer-half text-primary text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-stone-900 mb-3" data-ml="സാധാരണ താപനിലയിൽ">Room Temperature</h4>
-                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
-                        <p class="text-2xl font-bold text-primary mb-1">1 <span data-ml="ദിവസം">Day</span></p>
-                        <p class="text-xs text-stone-600" data-ml="സാധാരണ സംഭരണം">Normal Storage</p>
-                    </div>
-                    <p class="text-sm text-stone-600 leading-relaxed" data-ml="സാധാരണ താപനിലയിൽ, ഒരു ദിവസത്തിനുള്ളിൽ ഉപയോഗിക്കുക.">At room temperature, consume within 1 day for best quality and safety.</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
-                        <i class="fas fa-box-open text-primary text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-stone-900 mb-3" data-ml="പാക്കേജിംഗ് ശ്രദ്ധിക്കുക">Packaging Care</h4>
-                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
-                        <p class="text-lg font-bold text-primary mb-1" data-ml="ഒറിജിനൽ">Original</p>
-                        <p class="text-xs text-stone-600" data-ml="പാക്കേജിംഗ്">Packaging</p>
-                    </div>
-                    <p class="text-sm text-stone-600 leading-relaxed" data-ml=" വായു സഞ്ചാരമുള്ള കവറിൽ സൂക്ഷിക്കുക. പ്ലാസ്റ്റിക് കവറിൽ നനവുണ്ടെങ്കിൽ പേപ്പർ ബാഗിലേക്ക് മാറ്റുക.">Keep in breathable packaging. Transfer to paper bag if plastic feels damp.</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/10 transition-colors">
-                        <i class="fas fa-tint text-primary text-2xl"></i>
-                    </div>
-                    <h4 class="font-bold text-stone-900 mb-3" data-ml="തയ്യാറാക്കുമ്പോൾ">Preparation</h4>
-                    <div class="bg-primary/5 p-4 rounded-xl mb-4">
-                        <p class="text-lg font-bold text-primary mb-1" data-ml="മൃദുവായി">Gentle</p>
-                        <p class="text-xs text-stone-600" data-ml="കഴുകുക">Cleaning</p>
-                    </div>
-                    <p class="text-sm text-stone-600 leading-relaxed" data-ml="പാചകം ചെയ്യുന്നതിന് തൊട്ടുമുമ്പ് തണുത്ത വെള്ളത്തിൽ മൃദുവായി കഴുകുക.">Rinse gently under cold water just before cooking. Pat dry with paper towel.</p>
-                </div>
-            </div>
-
-            <!-- Additional Tips -->
-            <div class="mt-10 pt-8 border-t border-primary/10">
-                <h4 class="text-lg font-bold text-stone-900 mb-6 text-center" data-ml="കൂടുതൽ ഫ്രഷ്‌നസിനുള്ള നുറുങ്ങുകൾ">Pro Tips for Maximum Freshness</h4>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="flex items-start gap-3 p-4 bg-primary/3 rounded-xl">
-                        <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0 mt-1">
-                            <i class="fas fa-lightbulb text-primary text-sm"></i>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-stone-900 mb-1" data-ml="ഈർപ്പം ഒഴിവാക്കുക">Avoid Moisture</h5>
-                            <p class="text-sm text-stone-600" data-ml="പാചകം ചെയ്യാൻ തയ്യാറാകുന്നത് വരെ കഴുകരുത്. അമിത ഈർപ്പം കേടാകാൻ കാരണമാകും.">Don't wash until ready to cook. Excess moisture reduces shelf life.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3 p-4 bg-primary/3 rounded-xl">
-                        <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0 mt-1">
-                            <i class="fas fa-eye text-primary text-sm"></i>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-stone-900 mb-1" data-ml="പരിശോധിക്കുക">Visual Check</h5>
-                            <p class="text-sm text-stone-600" data-ml="ഫ്രഷ് കൂണുകൾ ഉറപ്പുള്ളതും ഉണങ്ങിയതും പാടുകൾ ഇല്ലാത്തതുമായിരിക്കണം.">Fresh mushrooms should be firm, dry, and free from dark spots.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3 p-4 bg-primary/3 rounded-xl">
-                        <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0 mt-1">
-                            <i class="fas fa-utensils text-primary text-sm"></i>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-stone-900 mb-1" data-ml="പാചക ടിപ്പുകൾ">Cooking Tips</h5>
-                            <p class="text-sm text-stone-600" data-ml="പാനിൽ അമിതമായി നിറയ്ക്കരുത്. മികച്ച രുചിക്കായി ഇടത്തരം ചൂടിൽ പാകം ചെയ്യുക.">Don't overcrowd the pan. Cook on medium-high heat for best texture.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+<script is:inline src="/js/site-ui.js"></script>
 <Footer/>

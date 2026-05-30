@@ -54,16 +54,6 @@ import SEO from "../components/seo.astro";
         body {
             font-family: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
         }
-        /* Malayalam Specific Styles */
-        html.lang-ml body {
-            font-family: 'Manjari', system-ui, -apple-system, Segoe UI, sans-serif;
-            font-size: 0.9em; 
-            line-height: 1.6;
-        }
-        html.lang-ml h1, html.lang-ml h2, html.lang-ml h3, html.lang-ml h4 {
-            font-family: 'Manjari', system-ui, -apple-system, Segoe UI, sans-serif;
-            font-weight: 700;
-        }
         .font-pattaya {
             font-family: 'Pattaya', cursive;
         }
@@ -79,75 +69,6 @@ import SEO from "../components/seo.astro";
             animation: float 6s ease-in-out infinite;
         }
     </style>
-    <script is:inline>
-        function updateLanguageText(isMl) {
-            if (isMl) {
-                document.querySelectorAll('[data-ml]').forEach(el => {
-                    if (!el.dataset.en) el.dataset.en = el.textContent;
-                    el.textContent = el.dataset.ml;
-                });
-                document.querySelectorAll('[data-ml-placeholder]').forEach(el => {
-                    if (!el.dataset.enPlaceholder) el.dataset.enPlaceholder = el.placeholder;
-                    el.placeholder = el.dataset.mlPlaceholder;
-                });
-                return;
-            }
-
-            document.querySelectorAll('[data-ml][data-en]').forEach(el => {
-                el.textContent = el.dataset.en;
-            });
-            document.querySelectorAll('[data-ml-placeholder][data-en-placeholder]').forEach(el => {
-                el.placeholder = el.dataset.enPlaceholder;
-            });
-        }
-
-        function updateToggleButtons(isMl) {
-            const desktopBtn = document.getElementById('lang-toggle-desktop');
-            const mobileBtn = document.getElementById('lang-toggle-mobile');
-
-            [desktopBtn, mobileBtn].forEach(btn => {
-                if (!btn) return;
-                const enSpan = btn.querySelector('.lang-en');
-                const mlSpan = btn.querySelector('.lang-ml-text');
-                if (isMl) {
-                    enSpan.classList.add('opacity-50', 'font-normal');
-                    enSpan.classList.remove('font-bold', 'opacity-100');
-                    mlSpan.classList.add('opacity-100', 'font-bold');
-                    mlSpan.classList.remove('opacity-50', 'font-normal');
-                } else {
-                    enSpan.classList.add('opacity-100', 'font-bold');
-                    enSpan.classList.remove('opacity-50', 'font-normal');
-                    mlSpan.classList.add('opacity-50', 'font-normal');
-                    mlSpan.classList.remove('opacity-100', 'font-bold');
-                }
-            });
-        }
-
-        function toggleLanguage() {
-            const isMl = !document.documentElement.classList.contains('lang-ml');
-            document.documentElement.classList.toggle('lang-ml', isMl);
-            localStorage.setItem('app_language', isMl ? 'ml' : 'en');
-            updateLanguageText(isMl);
-            updateToggleButtons(isMl);
-        }
-
-        const savedLang = localStorage.getItem('app_language');
-        const shouldBeMl = savedLang === 'ml';
-
-        if (shouldBeMl) {
-            document.documentElement.classList.add('lang-ml');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (shouldBeMl) {
-                updateLanguageText(true);
-            }
-            updateToggleButtons(shouldBeMl);
-
-            document.getElementById('lang-toggle-desktop')?.addEventListener('click', toggleLanguage);
-            document.getElementById('lang-toggle-mobile')?.addEventListener('click', toggleLanguage);
-        });
-    </script>
 </head>
 <body class="bg-[#FFFDF9]">
     <!-- Navbar -->
@@ -163,54 +84,39 @@ import SEO from "../components/seo.astro";
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center gap-6">
                     <nav class="flex items-center gap-6">
-                        <a href="/" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഹോം">Home</a>
-                        <a href="/products" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഉൽപ്പന്നങ്ങൾ">Products</a>
-                        <a href="/farm" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഞങ്ങളുടെ ഫാം">Our Farm</a>
-                        <a href="/recipes" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="പാചകക്കുറിപ്പുകൾ">Recipes</a>
-                        <a href="https://wa.me/918078937260" target="_blank" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ബന്ധപ്പെടുക">Contact</a>
+                        <a href="/" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium">Home</a>
+                        <a href="/#store" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium">Store</a>
+                        <a href="/recipes" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium">Recipes</a>
+                        <a href="/about" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium">About</a>
+                        <a href="/contact" class="text-stone-600 hover:text-primary transition-colors text-sm font-medium">Contact</a>
                     </nav>
-                    
-                    <div class="flex items-center gap-3">
-                        <button id="lang-toggle-desktop" class="flex items-center gap-2 text-sm bg-stone-100 px-4 py-2 rounded-full hover:bg-stone-200 transition-colors border border-stone-200">
-                            <span class="lang-en font-bold text-primary">English</span>
-                            <span class="text-stone-300">|</span>
-                            <span class="lang-ml-text opacity-50 text-primary font-medium">മലയാളം</span>
-                        </button>
-                        
-                        <a href="https://wa.me/918078937260" target="_blank" class="px-6 py-2.5 bg-primary text-white rounded-full hover:bg-primary-dark hover:shadow-lg transition-all flex items-center gap-2 text-sm font-medium">
-                            <span data-ml="ഓർഡർ ചെയ്യൂ">Order Now</span>
-                        </a>
-                    </div>
+                    <button class="relative inline-flex items-center justify-center rounded-lg border border-primary/20 bg-primary-light p-2.5 text-primary hover:bg-primary hover:text-white transition-colors" data-open-cart aria-label="Open cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="absolute -right-1.5 -top-1.5 inline-grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-white" data-cart-count>0</span>
+                    </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-button" aria-label="Open mobile menu" aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="text-xl text-stone-600 leading-none" aria-hidden="true">☰</span>
-                </button>
+                <!-- Mobile Menu Button + Cart -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button class="relative inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white p-2 text-stone-700" data-open-cart aria-label="Open cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="absolute -right-1.5 -top-1.5 inline-grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-white" data-cart-count>0</span>
+                    </button>
+                    <button class="p-2" id="mobile-menu-button" aria-label="Open mobile menu" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="text-xl text-stone-600 leading-none" aria-hidden="true">☰</span>
+                    </button>
+                </div>
             </div>
         </div>
 
         <!-- Mobile Menu -->
         <div class="hidden lg:hidden" id="mobile-menu" aria-hidden="true">
             <div class="px-6 py-5 space-y-4 bg-white border-t border-stone-200">
-                <a href="/" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഹോം">Home</a>
-                <a href="/products" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഉൽപ്പന്നങ്ങൾ">Products</a>
-                <a href="/farm" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ഞങ്ങളുടെ ഫാം">Our Farm</a>
-                <a href="/recipes" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="പാചകക്കുറിപ്പുകൾ">Recipes</a>
-                <a href="https://wa.me/918078937260" target="_blank" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium" data-ml="ബന്ധപ്പെടുക">Contact</a>
-                
-                <div class="flex items-center justify-between pt-4 border-t border-stone-100 mt-2">
-                    <span class="text-sm font-medium text-stone-600" data-ml="ഭാഷ മാറ്റുക">Change Language</span>
-                    <button id="lang-toggle-mobile" class="flex items-center gap-2 text-sm bg-stone-100 px-4 py-2 rounded-full hover:bg-stone-200 transition-colors border border-stone-200">
-                        <span class="lang-en font-bold text-primary">English</span>
-                        <span class="text-stone-300">|</span>
-                        <span class="lang-ml-text opacity-50 text-primary font-medium">മലയാളം</span>
-                    </button>
-                </div>
-
-                <a href="https://wa.me/918078937260" target="_blank" class="w-full px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 text-sm font-medium mt-2">
-                    <span data-ml="ഓർഡർ ചെയ്യൂ">Order Now</span>
-                </a>
+                <a href="/" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium">Home</a>
+                <a href="/#store" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium">Store</a>
+                <a href="/recipes" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium">Recipes</a>
+                <a href="/about" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium">About</a>
+                <a href="/contact" class="block text-stone-600 hover:text-primary transition-colors text-sm font-medium">Contact</a>
             </div>
         </div>
     </nav>

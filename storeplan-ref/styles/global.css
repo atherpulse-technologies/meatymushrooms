@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+	--color-brand-50: #fffaf0;
+	--color-brand-100: #fef3d7;
+	--color-brand-500: #c89a2c;
+	--color-brand-600: #a77f20;
+	--color-brand-900: #4a3613;
+
+	--font-sans: "Manrope", "Segoe UI", sans-serif;
+	--font-display: "Playfair Display", "Georgia", serif;
+
+	--shadow-soft: 0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+@keyframes orderSpinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.order-spinner {
+	animation: orderSpinner 0.9s linear infinite;
+	border-top-color: var(--color-brand-500);
+}

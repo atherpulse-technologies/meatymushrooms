@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* Order Spinner */
+.order-spinner {
+  border-top-color: #8B1E3F;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cart drawer shadow */
+.shadow-soft {
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+}
