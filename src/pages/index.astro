@@ -60,33 +60,69 @@ const cookingVideos = [
         label: 'Shorts'
     }
 ];
+
+// Testimonials Data
+const testimonials = [
+    {
+        quote: "The texture is incredible — just like meat in my curry!",
+        name: "Reshma",
+        area: "Kozhikode"
+    },
+    {
+        quote: "My kids loved the thoran. We order every week now.",
+        name: "Bindu",
+        area: "Vadakara"
+    },
+    {
+        quote: "First time trying oyster mushrooms. Totally worth it!",
+        name: "Anoop",
+        area: "Calicut"
+    }
+];
 ---
 
 <Head/>
 <CartDrawer />
 
-<!-- Hero Section -->
-<section class="min-h-screen pt-48 pb-8 relative overflow-hidden">
+<!-- 1. Hero Section -->
+<section class="min-h-screen pt-28 pb-16 relative overflow-hidden flex items-center bg-[#FDFBF7]">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&blur=100')] opacity-5 z-0"></div>
     
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
             <div class="text-center lg:text-left">
 
-                <h1 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight mb-6">
-                    <span>Fresh Oyster Mushrooms, Harvested Daily in Vadakara</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-900 leading-tight mb-6">
+                    <span>Premium Oyster Mushrooms.<br/>Harvested Today.</span>
                 </h1>
-                <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0">
-                    Taste the healthy "vegetarian meat." Farm-fresh and delivered straight to your kitchen.
+                <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Thick, meaty, and cultivated in Vadakara. Taste the difference quality makes.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#store" class="px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-xl hover:-translate-y-1">
+
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-primary-light text-primary px-4 py-1.5 text-xs font-medium">
+                        <i class="fas fa-leaf text-[10px]"></i>
+                        Indoor Farmed
+                    </span>
+                    <span class="inline-flex items-center gap-2 rounded-full bg-primary-light text-primary px-4 py-1.5 text-xs font-medium">
+                        <i class="fas fa-certificate text-[10px]"></i>
+                        FSSAI Registered
+                    </span>
+                    <span class="inline-flex items-center gap-2 rounded-full bg-primary-light text-primary px-4 py-1.5 text-xs font-medium">
+                        <i class="fas fa-box text-[10px]"></i>
+                        Hygienic Packaging
+                    </span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="#store" class="px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all flex items-center justify-center gap-2 font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                        <i class="fab fa-whatsapp text-sm"></i>
                         <span>Order Fresh Now</span>
-                        <i class="fas fa-shopping-basket text-sm"></i>
                     </a>
-                    <a href="#videos" class="px-8 py-4 border-2 border-primary text-primary rounded-full hover:bg-primary-light transition-all flex items-center justify-center gap-2">
+                    <a href="#videos" class="px-8 py-4 border-2 border-primary text-primary rounded-full hover:bg-primary-light transition-all flex items-center justify-center gap-2 font-semibold bg-transparent">
+                        <i class="fas fa-utensils text-sm"></i>
                         <span>Watch Recipes</span>
-                        <i class="fas fa-play text-sm"></i>
                     </a>
                 </div>
             </div>
@@ -102,55 +138,53 @@ const cookingVideos = [
     </div>
 </section>
 
-<!-- Hook / Value Proposition Section -->
+<!-- 2. Why Oyster Mushrooms -->
 <section class="py-12 bg-primary text-white overflow-hidden relative">
-    <div class="absolute top-0 left-0 right-0 h-full opacity-10 pointer-events-none overflow-hidden flex items-center">
-        <div class="whitespace-nowrap animate-marquee text-9xl font-bold uppercase tracking-widest text-white">
-            Superfood - Protein - Immunity - Energy - Superfood - Protein - Immunity - Energy
-        </div>
-    </div>
-    
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <span class="inline-block py-1 px-3 rounded-full bg-primary-light text-primary text-xs font-bold uppercase tracking-wider mb-4 animate-bounce">Limited Daily Harvest</span>
         <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             <span>Have You Tasted the "Vegetarian Meat"?</span>
         </h2>
-        <p class="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-3xl mx-auto">
-            <span>Tastes like meat. Nature's functional food. Vadakara's new health secret!</span>
+        <p class="text-xl md:text-2xl text-white/90 mb-10 font-light max-w-3xl mx-auto">
+            Firm, meaty texture, rich umami flavour, and full of nutrition your body actually needs.
         </p>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8 mt-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-10 mt-4">
             <div class="text-center">
                 <div class="text-3xl mb-2"><i class="fas fa-bolt text-stone-200"></i></div>
                 <div class="font-bold text-lg">Metabolism</div>
-                <div class="text-xs text-white/80">B-Vitamin Boost</div>
+                <div class="text-xs text-white/80">B-Vitamin boost for sustained energy</div>
             </div>
              <div class="text-center">
                 <div class="text-3xl mb-2"><i class="fas fa-shield-alt text-stone-200"></i></div>
-                <div class="font-bold text-lg">Immunity Boost</div>
-                <div class="text-xs text-white/80">Beta-Glucans</div>
+                <div class="font-bold text-lg">Immunity</div>
+                <div class="text-xs text-white/80">Beta-glucans for natural defense</div>
             </div>
              <div class="text-center">
                 <div class="text-3xl mb-2"><i class="fas fa-brain text-stone-200"></i></div>
                 <div class="font-bold text-lg">Brain Power</div>
-                <div class="text-xs text-white/80">Neuro-protective</div>
+                <div class="text-xs text-white/80">Neuroprotective compounds</div>
             </div>
              <div class="text-center">
                 <div class="text-3xl mb-2"><i class="fas fa-heart text-stone-200"></i></div>
                 <div class="font-bold text-lg">Heart Health</div>
-                <div class="text-xs text-white/80">Zero Cholesterol</div>
+                <div class="text-xs text-white/80">Zero cholesterol, heart-friendly</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Store Section -->
+<!-- 3. Products (Store) -->
 <section id="store" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-12">
             <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Our Store</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Our Farm Fresh Products</h2>
-            <p class="text-stone-600">Select your items below. Fast checkout via WhatsApp.</p>
+            <p class="text-stone-600 mb-6">Select your items below. Fast checkout via WhatsApp.</p>
+            <!-- Scarcity Badge -->
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-xs font-bold tracking-wider uppercase">
+                <i class="fas fa-hourglass-half"></i>
+                Limited Daily Harvest
+            </span>
         </div>
 
         <!-- How to Order Teaser -->
@@ -171,20 +205,20 @@ const cookingVideos = [
             </div>
         </div>
 
-        <!-- All Products in Single Grid -->
+        <!-- Products Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => <ProductCard product={product} />)}
         </div>
     </div>
 </section>
 
-<!-- Cooking Videos Section -->
-<section id="videos" class="py-20 bg-[#F8FAF8]">
+<!-- 4. Recipe Videos -->
+<section id="videos" class="py-20 bg-stone-50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Learn to Cook</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Learn to Cook in Minutes</h2>
-            <p class="text-stone-600">Oysters hold their shape and absorb traditional Kerala curry flavors perfectly.</p>
+            <p class="text-stone-600">Oyster mushrooms hold their shape and absorb Kerala curry flavours perfectly. Watch and cook today.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -195,7 +229,7 @@ const cookingVideos = [
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                             <i class="fas fa-play text-white text-3xl"></i>
                         </div>
-                        <span class="absolute top-4 left-4 bg-red-600 text-white text-xs px-2 py-1 rounded" data-ml={video.label}>{video.label}</span>
+                        <span class="absolute top-4 left-4 text-white text-xs px-2 py-1 rounded" style="background-color: rgba(139, 30, 63, 0.85);" data-ml={video.label}>{video.label}</span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-semibold text-stone-900 mb-2" data-ml={video.titleML || video.title}>{video.title}</h3>
@@ -210,7 +244,7 @@ const cookingVideos = [
         </div>
 
         <div class="text-center mt-12">
-            <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition-all group">
+            <a href="/cooking-videos" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-all group">
                 <i class="fab fa-youtube"></i>
                 <span>More Cooking Videos</span>
                 <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
@@ -219,9 +253,37 @@ const cookingVideos = [
     </div>
 </section>
 
-<!-- Condensed Health Benefits -->
-<section class="py-20 bg-white">
+<!-- 5. Testimonials -->
+<section class="py-20 bg-[#F8FAF8]">
     <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Testimonials</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">What Our Customers Say</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {testimonials.map((item) => (
+                <div class="bg-white rounded-2xl p-8 border border-stone-200 hover:shadow-lg transition-all">
+                    <i class="fas fa-quote-left text-3xl text-primary/30 mb-4"></i>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-6 italic">"{item.quote}"</p>
+                    <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                            <span class="text-primary font-bold text-sm">{item.name.charAt(0)}</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-stone-900 text-sm">{item.name}</p>
+                            <p class="text-xs text-stone-500">{item.area}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<!-- 6. Health Benefits (Zigzag) -->
+<section class="py-20 bg-stone-50">
+    <div class="max-w-5xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Health Benefits</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">
@@ -230,195 +292,126 @@ const cookingVideos = [
             <p class="text-stone-600 mb-4">Packed with nutrition and scientifically proven health benefits.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <!-- 1. Immune System Support -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-shield-virus text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Immune System Support</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    Rich in naturally occurring beta-glucans that help support healthy immune function.
-                </p>
-            </div>
-
-            <!-- 2. High in Protein -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-dumbbell text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">High in Protein</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    A great plant-based protein source for everyday nutrition and muscle recovery.
-                </p>
-            </div>
-
-            <!-- 3. Naturally Rich in Vitamin D -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-sun text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Naturally Rich in Vitamin D</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    One of the few natural food sources that can provide Vitamin D when exposed to sunlight.
-                </p>
-            </div>
-
-            <!-- 4. Heart-Friendly Nutrition -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-heart text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Heart-Friendly Nutrition</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    Contains compounds that may help support healthy cholesterol levels and heart wellness.
-                </p>
-            </div>
-
-            <!-- 5. Supports Brain Health -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-brain text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Supports Brain Health</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    Contains antioxidants and bioactive compounds linked to cognitive and nerve health.
-                </p>
-            </div>
-
-            <!-- 6. Gut Health & Digestion -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-seedling text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Gut Health & Digestion</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    Rich in dietary fiber that helps support digestion and a healthy gut microbiome.
-                </p>
-            </div>
-
-            <!-- 7. Low-Calorie Superfood -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-weight text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Low-Calorie Superfood</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    Nutrient-dense, low in calories, and ideal for healthy everyday meals.
-                </p>
-            </div>
-
-            <!-- 8. Antioxidant Rich -->
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10 hover:shadow-lg transition-all group text-center">
-                <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-shield text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-stone-900 mb-3">Antioxidant Rich</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">
-                    Packed with antioxidants that help the body fight oxidative stress naturally.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Conversion FAQ -->
-<section class="py-16 bg-stone-50 border-y border-stone-200" id="faq-section">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">No Hesitation</span>
-            <h2 class="text-3xl font-bold text-stone-900 mb-4">First Time Buying?</h2>
-            <p class="text-stone-600 max-w-2xl mx-auto">We answer your top questions so you can order with confidence.</p>
-        </div>
-
-        <div class="space-y-3">
-            <!-- Q1: Delivery Area -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-truck"></i></span>
-                        <span>Where do you deliver?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p>We deliver fresh harvests locally across the <strong>Vadakara and Kozhikode</strong> area to ensure maximum freshness.</p>
-                </div>
-            </details>
-
-            <!-- Q2: Freshness -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
-                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-clock"></i></span>
-                        <span>How long do they stay fresh?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p>Store them in your refrigerator (2-4<span>°C</span>) in their original breathable packaging, and they will stay perfectly fresh for up to <strong>4 days</strong>.</p>
-                </div>
-            </details>
+        <div class="space-y-12">
             
-            <!-- Q3: Washing -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
-                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-hand-holding-water"></i></span>
-                        <span>Do I need to wash them?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p><strong>Do not soak them.</strong> Simply wipe them with a damp cloth or give them a very gentle, quick rinse under cold water right before cooking.</p>
+            <!-- Row 1: Icon Left, Text Right -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-shield-virus text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Immune System Support</h3>
+                    <p class="text-stone-600 text-sm">Rich in beta-glucans for healthy immune function.</p>
                 </div>
-            </details>
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-dumbbell text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">High in Protein</h3>
+                    <p class="text-stone-600 text-sm">Great plant-based protein for everyday nutrition.</p>
+                </div>
+            </div>
 
-            <!-- Q4: Texture -->
-            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
-                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
-                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
-                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-utensils"></i></span>
-                        <span>What is the texture like?</span>
-                    </h3>
-                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
-                        <i class="fas fa-chevron-down"></i>
-                    </span>
-                </summary>
-                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
-                    <p>Unlike common button mushrooms that shrink and get soggy, our oyster mushrooms maintain a firm, satisfying <strong>"meaty" bite</strong> even in heavy curries.</p>
+            <!-- Row 2: Text Left, Icon Right -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left md:order-2">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-sun text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Naturally Rich in Vitamin D</h3>
+                    <p class="text-stone-600 text-sm">One of the few natural food sources of Vitamin D.</p>
                 </div>
-            </details>
-        </div>
-        
-        <div class="mt-8 text-center">
-            <a href="https://wa.me/918078937260" target="_blank" class="hover:underline inline-flex items-center justify-center gap-1 text-sm text-stone-500">
-                <i class="fab fa-whatsapp text-green-600"></i>
-                <span>Still have questions? Ask us on WhatsApp</span>
-            </a>
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left md:order-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-heart text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Heart-Friendly Nutrition</h3>
+                    <p class="text-stone-600 text-sm">Supports healthy cholesterol levels.</p>
+                </div>
+            </div>
+
+            <!-- Row 3: Icon Left, Text Right -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-brain text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Brain Health</h3>
+                    <p class="text-stone-600 text-sm">Antioxidants linked to cognitive health.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-seedling text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Gut Health & Digestion</h3>
+                    <p class="text-stone-600 text-sm">Rich dietary fiber for healthy digestion.</p>
+                </div>
+            </div>
+
+            <!-- Row 4: Text Left, Icon Right -->
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left md:order-2">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-fire text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Low-Calorie Superfood</h3>
+                    <p class="text-stone-600 text-sm">Nutrient-dense, ideal for healthy meals.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border border-primary/10 text-center md:text-left md:order-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                        <i class="fas fa-star text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Antioxidant Rich</h3>
+                    <p class="text-stone-600 text-sm">Fights oxidative stress naturally.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Safety, Quality & Why Choose Us -->
-<section id="safety" class="py-20 bg-white">
+<!-- 7. The Meaty Difference (Compact Banner) -->
+<section class="py-14 bg-primary text-white">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold">The Meaty Mushrooms Difference</h2>
+            <p class="text-white/80 mt-2 text-sm">Why customers choose us</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center">
+                <i class="fas fa-leaf text-2xl text-stone-200 mb-2"></i>
+                <p class="font-semibold text-sm">100% Organic</p>
+                <p class="text-xs text-white/70 mt-1">Pesticide-free</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-clock text-2xl text-stone-200 mb-2"></i>
+                <p class="font-semibold text-sm">Same Day Delivery</p>
+                <p class="text-xs text-white/70 mt-1">Farm to kitchen</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-flask text-2xl text-stone-200 mb-2"></i>
+                <p class="font-semibold text-sm">Lab Tested</p>
+                <p class="text-xs text-white/70 mt-1">Quality checked</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-handshake text-2xl text-stone-200 mb-2"></i>
+                <p class="font-semibold text-sm">Locally Grown</p>
+                <p class="text-xs text-white/70 mt-1">Vadakara, Kerala</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. Safety & Certifications -->
+<section id="safety" class="py-20 bg-stone-50">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Grown Safely in Kerala -->
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Safety & Quality</span>
             <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Grown Safely in Kerala</h2>
             <p class="text-stone-600">Our commitment to quality and safety standards you can trust.</p>
         </div>
 
-        <!-- Registration Badges -->
+        <!-- Certifications -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
             <div class="bg-[#F8FAF8] rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-primary/10">
                 <div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -438,7 +431,7 @@ const cookingVideos = [
             </div>
         </div>
 
-        <!-- Storage & Handling - Split into 2 Cards -->
+        <!-- Storage & Handling: 2 Side-by-Side Cards -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
             <!-- Card 1: Storage Rules -->
             <div class="bg-[#F8FAF8] rounded-2xl p-8 border border-primary/10">
@@ -496,71 +489,330 @@ const cookingVideos = [
                         <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-fire text-primary"></i></div>
                         <div>
                             <p class="font-semibold text-stone-900">Cooking</p>
-                            <p class="text-sm text-stone-600">Don't overcrowd the pan. Cook on medium-high heat.</p>
+                            <p class="text-sm text-stone-600">Do not overcrowd the pan — cook on medium-high heat.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Why Choose Us (Restored) -->
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Why Choose Us</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">The Meaty Mushrooms Difference</h2>
-            <p class="text-stone-600">Discover what sets us apart in the world of mushroom cultivation.</p>
+<!-- 9. FAQ -->
+<section class="py-16 bg-stone-50 border-y border-stone-200" id="faq-section">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">No Hesitation</span>
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">First Time Buying?</h2>
+            <p class="text-stone-600 max-w-2xl mx-auto">We answer your top questions so you can order with confidence.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
-                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-leaf text-primary text-2xl group-hover:text-white transition-colors"></i>
+        <div class="space-y-3">
+            <!-- Q1: Delivery Area -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-truck"></i></span>
+                        <span>Where do you deliver?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p>We deliver fresh harvests locally across <strong>Vadakara and Kozhikode</strong> area.</p>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3">100% Organic</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">Our mushrooms are grown using organic methods, free from pesticides and artificial additives.</p>
-            </div>
+            </details>
 
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
-                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-clock text-primary text-2xl group-hover:text-white transition-colors"></i>
+            <!-- Q2: Freshness -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-lg text-stone-900 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-clock"></i></span>
+                        <span>How long do they stay fresh?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p>Up to <strong>4 days</strong> refrigerated at 2-4<span>°C</span> in breathable packaging.</p>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3">Same Day Delivery</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">Fresh mushrooms delivered to your doorstep within hours of harvesting.</p>
-            </div>
+            </details>
 
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
-                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-flask text-primary text-2xl group-hover:text-white transition-colors"></i>
+            <!-- Q3: Washing -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-hand-holding-water"></i></span>
+                        <span>Do I need to wash them?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p><strong>Do not soak them.</strong> Wipe with a damp cloth or quick rinse just before cooking.</p>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3">Lab Tested</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">Regular quality checks ensure the highest standards of safety and nutrition.</p>
-            </div>
+            </details>
 
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
-                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-handshake text-primary text-2xl group-hover:text-white transition-colors"></i>
+            <!-- Q4: Texture -->
+            <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden open:shadow-md open:border-primary/20 transition-all duration-300">
+                <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                    <h3 class="font-bold text-base text-stone-900 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm"><i class="fas fa-utensils"></i></span>
+                        <span>What is the texture like?</span>
+                    </h3>
+                    <span class="text-stone-400 group-open:rotate-180 transition-transform duration-300">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="px-5 pb-5 pt-0 text-stone-600 leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+                    <p>Firm and meaty — holds shape even in heavy Kerala curries. Unlike button mushrooms.</p>
                 </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3">Local Community</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">Supporting local farmers and contributing to sustainable agriculture in Vadakara.</p>
-            </div>
+            </details>
+        </div>
 
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
-                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-seedling text-primary text-2xl group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3">Sustainable Farming</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">Eco-friendly cultivation methods that prioritize environmental conservation.</p>
-            </div>
-
-            <div class="bg-[#F8FAF8] rounded-2xl p-8 group hover:shadow-xl transition-all duration-300 text-center">
-                <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                    <i class="fas fa-phone-alt text-primary text-2xl group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-stone-900 mb-3">Expert Support</h3>
-                <p class="text-stone-600 text-sm leading-relaxed">Our team is always available to assist with your queries and provide growing tips.</p>
-            </div>
+        <div class="mt-8 text-center">
+            <button id="open-faq-modal" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-md group">
+                <span>View All Common Doubts</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </button>
         </div>
     </div>
 </section>
 
+<!-- Full Screen FAQ Modal -->
+<div id="faq-modal" class="fixed inset-0 z-[100] hidden" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="close-faq-modal-backdrop"></div>
+    
+    <div class="absolute inset-x-0 bottom-0 md:inset-0 md:flex md:items-center md:justify-center pointer-events-none">
+        <div class="bg-[#F8FAF8] w-full md:w-[800px] md:h-[80vh] md:rounded-2xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto max-h-[90vh] md:max-h-[80vh]">
+            
+            <div class="bg-white border-b border-stone-200 p-4 md:p-6 flex items-center justify-between shrink-0 sticky top-0 z-10">
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold text-primary">All Common Doubts</h3>
+                    <p class="text-sm text-stone-500">Everything you wanted to ask</p>
+                </div>
+                <button id="close-faq-modal" class="w-10 h-10 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center transition-colors">
+                    <i class="fas fa-times text-stone-600 text-lg"></i>
+                </button>
+            </div>
+            
+            <div class="overflow-y-auto p-4 md:p-8 space-y-8 bg-[#F8FAF8]">
+                
+                <div>
+                    <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Essentials / Basics</h4>
+                    <div class="space-y-3">
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Does it really taste like meat?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>It is 100% vegetarian, but the texture is fibrous and chewy like meat. It has a savoury umami flavour that mimics meat when cooked with spices.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>How long does it last?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p><strong>Fridge:</strong> Up to 4 days in breathable packaging.<br><strong>Room Temp:</strong> 1 day. Use immediately for best taste.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Is it hard to clean?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>No. Do <strong>NOT wash</strong> heavily. Just wipe with a damp cloth or rinse quickly before cooking. No cutting needed, tear by hand.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Health & Safety</h4>
+                    <div class="space-y-3">
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Is it safe for kids?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>Yes. It is a superfood for growing kids, excellent for brain development and immunity. Purely organic, no chemical risks.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Can pregnant women eat this?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>Yes, mushrooms are a natural source of Folate (Vitamin B9), which is crucial during pregnancy. Ensure it is cooked properly.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Any chemicals used?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>Zero. Grown on sterilized sawdust. No fertilizers, no pesticides, no preservatives.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Is it good for Diabetes/BP/Cholesterol?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>Yes. Oyster mushrooms are low-carb, low-sodium, and zero-cholesterol. They may help regulate blood sugar and improve heart health.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-primary/10 pb-2">Buying & Cooking</h4>
+                    <div class="space-y-3">
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>What is the price?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>Check our store section above for current prices. We offer trial packs and value packs.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>Is there a minimum order?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>No minimums for pickup. For home delivery, we may suggest bulk orders to save on delivery charges.</p>
+                            </div>
+                        </details>
+                        <details class="group bg-white rounded-xl border border-stone-200 overflow-hidden">
+                            <summary class="flex items-center justify-between p-4 cursor-pointer list-none font-medium text-stone-900 hover:bg-stone-50">
+                                <span>I don't know recipes. Can you help?</span>
+                                <i class="fas fa-plus text-stone-400 text-xs group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="px-4 pb-4 pt-2 text-stone-600 text-sm leading-relaxed">
+                                <p>Absolutely. Check our recipe videos above. It is versatile — fry, curry, roast, soup, or stir-fry.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="p-4 border-t border-stone-200 bg-white md:bg-stone-50 shrink-0 text-center">
+                <a href="https://wa.me/918078937260" target="_blank" class="w-full md:w-auto inline-flex justify-center items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all font-bold">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat with Us</span>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('faq-modal');
+        const openBtn = document.getElementById('open-faq-modal');
+        const closeBtn = document.getElementById('close-faq-modal');
+        const closeBackdrop = document.getElementById('close-faq-modal-backdrop');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        if(openBtn) openBtn.addEventListener('click', openModal);
+        if(closeBtn) closeBtn.addEventListener('click', closeModal);
+        if(closeBackdrop) closeBackdrop.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    });
+</script>
+
+<!-- 10. Contact Section -->
+<section class="py-20 bg-white border-t border-stone-100">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-sm font-medium text-primary tracking-wider uppercase block mb-3">Get in Touch</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-6">Have a Question?</h2>
+            <p class="text-stone-600">We'd love to hear from you.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-4 bg-stone-50 rounded-xl">
+                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fab fa-whatsapp text-primary"></i></div>
+                    <div>
+                        <p class="font-semibold text-stone-900">WhatsApp</p>
+                        <a href="https://wa.me/918078937260" target="_blank" class="text-primary hover:underline text-sm">+91 80789 37260</a>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-stone-50 rounded-xl">
+                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-phone text-primary"></i></div>
+                    <div>
+                        <p class="font-semibold text-stone-900">Phone</p>
+                        <a href="tel:+918078937260" class="text-primary hover:underline text-sm">+91 80789 37260</a>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-stone-50 rounded-xl">
+                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-envelope text-primary"></i></div>
+                    <div>
+                        <p class="font-semibold text-stone-900">Email</p>
+                        <a href="mailto:support@meatymushrooms.in" class="text-primary hover:underline text-sm">support@meatymushrooms.in</a>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-stone-50 rounded-xl">
+                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-location-dot text-primary"></i></div>
+                    <div>
+                        <p class="font-semibold text-stone-900">Address</p>
+                        <p class="text-stone-600 text-sm">Keethadi Road, Makkoolpeedika, Vadakara, Kozhikode, Kerala</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="space-y-4 bg-stone-50 rounded-2xl p-6 border border-stone-200">
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full rounded-lg border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-800 outline-none focus:ring-2 focus:ring-primary/30" placeholder="Your name" />
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full rounded-lg border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-800 outline-none focus:ring-2 focus:ring-primary/30" placeholder="your@email.com" />
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-stone-700 mb-1">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full rounded-lg border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-800 outline-none focus:ring-2 focus:ring-primary/30 resize-none" placeholder="Your message..."></textarea>
+                </div>
+                <button type="submit" class="w-full rounded-xl bg-primary px-4 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- 11. Footer -->
 <script is:inline src="/js/site-ui.js"></script>
 <Footer/>
