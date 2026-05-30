@@ -13,6 +13,7 @@ export interface Product {
   usage: string[];
   storage: string;
   image: string;
+  comingSoon?: boolean;
 }
 
 export const products: Product[] = [
@@ -33,7 +34,7 @@ export const products: Product[] = [
     ],
     usage: ["Kerala curries", "Stir-fries", "Pepper fry", "Soups"],
     storage: "4 days refrigerated (do not wash before storing)",
-    image: "/assets/images/oyster.jpg"
+    image: "/productimages/100gramfresh.png"
   },
   {
     slug: "fresh-oyster-200g",
@@ -53,13 +54,13 @@ export const products: Product[] = [
     ],
     usage: ["Kerala curries", "Stir-fries", "Pepper fry", "Soups", "Biryani"],
     storage: "4 days refrigerated (do not wash before storing)",
-    image: "/assets/images/oyster.jpg"
+    image: "/productimages/200gramfresh.png"
   },
   {
     slug: "mushroom-powder",
     name: "Oyster Mushroom Powder",
     form: "dried",
-    price: 200,
+    price: 350,
     unit: "100g",
     tagline: "100% pure dehydrated mushroom. Shelf-stable nutrition.",
     shortDescription: "Pure oyster mushroom powder — dehydrated and finely ground. Add to anything for an umami nutrition boost.",
@@ -72,13 +73,14 @@ export const products: Product[] = [
     ],
     usage: ["Smoothies", "Soups & broths", "Roti/chapati dough", "Seasoning sprinkle", "Curry thickener"],
     storage: "6 months in a cool, dry place",
-    image: "/assets/images/powder.png"
+    image: "/productimages/100grampowder.png",
+    comingSoon: true
   },
   {
     slug: "mushroom-achar",
     name: "Oyster Mushroom Achar",
     form: "pickled",
-    price: 150,
+    price: 200,
     unit: "250g",
     tagline: "Traditional Kerala-style mushroom pickle.",
     shortDescription: "Homemade oyster mushroom pickle with authentic Kerala spices. Tangy, spicy, and full of flavor.",
@@ -91,7 +93,8 @@ export const products: Product[] = [
     ],
     usage: ["Side for rice meals", "With curd rice", "With kanji/porridge", "As a sandwich spread"],
     storage: "3 months refrigerated after opening",
-    image: "/assets/images/oyster.jpg"
+    image: "/productimages/200gramachar.png",
+    comingSoon: true
   }
 ];
 
