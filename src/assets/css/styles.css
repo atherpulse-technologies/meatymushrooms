@@ -20,7 +20,7 @@
 
 /* ===== Fade-in Up (Hero Heading / Badges) ===== */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .animate-hero-title {
@@ -29,6 +29,17 @@
 .animate-hero-badge-1 { animation: fadeInUp 0.4s ease-out 0.1s both; }
 .animate-hero-badge-2 { animation: fadeInUp 0.4s ease-out 0.15s both; }
 .animate-hero-badge-3 { animation: fadeInUp 0.4s ease-out 0.2s both; }
+
+/* ===== Scroll-Reveal Sections ===== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+[data-reveal].animate-fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ===== Card Hover Lift ===== */
 .card-hover {
@@ -50,7 +61,10 @@
   .animate-hero-title,
   .animate-hero-badge-1,
   .animate-hero-badge-2,
-  .animate-hero-badge-3 {
+  .animate-hero-badge-3,
+  [data-reveal] {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
