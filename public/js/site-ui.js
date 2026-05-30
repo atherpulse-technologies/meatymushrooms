@@ -414,18 +414,18 @@ document.addEventListener("keydown", (e) => {
 renderCart();
 hydrateCustomerInputs();
 
-// ===== Scroll-Reveal Animations =====
+// ===== Scroll-Reveal: Sections fade in when scrolled to =====
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fadeInUp");
+          entry.target.classList.add("revealed");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.12 }
   );
 
   document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
